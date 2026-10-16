@@ -1,0 +1,15 @@
+.DS_Store
+Thumbs.db
+__pycache__/
+*.pyc
+.env
+.env.*
+*.key
+*.pem
+*.pfx
+*.log
+work/
+local/
+reports/
+releases/
+

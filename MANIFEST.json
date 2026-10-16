@@ -1,0 +1,108 @@
+{
+  "package_version": "0.1.0-design-handoff",
+  "created_at_utc": "2026-10-16T05:08:23.707325+00:00",
+  "kind": "design_and_development_handoff",
+  "gameplay_verified": false,
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 114,
+      "sha256": "8c7ee28642a937ed089a7be9acad17a910ae31872626b5f2a60cc7980058caa9"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 108,
+      "sha256": "4d1a9549f1e0b1b35a4435e7a7cfd728bbbee0b5136deb96a2e73762915e92f0"
+    },
+    {
+      "path": "AGENTS.md",
+      "bytes": 2410,
+      "sha256": "72d99fc6a5cada214a03a03869d5f04d9403e28c25f0b10757f946dc0ce69cdf"
+    },
+    {
+      "path": "assets/README.md",
+      "bytes": 223,
+      "sha256": "01bb326d2f3c9a14e631f44beb3e017a42ee4e4c8fee30f86f96a7d415b8de66"
+    },
+    {
+      "path": "assets/reference-index.json",
+      "bytes": 974,
+      "sha256": "217837f35ffb8289d382c9603c6cb26c7a01743670f38143db91d5b213b32fae"
+    },
+    {
+      "path": "design/project-status.json",
+      "bytes": 825,
+      "sha256": "24fce843c421da4d4d317b5cb2269c349bd58535c642ba0b810d3e0863a70158"
+    },
+    {
+      "path": "design/requirements.json",
+      "bytes": 11686,
+      "sha256": "759889a62850b5a910dae5225fc68617ce575bbc8c08dd2c3dd4aee79eb27074"
+    },
+    {
+      "path": "docs/01-confirmed-design.md",
+      "bytes": 2511,
+      "sha256": "89cd6fb456ecf0a69e47fa2ef1315662edcde59f17d606116fc241e19cc323e9"
+    },
+    {
+      "path": "docs/02-population-and-buildings.md",
+      "bytes": 3279,
+      "sha256": "aece25355dd07b3bf2ba5e45833e8d6db504973ee6fdd537b0a0d1cc27ff50d6"
+    },
+    {
+      "path": "docs/03-fleets-and-megastructure.md",
+      "bytes": 2403,
+      "sha256": "99614762cd02b3d706d17c63303712c3d10d37ba0a43b02b042ed281400a7364"
+    },
+    {
+      "path": "docs/04-events-and-ascension.md",
+      "bytes": 2782,
+      "sha256": "8770c0403a9f32018ea993d4771f4d0f7f5b695732ee5c1eb0348f9beccd255c"
+    },
+    {
+      "path": "docs/05-proposals-and-open-questions.md",
+      "bytes": 1984,
+      "sha256": "e469c178ec5fa827430f44ad8cbda526e9eba400e0ff2626b429b0615c2f877d"
+    },
+    {
+      "path": "docs/06-development-handoff.md",
+      "bytes": 2786,
+      "sha256": "77ae14a82eab2fa940351bc23fac431131940940d584befb6878ca57c2b4dd1f"
+    },
+    {
+      "path": "docs/07-sources-and-assets.md",
+      "bytes": 2347,
+      "sha256": "b8c430393a8946b38aa87b7f3c2958de3da63f540637490476c3aa104b7d9dcc"
+    },
+    {
+      "path": "docs/08-revision-ledger.md",
+      "bytes": 1596,
+      "sha256": "041dfdf45ec5861971cad7af0fb3eb1f3bf3b8ef20af148ca2c8be0ee86bcbf5"
+    },
+    {
+      "path": "events/hunger_dialogue_zh.txt",
+      "bytes": 1154,
+      "sha256": "2b91ff8960580452cbe3815616156241609250acc1e68118686835499cbf93fb"
+    },
+    {
+      "path": "README.md",
+      "bytes": 2175,
+      "sha256": "e0239bdf6c0f181c5b7069de6f95e6e6f9a22bd352714bfc67e1b54483a9127d"
+    },
+    {
+      "path": "scripts/package_handoff.py",
+      "bytes": 3255,
+      "sha256": "0d320d31131bfe05dfbca7ce21e647dc0448a890b62e5a45d9f988498ae9e6aa"
+    },
+    {
+      "path": "scripts/setup-codex.sh",
+      "bytes": 382,
+      "sha256": "52ca4700656f09f6c5aff1c09ddbeaf45b60e7ff27fe8ac6c2e25545fb3b9bc7"
+    },
+    {
+      "path": "scripts/validate_handoff.py",
+      "bytes": 3309,
+      "sha256": "6107d42f2a126e36e316675434c12dbec613f362c975a342358ffc2f84365b31"
+    }
+  ]
+}

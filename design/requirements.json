@@ -1,0 +1,325 @@
+{
+  "schema_version": 1,
+  "package_version": "0.1.0-design-handoff",
+  "updated_date": "2026-10-16",
+  "population": {
+    "origin": "Syncretic Evolution / 协同进化",
+    "primary_species": "白蚊人",
+    "secondary_species": "灰蚊人",
+    "leader_species": "白蚊人",
+    "gray_population": {
+      "job_scope": "enabled_non_elite_jobs",
+      "fill_delay_months": {
+        "min": 3,
+        "max": 6
+      },
+      "surplus_policy": "remove_surplus_gray_population",
+      "resettlement_as_surplus_policy": false,
+      "reserve_jobs_as_surplus_policy": false,
+      "spontaneous_growth_should_not_create_surplus": true,
+      "pending_batches_must_be_reconciled": true,
+      "apply_to_gray_modified_subspecies": true
+    },
+    "reactor": {
+      "scope": "planet_all_gray_population",
+      "food_upkeep_reduction": null
+    },
+    "gray_gene_modification_speed_reduction": null
+  },
+  "ascension": {
+    "haipam": {
+      "paths": [
+        "genetic",
+        "psionic"
+      ],
+      "combined": true,
+      "implemented": false
+    },
+    "steel_mosquito": {
+      "initial_species": [
+        "白蚊人",
+        "机器人"
+      ],
+      "path": "synthetic",
+      "gray_species_conversion_is_origin_story": false
+    }
+  },
+  "psionics": {
+    "new_species": "灵蚊人",
+    "unlock_technology": null,
+    "birth_source": null,
+    "building": "重力子神殿"
+  },
+  "fleets": {
+    "fleetization": {
+      "field": "社会学",
+      "command_limit": "reduced",
+      "naval_capacity": "greatly_increased",
+      "upkeep": "very_low"
+    },
+    "same_class_naval_usage": "reduced",
+    "weapons": {
+      "name": "等离子轴炮",
+      "variants": [
+        "small",
+        "medium",
+        "heavy"
+      ]
+    },
+    "axial_ships": {
+      "main_resource": "alloys",
+      "hull": "high",
+      "attack": "high",
+      "shields": "almost_none"
+    }
+  },
+  "events": {
+    "frontier": {
+      "requires_fleetization": true,
+      "requires_no_graviton_temple": true,
+      "temple_absence_scope": "empire_wide_proposal_needs_confirmation",
+      "automatic_expansion_into_unowned_space": true,
+      "automatic_colonization": true,
+      "low_organization_outcome": "friendly_secession"
+    },
+    "midgame": {
+      "requester": "independent_haipam_white_mosquito_robot_civilization",
+      "request": "food",
+      "after_refusal_dialogue": "饿殍遍地",
+      "ascension": "synthetic",
+      "coalition_war": true
+    }
+  },
+  "gameplay": {
+    "power_fantasy": true,
+    "great_khan_target": "normal_progression_frontal_combat_by_midgame_needs_in_game_test",
+    "late_game": "exceptional_mass_shipbuilding"
+  },
+  "requirements": [
+    {
+      "id": "R001",
+      "title": "海帕姆初入星际",
+      "description": "保留群星核心玩法，第一阶段只制作初入星际的海帕姆帝国。",
+      "source": "user_conversation",
+      "status": "confirmed_direction_not_implemented"
+    },
+    {
+      "id": "R002",
+      "title": "母星与位置",
+      "description": "母星名称海帕姆星；母星系靠近银心；母星资源非常丰富。",
+      "source": "user_conversation",
+      "status": "confirmed_direction_not_implemented"
+    },
+    {
+      "id": "R003",
+      "title": "协同进化开局",
+      "description": "保留协同进化起源，以白蚊人为主种族、灰蚊人为副种族。",
+      "source": "user_conversation",
+      "status": "confirmed_direction_not_implemented"
+    },
+    {
+      "id": "R004",
+      "title": "白蚊人领袖",
+      "description": "玩家海帕姆帝国所有领袖均为白蚊人。",
+      "source": "user_conversation",
+      "status": "confirmed_direction_not_implemented"
+    },
+    {
+      "id": "R005",
+      "title": "大量灰蚊人",
+      "description": "灰蚊人具有非常高的人口规模，其数量随实际非精英岗位需求变化。",
+      "source": "user_conversation",
+      "status": "confirmed_direction_not_implemented"
+    },
+    {
+      "id": "R006",
+      "title": "补员期限",
+      "description": "皇家孵化场建立后，已启用的非精英岗位出现缺口，灰蚊人在3—6个月内自动补齐。",
+      "source": "user_conversation",
+      "status": "confirmed_direction_not_implemented"
+    },
+    {
+      "id": "R007",
+      "title": "非精英就业范围",
+      "description": "灰蚊人覆盖所有非精英岗位，包括需要定制就业规则的专家类岗位。",
+      "source": "user_conversation",
+      "status": "confirmed_direction_not_implemented"
+    },
+    {
+      "id": "R008",
+      "title": "过剩人口消失",
+      "description": "超过岗位需求的灰蚊人口自动消失；不使用跨星迁移或预备劳动力替代此规则。",
+      "source": "user_conversation",
+      "status": "confirmed_direction_not_implemented"
+    },
+    {
+      "id": "R009",
+      "title": "防重复孵化",
+      "description": "孵化按真实缺口结算，满员停止，岗位减少取消对应待孵化需求。",
+      "source": "user_conversation",
+      "status": "confirmed_direction_not_implemented"
+    },
+    {
+      "id": "R010",
+      "title": "快速基因改造",
+      "description": "灰蚊人添加、调整基因特质的速度非常快；具体减时比例尚未定案。",
+      "source": "user_conversation",
+      "status": "confirmed_direction_not_implemented"
+    },
+    {
+      "id": "R011",
+      "title": "反应釜",
+      "description": "降低所在星球全部灰蚊人的食物消耗，包含改造亚种。",
+      "source": "user_conversation",
+      "status": "confirmed_direction_not_implemented"
+    },
+    {
+      "id": "R012",
+      "title": "皇家孵化场",
+      "description": "生物方向人口建筑，类似机械工厂的人口生产职能，兼具基因治疗所功能和社会学研究产出。",
+      "source": "user_conversation",
+      "status": "confirmed_direction_not_implemented"
+    },
+    {
+      "id": "R013",
+      "title": "军耀殿",
+      "description": "后续政治方向首都建筑；领袖寿命无限；大量产出凝聚力。",
+      "source": "user_conversation",
+      "status": "confirmed_direction_not_implemented"
+    },
+    {
+      "id": "R014",
+      "title": "皇家设计局",
+      "description": "大量产出物理学和工程学研究点。",
+      "source": "user_conversation",
+      "status": "confirmed_direction_not_implemented"
+    },
+    {
+      "id": "R015",
+      "title": "灵蚊人",
+      "description": "研究指定灵能科技后出现独立的灵蚊人种族；触发科技名称及出生来源尚未确定。",
+      "source": "user_conversation",
+      "status": "confirmed_direction_not_implemented"
+    },
+    {
+      "id": "R016",
+      "title": "重力子神殿",
+      "description": "灵蚊人相关建筑，大量产出凝聚力与贸易，开放灵蚊人专属军队及各种灵能事件。",
+      "source": "user_conversation",
+      "status": "confirmed_direction_not_implemented"
+    },
+    {
+      "id": "R017",
+      "title": "舰团化",
+      "description": "重要社会学科技；限制单舰队规模，大量提高帝国海军容量。",
+      "source": "user_conversation",
+      "status": "confirmed_direction_not_implemented"
+    },
+    {
+      "id": "R018",
+      "title": "低维护舰团",
+      "description": "舰团化具有类似用户所指佣兵城邦体验的极低消耗效果；不自动等同于原版租赁机制。",
+      "source": "user_conversation",
+      "status": "confirmed_direction_not_implemented"
+    },
+    {
+      "id": "R019",
+      "title": "低容量占用舰船",
+      "description": "海帕姆战舰同级容量占用低于其他文明战舰；先按海军容量占用设计，指挥占用的具体关系待验证。",
+      "source": "user_conversation",
+      "status": "confirmed_direction_not_implemented"
+    },
+    {
+      "id": "R020",
+      "title": "等离子轴炮",
+      "description": "海帕姆专属小型、中型、重型等离子轴炮科技路线，具有非常高战斗力。",
+      "source": "user_conversation",
+      "status": "confirmed_direction_not_implemented"
+    },
+    {
+      "id": "R021",
+      "title": "轴炮舰特征",
+      "description": "类似用户所指T-34式主力：以合金消耗为主、高血量、高攻击、几乎无护盾。",
+      "source": "user_conversation",
+      "status": "confirmed_direction_not_implemented"
+    },
+    {
+      "id": "R022",
+      "title": "邮政舰队",
+      "description": "社会学科技；大量增加贸易，并通过事件获得一些旧船；周期、数量和获取方式尚未定案。",
+      "source": "user_conversation",
+      "status": "confirmed_direction_not_implemented"
+    },
+    {
+      "id": "R023",
+      "title": "母星舰造巨构",
+      "description": "在海帕姆星建设类似环形世界基址的分阶段工程，把母星变成巨大的战舰制造工厂。",
+      "source": "user_conversation",
+      "status": "confirmed_direction_not_implemented"
+    },
+    {
+      "id": "R024",
+      "title": "强势游戏体验",
+      "description": "普通初始文明通过正常资源、研究和建设成长，中期目标是正面迎战大可汗，后期具有惊人的爆兵与补舰能力。",
+      "source": "user_conversation",
+      "status": "confirmed_direction_not_implemented"
+    },
+    {
+      "id": "R025",
+      "title": "边疆自动扩展",
+      "description": "研究舰团化且满足无重力子神殿条件时，边疆向无人区自动扩展，部分星球自动殖民。",
+      "source": "user_conversation",
+      "status": "confirmed_direction_not_implemented"
+    },
+    {
+      "id": "R026",
+      "title": "组织度与友好分裂",
+      "description": "组织度过低时，边疆出现友好的分裂；阈值、持续时间和组织度恢复方式待定。",
+      "source": "user_conversation",
+      "status": "confirmed_direction_not_implemented"
+    },
+    {
+      "id": "R027",
+      "title": "借粮事件",
+      "description": "中期一个独立海帕姆势力向玩家借粮；拒绝后对方会变强，并联合其他子势力与玩家交战。",
+      "source": "user_conversation",
+      "status": "confirmed_direction_not_implemented"
+    },
+    {
+      "id": "R028",
+      "title": "饿殍遍地",
+      "description": "借粮拒绝与钢铁势力崛起之间加入名为饿殍遍地的对话事件。",
+      "source": "user_conversation",
+      "status": "confirmed_direction_not_implemented"
+    },
+    {
+      "id": "R029",
+      "title": "钢铁蚊人构成",
+      "description": "钢铁蚊人初期由白蚊人与机器人组成；不采用灰蚊人整体机械化这一已撤销解释。",
+      "source": "user_conversation",
+      "status": "confirmed_direction_not_implemented"
+    },
+    {
+      "id": "R030",
+      "title": "钢铁蚊人飞升",
+      "description": "该势力明确走机械／合成飞升道路，后续白蚊人的合成化作为路线内容。",
+      "source": "user_conversation",
+      "status": "confirmed_direction_not_implemented"
+    },
+    {
+      "id": "R031",
+      "title": "海帕姆双飞升",
+      "description": "玩家海帕姆同时发展基因飞升与灵能飞升，需专属兼容；不是二选一。",
+      "source": "user_conversation",
+      "status": "confirmed_direction_not_implemented"
+    },
+    {
+      "id": "R032",
+      "title": "建模集成目标",
+      "description": "后续需要自制模型接入游戏；先验证一艘轴炮舰显示、移动和开火，再扩展舰系与巨构。",
+      "source": "user_conversation",
+      "status": "confirmed_direction_not_implemented"
+    }
+  ]
+}
+

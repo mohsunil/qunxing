@@ -1,0 +1,26 @@
+{
+  "package_version": "0.1.0-design-handoff",
+  "date": "2026-10-16",
+  "kind": "design_and_development_handoff",
+  "game_version": null,
+  "dlc": null,
+  "game_install_path_confirmed": false,
+  "implemented_game_features": 0,
+  "game_script_files": 0,
+  "custom_models": 0,
+  "in_game_tests_passed": false,
+  "tripo_last_observation": "no API key configured",
+  "blender_installation_verified": false,
+  "github_repository_requested": {
+    "owner": "mohsunil",
+    "visibility": "public_explicitly_authorized",
+    "repository_full_name": "mohsunil/qunxing",
+    "original_visibility_request": "private",
+    "public_upload_authorized_date": "2026-10-16"
+  },
+  "github_upload_verified": false,
+  "upload_status_is_pre_upload_snapshot": true,
+  "codex_cloud_environment_published": false,
+  "cloud_task_started": false
+}
+
