@@ -16,5 +16,5 @@ Read README.md and docs/01-confirmed-design.md before editing. The JSON requirem
 - Do not modify memories without a direct user request. Do not create a new chat or message another chat unless explicitly asked.
 - No sub-agent delegation unless directly authorized by the user or applicable higher-level instructions.
 
-The initial design handoff is preserved in the v0.1.0 release. mod/haipam now contains v0.2.0-alpha source; it is not yet engine-validated. Read docs/09-prototype-progress.md before changing runtime scripts. scripts/install_mod.py generates a local rules adapter from the user's installed 4.5.2 game; never commit or package that generated adapter or copy proprietary base-game assets. Local install reports/backups are excluded from publication.
+The initial design handoff is preserved in the v0.1.0 release. mod/haipam now contains v0.2.1-alpha source; it is not yet engine-validated. Read docs/09-prototype-progress.md before changing runtime scripts. scripts/install_mod.py generates a local rules adapter from the user's installed 4.5.2 game; never commit or package that generated adapter or copy proprietary base-game assets. Local install reports/backups are excluded from publication.
 

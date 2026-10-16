@@ -11,7 +11,7 @@ trait_haipam_white = {
 
 trait_haipam_gray = {
  cost = 0
- initial = no
+ initial = yes
  randomized = no
  species_potential_add = { always = no }
  species_possible_remove = { always = no }

@@ -87,7 +87,7 @@ def install(game, userdir):
             dest=target/file.relative_to(source)
             if file.read_bytes()!=dest.read_bytes(): raise ValueError('Copy verification failed: '+str(dest))
             checked.append(str(file.relative_to(source)))
-    report={'installed':True,'version':'0.2.0-alpha','target':str(target),'descriptor':str(descriptor),'source_files_verified':len(checked),'local_rules':6,'game_files_modified':False,'other_mods_modified':False,'backup':str(backup) if backup else None,'gameplay_verified':False}
+    report={'installed':True,'version':'0.2.1-alpha','target':str(target),'descriptor':str(descriptor),'source_files_verified':len(checked),'local_rules':6,'game_files_modified':False,'other_mods_modified':False,'backup':str(backup) if backup else None,'gameplay_verified':False}
     (ROOT/'local-install-report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     print(json.dumps(report,ensure_ascii=False))
 

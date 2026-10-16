@@ -1,6 +1,6 @@
 # 海帕姆：银心初航｜Stellaris Mod 开发工程
 
-版本：0.2.0-alpha（人口机制源代码原型）
+版本：0.2.1-alpha（人口机制源代码原型）
 整理日期：2026-10-16（Asia/Shanghai）
 
 **已包含首批游戏脚本与本地安装器，适配4.5.2。游戏内运行尚未验证，不是完整可玩版本。**
@@ -23,9 +23,9 @@
 
 - 需求与事件交接：已整理。
 - 目标版本：本机已确认 Cygnus 4.5.2 (9776)，已读取其人口组、岗位、特质和事件接口。已发现Utopia等DLC资源，账号授权未单独核对。
-- 游戏机制脚本：人口首版已写入 `mod/haipam`，本机已安装；尚未通过引擎加载及游戏内测试。肖像和舰船使用原版占位，没有自制模型。
+- 游戏机制脚本：人口首版已写入 `mod/haipam`，本机已安装。引擎已读取定义，用户确认能到主菜单并看到海帕姆预设；尚未进入新战役验证人口机制。肖像和舰船使用原版占位，没有自制模型。
 - 脚本静态校验及406组孵化算法检查通过；实际就业、维护费、领袖与人口删除仍待引擎验收。
-- 直接启动在生成脚本日志前退出；通过Steam启动后观察到剩余游戏文件正在下载/安装。崩溃原因尚未确认。
+- 已实际启动引擎读取Mod并按真实报错修复预设和殖民地事件接口；完整游戏内测试仍未完成。窗口截图接口超时，无法操作新建战役。详细检查见 `design/engine-validation.json`。
 - GitHub 目标：mohsunil/qunxing；用户于2026-10-16明确授权公开上传。上传验证结果查看工作区外部的报告；本包不以上传代替开发完成。
 - Codex Cloud 环境或云端开发任务：未创建、未发布、未启动。
 
@@ -34,7 +34,7 @@
 ```sh
 python3 scripts/validate_handoff.py
 python3 scripts/validate_mod.py
-python3 scripts/package_handoff.py --output ../haipam-stellaris-prototype-v0.2.0.zip
+python3 scripts/package_handoff.py --output ../haipam-stellaris-prototype-v0.2.1.zip
 ```
 
 Windows 可将 python3 改为 python。脚本只依赖 Python 标准库，不下载游戏、模型或凭据。安装器生成的原版规则适配文件与本机安装报告不进入公开仓库或压缩包。

@@ -23,7 +23,7 @@ def payload_files():
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--output", default=str(ROOT.parent / "haipam-stellaris-prototype-v0.2.0-20261016.zip"))
+    parser.add_argument("--output", default=str(ROOT.parent / "haipam-stellaris-prototype-v0.2.1-20261016.zip"))
     args = parser.parse_args()
     output = Path(args.output).resolve()
     if output.is_relative_to(ROOT):
@@ -33,7 +33,7 @@ def main():
     output.parent.mkdir(parents=True, exist_ok=True)
     files = payload_files()
     manifest = {
-        "package_version": "0.2.0-alpha",
+        "package_version": "0.2.1-alpha",
         "created_at_utc": datetime.now(timezone.utc).isoformat(),
         "kind": "mod_source_prototype_and_design",
         "gameplay_verified": False,

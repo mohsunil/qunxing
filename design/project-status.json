@@ -1,5 +1,5 @@
 {
-  "package_version": "0.2.0-alpha",
+  "package_version": "0.2.1-alpha",
   "date": "2026-10-16",
   "kind": "mod_source_prototype_and_design",
   "game_version": "4.5.2 (9776)",
@@ -17,7 +17,7 @@
   },
   "game_install_path_confirmed": true,
   "implemented_game_features": 0,
-  "game_script_files": 9,
+  "game_script_files": 10,
   "custom_models": 0,
   "in_game_tests_passed": false,
   "tripo_last_observation": "no API key configured",
@@ -33,7 +33,7 @@
   "upload_status_is_pre_upload_snapshot": true,
   "codex_cloud_environment_published": false,
   "cloud_task_started": false,
-  "prototype_source_files": 11,
+  "prototype_source_files": 12,
   "prototype_systems": [
     "prescripted_syncretic_empire",
     "lineage_traits",
@@ -46,7 +46,7 @@
   ],
   "gameplay_verified_features": 0,
   "prototype_installed_locally": true,
-  "engine_loading_verified": false,
+  "engine_loading_verified": true,
   "population_algorithm_cases_passed": 406,
   "randomized_monthly_steps": 19200,
   "static_validation_passed": true,
@@ -55,6 +55,22 @@
     "script_logs_created": false,
     "steam_launch_attempted": true,
     "steam_content_log": "downloading_and_staging_game_files",
-    "cause_confirmed": false
-  }
+    "cause_confirmed": false,
+    "vanilla_created_graphics_and_script_logs": true,
+    "game_window_capture": "FrameArrived and window capture timed out",
+    "prototype_traits_and_event_namespace_loaded": true,
+    "steam_pending_download_observed": "Workshop update; do not assume base-game installation is incomplete",
+    "main_menu_confirmed_by_user": true,
+    "preset_visible_confirmed_by_user": true,
+    "reopened_after_user_accidental_close": true
+  },
+  "engine_first_load_detected_defects": true,
+  "engine_first_load_defects_corrected": true,
+  "engine_recheck_pending": false,
+  "definition_loading_verified": true,
+  "preset_visible_verified": true,
+  "preset_visibility_evidence": "user_confirmed",
+  "new_campaign_started": false,
+  "population_initialization_verified": false,
+  "engine_error_regression_guards": 8
 }

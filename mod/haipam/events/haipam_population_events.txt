@@ -25,6 +25,7 @@ country_event = {
    haipam_reset_pipeline = yes
   }
   country_event = { id = haipam.100 days = 2 }
+  log = "HAIPAM_INIT_COMPLETE"
  }
 }
 country_event = {
@@ -54,11 +55,11 @@ country_event = {
    }
    else = { haipam_reset_pipeline = yes }
    # Give employment allocation time; never delete employed gray groups.
-   planet_event = { id = haipam.20 days = 15 }
+   colony_event = { id = haipam.20 days = 15 }
   }
  }
 }
-planet_event = {
+colony_event = {
  id = haipam.20 hide_window = yes is_triggered_only = yes
  trigger = { exists = owner owner = { haipam_is_empire = yes } }
  immediate = {

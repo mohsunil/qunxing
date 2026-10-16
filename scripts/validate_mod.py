@@ -121,7 +121,21 @@ def validate():
             keys.append(match[1]); json.loads(match[2])
         assert len(keys)==len(set(keys))
     count=simulation_tests()
-    report={'ok':True,'parsed_script_files':len(checked),'population_algorithm_cases':count,'randomized_monthly_steps':19200,'localisation_languages':2,'engine_loading_verified':False,'employment_allocation_verified':False,'in_game_tests_passed':False}
+    # Regression guards from real 4.5.2 startup errors, not only grammar checks.
+    empire=fields(parse((MOD/'prescripted_countries/haipam_empire.txt').read_text()))['haipam_early_empire']
+    empire_fields=fields(empire)
+    assert isinstance(empire_fields['playable'],str), 'Preset playable expects a scripted-trigger key'
+    assert empire_fields['playable'] in fields(parse((MOD/'common/scripted_triggers/haipam_triggers.txt').read_text()))
+    assert empire_fields['flag'] in fields(parse((MOD/'common/prescripted_flags/haipam_flags.txt').read_text()))
+    assert ('trait','=','"trait_syncretic_proles"') in empire_fields['secondary_species']
+    assert empire_fields['government']=='gov_star_empire'
+    assert empire_fields['initializer']=='""', 'Internal random initializer cannot be selected in empire designer'
+    gray_trait=fields(fields(parse((MOD/'common/traits/haipam_traits.txt').read_text()))['trait_haipam_gray'])
+    assert gray_trait['initial']=='yes', 'Secondary lineage trait must be legal at empire creation'
+    event_source=(MOD/'events/haipam_population_events.txt').read_text()
+    assert 'planet_event = { id = haipam.20' not in event_source
+    assert 'colony_event = { id = haipam.20' in event_source
+    report={'ok':True,'parsed_script_files':len(checked),'population_algorithm_cases':count,'randomized_monthly_steps':19200,'engine_error_regression_guards':8,'localisation_languages':2,'engine_loading_verified':False,'employment_allocation_verified':False,'in_game_tests_passed':False}
     print(json.dumps(report,ensure_ascii=False))
     return report
 

@@ -1,0 +1,3 @@
+empire_haipam = {
+ flags = { haipam_early_empire }
+}

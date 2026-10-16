@@ -1,0 +1,32 @@
+{
+  "version": "0.2.1-alpha",
+  "date": "2026-10-16",
+  "game_version": "Cygnus 4.5.2 (9776)",
+  "definition_loading_verified": true,
+  "definition_loading_evidence": [
+    "Game setup log registered trait_haipam_white and trait_haipam_gray",
+    "Game setup log registered haipam event namespace",
+    "User confirmed main menu visible",
+    "User confirmed Haipam preset appeared after validity fixes"
+  ],
+  "main_menu_confirmation": "user_report",
+  "preset_visible_confirmation": "user_report",
+  "new_campaign_started": false,
+  "population_initialization_verified": false,
+  "employment_and_surplus_verified": false,
+  "in_game_tests_passed": false,
+  "fixed_engine_errors": [
+    "colony scope requires colony_event instead of planet_event",
+    "Preset playable expects a named scripted trigger",
+    "Missing prescripted flag definition",
+    "Legacy Utopia DLC key rejected by engine",
+    "Missing government field hides the preset",
+    "Internal random initializer is unavailable in empire designer",
+    "Gray lineage needed initial=yes"
+  ],
+  "ui_capture": "FrameArrived / window capture timed out; accessibility exposes only title bar",
+  "latest_user_action": "User accidentally closed game; reopened on request",
+  "other_mods": "Only Haipam enabled; later startup reports missing files for unrelated subscribed Workshop mods. These were not altered.",
+  "test_configuration": "Windowed Chinese test display and Haipam-only activation retained while game is reopened for the user; original settings backup retained locally",
+  "next_required_test": "Enter a new non-Ironman Haipam campaign, advance >=3 days, then inspect initialization and month-based population behavior"
+}

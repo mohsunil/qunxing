@@ -1,3 +1,5 @@
 # Country/owner checks are deliberately narrow. No other empire is enrolled.
 haipam_is_empire = { has_valid_civic = civic_haipam_royal_biology }
 haipam_is_gray = { has_trait = trait_haipam_gray }
+# 4.5.2 does not recognize the legacy "Utopia" DLC key; origin itself has no DLC gate.
+haipam_design_playable = { always = yes }

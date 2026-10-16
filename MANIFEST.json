@@ -1,6 +1,6 @@
 {
-  "package_version": "0.2.0-alpha",
-  "created_at_utc": "2026-10-16T06:11:41.364302+00:00",
+  "package_version": "0.2.1-alpha",
+  "created_at_utc": "2026-10-16T07:10:05.991611+00:00",
   "kind": "mod_source_prototype_and_design",
   "gameplay_verified": false,
   "files": [
@@ -16,8 +16,8 @@
     },
     {
       "path": "AGENTS.md",
-      "bytes": 2759,
-      "sha256": "d49065abe4efae3a4cd07b5a91f0df4e3aba73e5860c6e8b6db529954960af4e"
+      "bytes": 2779,
+      "sha256": "2e32747c4f7af7a234dd99b6c9f1b0fdd5d69b98767ac4c70b4f4a85ac3a04e0"
     },
     {
       "path": "assets/README.md",
@@ -30,9 +30,14 @@
       "sha256": "217837f35ffb8289d382c9603c6cb26c7a01743670f38143db91d5b213b32fae"
     },
     {
+      "path": "design/engine-validation.json",
+      "bytes": 1728,
+      "sha256": "158e6a418b41a60349b8d40324196ac92f8649776292d89ce46c01eb95aa2adb"
+    },
+    {
       "path": "design/project-status.json",
-      "bytes": 1866,
-      "sha256": "28f6e7e1d5d0a144f0a6c2aa9982ffeb695522700634e24de224039e3483c17b"
+      "bytes": 2683,
+      "sha256": "7af0c8cc0e7d57d9dfe95296af5a12170ae97146c6c050eb9b6c51f99870e5d4"
     },
     {
       "path": "design/requirements.json",
@@ -81,8 +86,8 @@
     },
     {
       "path": "docs/09-prototype-progress.md",
-      "bytes": 4936,
-      "sha256": "9692b1a0fbe15c557a1402602a4721ce96fba13f6c6dcb780bb55887d4bedd2c"
+      "bytes": 6656,
+      "sha256": "0b1248815d267af152da3f651fd25d0148d93e0c63a475dc9be037185fcad0d5"
     },
     {
       "path": "docs/10-in-game-acceptance.md",
@@ -110,59 +115,64 @@
       "sha256": "9826b0fe1e0c652789a622400e72d3d912cdda1d013021fd757726e8e10a4ebe"
     },
     {
+      "path": "mod/haipam/common/prescripted_flags/haipam_flags.txt",
+      "bytes": 53,
+      "sha256": "0cd79efacf089d364cf2368fe62fe58bf209ca533df4aa57a6713d4fb04c5305"
+    },
+    {
       "path": "mod/haipam/common/scripted_effects/haipam_population.txt",
       "bytes": 4284,
       "sha256": "4826349b3b6b189805afb00be0bbe98316352c9d914d41ab5b4ad631f7bd36ea"
     },
     {
       "path": "mod/haipam/common/scripted_triggers/haipam_triggers.txt",
-      "bytes": 199,
-      "sha256": "7ad6d1c534ef6db8338f09b51f6d5159daaa876fe375c17fb7c00707a0d4ad5e"
+      "bytes": 330,
+      "sha256": "9ccdacf64ecdb8a2548a9259480d6343fc4e2721a7cc6a206ab978293cd9ad0c"
     },
     {
       "path": "mod/haipam/common/traits/haipam_traits.txt",
-      "bytes": 819,
-      "sha256": "bb407d8c9ade59892c48e6f9c616b08ea971879b69e1db91e00dc22a073affa9"
+      "bytes": 820,
+      "sha256": "320112f3994a09d59b1140c4ba91232d116c5b0459df364a765571da252ec092"
     },
     {
       "path": "mod/haipam/descriptor.mod",
       "bytes": 132,
-      "sha256": "7ded8bccecc04b19ffa7f8f28a6fdf7c40f5a62b67d22b80b84070684da95b46"
+      "sha256": "63655e0badbfe8229e2bc80edd3a3722f3127189510e96e3371e7692da151352"
     },
     {
       "path": "mod/haipam/events/haipam_population_events.txt",
-      "bytes": 3678,
-      "sha256": "7e29b6cb3c7000e98cbaaa272abd3073b14c28d2b8abfc4179793a3d734bff82"
+      "bytes": 3710,
+      "sha256": "c8754e712a8ae629c641b5cf07f0eb6d8c373c4c8851cb9161600a4cf32dff2a"
     },
     {
       "path": "mod/haipam/localisation/english/haipam_l_english.yml",
-      "bytes": 2161,
-      "sha256": "0734be7c5bae6ae990126929e63c44ef00c2a654e016f42f6e7f28011c4a43ec"
+      "bytes": 2617,
+      "sha256": "1c80368e0b99c926b5a0b946fa58089256ab4cf6ceeeb807da3b4f17b78d4334"
     },
     {
       "path": "mod/haipam/localisation/simp_chinese/haipam_l_simp_chinese.yml",
-      "bytes": 2166,
-      "sha256": "12e35c7268d23393d7c6434ca4ab091fb2b6634b377a25580719c391973f0b7a"
+      "bytes": 2622,
+      "sha256": "81afe51b3f4defad6e75b85bb644a5d952ccf2020ff33c1dce54df1b2623d0c4"
     },
     {
       "path": "mod/haipam/prescripted_countries/haipam_empire.txt",
-      "bytes": 1418,
-      "sha256": "289ede8e8aed083e4978a56dbb7364842ed9a7ee269a30b40b81182083304298"
+      "bytes": 1456,
+      "sha256": "31b0e0250fd0941a7a7e641f6b017b2517efcd19c9bb1cc79a36903cb63c2870"
     },
     {
       "path": "README.md",
-      "bytes": 3554,
-      "sha256": "d135b4aad27aeaffd57288f646a649351b81a057eeb001bb2ab49fa2e9773d9f"
+      "bytes": 3770,
+      "sha256": "d993b2e6096a3e154e898cbe84d54945d6209b41df9b349ff214050453502eee"
     },
     {
       "path": "scripts/install_mod.py",
-      "bytes": 4855,
-      "sha256": "4b14649f24c3ea55c18c6e69d43c9cc929f95b5205d887321ad2d0eaa6cd5ca1"
+      "bytes": 4954,
+      "sha256": "3f92bcf5ba264d1b7a4cbcf63f74501ed68b095b25a9ff8f3afd3808a3d5c3e8"
     },
     {
       "path": "scripts/package_handoff.py",
-      "bytes": 3518,
-      "sha256": "381587c810f4bfb3e6be09a0967b02aa9eb9f214cd6a6772209ebb24236dbde7"
+      "bytes": 3587,
+      "sha256": "1a057c2e6d71f5b5fd3be61fdbaf407f6a81a2d90f384ba0d2d4a61412163238"
     },
     {
       "path": "scripts/setup-codex.sh",
@@ -176,8 +186,8 @@
     },
     {
       "path": "scripts/validate_mod.py",
-      "bytes": 5496,
-      "sha256": "a7e027d0d29484a37b17c867f88ff83324b2bb31bd1106dd42185c383a14edab"
+      "bytes": 6763,
+      "sha256": "05f79b294ca6b21f556f14bcaeb0f053b702729373598d6cd6de1f6e9c2fa410"
     }
   ]
 }
