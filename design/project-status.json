@@ -1,12 +1,23 @@
 {
-  "package_version": "0.1.0-design-handoff",
+  "package_version": "0.2.0-alpha",
   "date": "2026-10-16",
-  "kind": "design_and_development_handoff",
-  "game_version": null,
-  "dlc": null,
-  "game_install_path_confirmed": false,
+  "kind": "mod_source_prototype_and_design",
+  "game_version": "4.5.2 (9776)",
+  "dlc": {
+    "installed_resource_folders": [
+      "Horizon Signal",
+      "Utopia",
+      "Anniversary",
+      "Synthetic Dawn",
+      "Apocalypse",
+      "Distant Stars",
+      "Overlord"
+    ],
+    "account_entitlement_verified": false
+  },
+  "game_install_path_confirmed": true,
   "implemented_game_features": 0,
-  "game_script_files": 0,
+  "game_script_files": 9,
   "custom_models": 0,
   "in_game_tests_passed": false,
   "tripo_last_observation": "no API key configured",
@@ -21,6 +32,29 @@
   "github_upload_verified": false,
   "upload_status_is_pre_upload_snapshot": true,
   "codex_cloud_environment_published": false,
-  "cloud_task_started": false
+  "cloud_task_started": false,
+  "prototype_source_files": 11,
+  "prototype_systems": [
+    "prescripted_syncretic_empire",
+    "lineage_traits",
+    "white_leader_guards",
+    "demand_hatching_pipeline",
+    "surplus_gray_removal",
+    "royal_hatchery",
+    "gray_food_reactor",
+    "resource_rich_homeworld"
+  ],
+  "gameplay_verified_features": 0,
+  "prototype_installed_locally": true,
+  "engine_loading_verified": false,
+  "population_algorithm_cases_passed": 406,
+  "randomized_monthly_steps": 19200,
+  "static_validation_passed": true,
+  "startup_observation": {
+    "direct_launch_exit_code": "0xC0000005",
+    "script_logs_created": false,
+    "steam_launch_attempted": true,
+    "steam_content_log": "downloading_and_staging_game_files",
+    "cause_confirmed": false
+  }
 }
-

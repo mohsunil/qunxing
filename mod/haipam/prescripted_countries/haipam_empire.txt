@@ -1,0 +1,29 @@
+haipam_early_empire = {
+ name = "HAIPAM_EMPIRE" adjective = "HAIPAM_ADJ"
+ spawn_enabled = no ignore_portrait_duplication = yes
+ ship_prefix = "HRS"
+ playable = { host_has_dlc = "Utopia" }
+ species = {
+  class = "ART" portrait = "art1" name = "HAIPAM_WHITE" plural = "HAIPAM_WHITE" adjective = "HAIPAM_WHITE"
+  name_list = "ART1" trait = "trait_organic" trait = "trait_haipam_white"
+ }
+ secondary_species = {
+  class = "ART" portrait = "art3" name = "HAIPAM_GRAY" plural = "HAIPAM_GRAY" adjective = "HAIPAM_GRAY"
+  name_list = "ART1" trait = "trait_organic" trait = "trait_haipam_gray"
+ }
+ room = "personality_hegemonic_imperialists_room"
+ authority = "auth_imperial"
+ civics = { "civic_haipam_royal_biology" "civic_distinguished_admiralty" }
+ ethic = "ethic_authoritarian" ethic = "ethic_militarist" ethic = "ethic_spiritualist"
+ origin = "origin_syncretic_evolution"
+ planet_name = "HAIPAM_HOMEWORLD" planet_class = "pc_continental"
+ system_name = "HAIPAM_SYSTEM" initializer = "random_empire_init_01"
+ graphical_culture = "arthropoid_01" city_graphical_culture = "arthropoid_01"
+ empire_flag = {
+  icon = { category = "domination" file = "domination_1.dds" }
+  background = { category = "backgrounds" file = "00_solid.dds" }
+  colors = { "red" "black" "null" "null" }
+ }
+ ruler = { name = "HAIPAM_RULER" gender = male portrait = "art1" leader_class = commander }
+ flag = empire_haipam
+}

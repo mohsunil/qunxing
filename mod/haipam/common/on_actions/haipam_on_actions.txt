@@ -1,0 +1,6 @@
+on_game_start_country = { events = { haipam.1 } }
+on_monthly_pulse_country = { events = { haipam.10 } }
+on_leader_spawned = { events = { haipam.30 } }
+on_added_to_leader_pool = { events = { haipam.30 } }
+on_ruler_created = { events = { haipam.30 } }
+on_leader_hired = { events = { haipam.31 } }

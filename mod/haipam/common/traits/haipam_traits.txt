@@ -1,0 +1,27 @@
+trait_haipam_white = {
+ cost = 0
+ initial = no
+ randomized = no
+ species_potential_add = { always = no }
+ species_possible_remove = { always = no }
+ species_possible_merge_remove = { always = no }
+ allowed_archetypes = { BIOLOGICAL }
+ icon = "gfx/interface/icons/traits/trait_intelligent.dds"
+}
+
+trait_haipam_gray = {
+ cost = 0
+ initial = no
+ randomized = no
+ species_potential_add = { always = no }
+ species_possible_remove = { always = no }
+ species_possible_merge_remove = { always = no }
+ allowed_archetypes = { BIOLOGICAL }
+ icon = "gfx/interface/icons/traits/trait_primitive.dds"
+
+ assembly_score = { base = -1000 }
+ triggered_pop_group_modifier = {
+  potential = { exists = planet planet = { has_active_building = building_haipam_reactor } }
+  planet_pops_food_upkeep_mult = -0.5
+ }
+}

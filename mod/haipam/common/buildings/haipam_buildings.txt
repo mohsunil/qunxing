@@ -1,0 +1,29 @@
+building_haipam_royal_hatchery = {
+ icon = building_clone_vats
+ base_buildtime = 360
+ category = pop_assembly
+ building_sets = { government urban }
+ planet_limit = 1
+ potential = { exists = owner owner = { has_valid_civic = civic_haipam_royal_biology } }
+ allow = { has_upgraded_capital = yes }
+ planet_modifier = { job_healthcare_add = 100 }
+ resources = {
+  category = planet_buildings
+  cost = { minerals = 500 }
+  upkeep = { energy = 4 food = 10 }
+  produces = { society_research = 12 }
+ }
+}
+building_haipam_reactor = {
+ icon = building_food_processing_facility
+ base_buildtime = 240
+ category = resource
+ building_sets = { government urban }
+ planet_limit = 1
+ potential = { exists = owner owner = { has_valid_civic = civic_haipam_royal_biology } }
+ resources = {
+  category = planet_buildings
+  cost = { minerals = 300 }
+  upkeep = { energy = 3 }
+ }
+}

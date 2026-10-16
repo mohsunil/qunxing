@@ -1,0 +1,3 @@
+# Country/owner checks are deliberately narrow. No other empire is enrolled.
+haipam_is_empire = { has_valid_civic = civic_haipam_royal_biology }
+haipam_is_gray = { has_trait = trait_haipam_gray }

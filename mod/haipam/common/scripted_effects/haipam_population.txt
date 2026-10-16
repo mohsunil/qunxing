@@ -1,0 +1,76 @@
+haipam_reset_pipeline = {
+ set_variable = { which = hp_worker_0 value = 0 }
+ set_variable = { which = hp_worker_1 value = 0 }
+ set_variable = { which = hp_worker_2 value = 0 }
+ set_variable = { which = hp_worker_3 value = 0 }
+ set_variable = { which = hp_specialist_0 value = 0 }
+ set_variable = { which = hp_specialist_1 value = 0 }
+ set_variable = { which = hp_specialist_2 value = 0 }
+ set_variable = { which = hp_specialist_3 value = 0 }
+}
+
+haipam_tick_worker = {
+ export_trigger_value_to_variable = { trigger = free_jobs_of_type parameters = { category = worker } variable = hp_free }
+ set_variable = { which = hp_birth value = hp_worker_3 }
+ if = { limit = { check_variable = { which = hp_birth value > hp_free } } set_variable = { which = hp_birth value = hp_free } }
+ if = {
+  limit = { check_variable = { which = hp_birth value > 0 } }
+  create_pop_group = { species = event_target:haipam_hatch_species category = worker size = hp_birth }
+  set_variable = { which = hp_sub value = hp_birth }
+  multiply_variable = { which = hp_sub value = -1 }
+  change_variable = { which = hp_free value = hp_sub }
+ }
+ set_variable = { which = hp_worker_3 value = hp_worker_2 }
+ set_variable = { which = hp_worker_2 value = hp_worker_1 }
+ set_variable = { which = hp_worker_1 value = hp_worker_0 }
+ set_variable = { which = hp_worker_0 value = 0 }
+
+ if = { limit = { check_variable = { which = hp_worker_3 value > hp_free } } set_variable = { which = hp_worker_3 value = hp_free } }
+ set_variable = { which = hp_sub value = hp_worker_3 }
+ multiply_variable = { which = hp_sub value = -1 }
+ change_variable = { which = hp_free value = hp_sub }
+
+ if = { limit = { check_variable = { which = hp_worker_2 value > hp_free } } set_variable = { which = hp_worker_2 value = hp_free } }
+ set_variable = { which = hp_sub value = hp_worker_2 }
+ multiply_variable = { which = hp_sub value = -1 }
+ change_variable = { which = hp_free value = hp_sub }
+
+ if = { limit = { check_variable = { which = hp_worker_1 value > hp_free } } set_variable = { which = hp_worker_1 value = hp_free } }
+ set_variable = { which = hp_sub value = hp_worker_1 }
+ multiply_variable = { which = hp_sub value = -1 }
+ change_variable = { which = hp_free value = hp_sub }
+ set_variable = { which = hp_worker_0 value = hp_free }
+}
+
+haipam_tick_specialist = {
+ export_trigger_value_to_variable = { trigger = free_jobs_of_type parameters = { category = specialist } variable = hp_free }
+ set_variable = { which = hp_birth value = hp_specialist_3 }
+ if = { limit = { check_variable = { which = hp_birth value > hp_free } } set_variable = { which = hp_birth value = hp_free } }
+ if = {
+  limit = { check_variable = { which = hp_birth value > 0 } }
+  create_pop_group = { species = event_target:haipam_hatch_species category = specialist size = hp_birth }
+  set_variable = { which = hp_sub value = hp_birth }
+  multiply_variable = { which = hp_sub value = -1 }
+  change_variable = { which = hp_free value = hp_sub }
+ }
+ set_variable = { which = hp_specialist_3 value = hp_specialist_2 }
+ set_variable = { which = hp_specialist_2 value = hp_specialist_1 }
+ set_variable = { which = hp_specialist_1 value = hp_specialist_0 }
+ set_variable = { which = hp_specialist_0 value = 0 }
+
+ if = { limit = { check_variable = { which = hp_specialist_3 value > hp_free } } set_variable = { which = hp_specialist_3 value = hp_free } }
+ set_variable = { which = hp_sub value = hp_specialist_3 }
+ multiply_variable = { which = hp_sub value = -1 }
+ change_variable = { which = hp_free value = hp_sub }
+
+ if = { limit = { check_variable = { which = hp_specialist_2 value > hp_free } } set_variable = { which = hp_specialist_2 value = hp_free } }
+ set_variable = { which = hp_sub value = hp_specialist_2 }
+ multiply_variable = { which = hp_sub value = -1 }
+ change_variable = { which = hp_free value = hp_sub }
+
+ if = { limit = { check_variable = { which = hp_specialist_1 value > hp_free } } set_variable = { which = hp_specialist_1 value = hp_free } }
+ set_variable = { which = hp_sub value = hp_specialist_1 }
+ multiply_variable = { which = hp_sub value = -1 }
+ change_variable = { which = hp_free value = hp_sub }
+ set_variable = { which = hp_specialist_0 value = hp_free }
+}

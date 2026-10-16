@@ -1,7 +1,7 @@
 {
-  "package_version": "0.1.0-design-handoff",
-  "created_at_utc": "2026-10-16T05:08:23.707325+00:00",
-  "kind": "design_and_development_handoff",
+  "package_version": "0.2.0-alpha",
+  "created_at_utc": "2026-10-16T06:11:41.364302+00:00",
+  "kind": "mod_source_prototype_and_design",
   "gameplay_verified": false,
   "files": [
     {
@@ -11,13 +11,13 @@
     },
     {
       "path": ".gitignore",
-      "bytes": 108,
-      "sha256": "4d1a9549f1e0b1b35a4435e7a7cfd728bbbee0b5136deb96a2e73762915e92f0"
+      "bytes": 203,
+      "sha256": "962666214248c438110bfab6bf7ede55f90b23d0e24cfa31c25383338e1ff5e4"
     },
     {
       "path": "AGENTS.md",
-      "bytes": 2410,
-      "sha256": "72d99fc6a5cada214a03a03869d5f04d9403e28c25f0b10757f946dc0ce69cdf"
+      "bytes": 2759,
+      "sha256": "d49065abe4efae3a4cd07b5a91f0df4e3aba73e5860c6e8b6db529954960af4e"
     },
     {
       "path": "assets/README.md",
@@ -31,8 +31,8 @@
     },
     {
       "path": "design/project-status.json",
-      "bytes": 825,
-      "sha256": "24fce843c421da4d4d317b5cb2269c349bd58535c642ba0b810d3e0863a70158"
+      "bytes": 1866,
+      "sha256": "28f6e7e1d5d0a144f0a6c2aa9982ffeb695522700634e24de224039e3483c17b"
     },
     {
       "path": "design/requirements.json",
@@ -80,29 +80,104 @@
       "sha256": "041dfdf45ec5861971cad7af0fb3eb1f3bf3b8ef20af148ca2c8be0ee86bcbf5"
     },
     {
+      "path": "docs/09-prototype-progress.md",
+      "bytes": 4936,
+      "sha256": "9692b1a0fbe15c557a1402602a4721ce96fba13f6c6dcb780bb55887d4bedd2c"
+    },
+    {
+      "path": "docs/10-in-game-acceptance.md",
+      "bytes": 2594,
+      "sha256": "15bdd6d5055a0db86d7efe6ef83250701918573449bab106844b6f983e867128"
+    },
+    {
       "path": "events/hunger_dialogue_zh.txt",
       "bytes": 1154,
       "sha256": "2b91ff8960580452cbe3815616156241609250acc1e68118686835499cbf93fb"
     },
     {
+      "path": "mod/haipam/common/buildings/haipam_buildings.txt",
+      "bytes": 887,
+      "sha256": "dbf20fb4eeb15de8525aecf01038f7736e2cd4647d528cf561d89d8fd76fd393"
+    },
+    {
+      "path": "mod/haipam/common/governments/civics/haipam_civics.txt",
+      "bytes": 379,
+      "sha256": "fc3992a531f06b98d1583e4d84983b0ab7ceb46b1a3b962a7ef8f319f214b15f"
+    },
+    {
+      "path": "mod/haipam/common/on_actions/haipam_on_actions.txt",
+      "bytes": 301,
+      "sha256": "9826b0fe1e0c652789a622400e72d3d912cdda1d013021fd757726e8e10a4ebe"
+    },
+    {
+      "path": "mod/haipam/common/scripted_effects/haipam_population.txt",
+      "bytes": 4284,
+      "sha256": "4826349b3b6b189805afb00be0bbe98316352c9d914d41ab5b4ad631f7bd36ea"
+    },
+    {
+      "path": "mod/haipam/common/scripted_triggers/haipam_triggers.txt",
+      "bytes": 199,
+      "sha256": "7ad6d1c534ef6db8338f09b51f6d5159daaa876fe375c17fb7c00707a0d4ad5e"
+    },
+    {
+      "path": "mod/haipam/common/traits/haipam_traits.txt",
+      "bytes": 819,
+      "sha256": "bb407d8c9ade59892c48e6f9c616b08ea971879b69e1db91e00dc22a073affa9"
+    },
+    {
+      "path": "mod/haipam/descriptor.mod",
+      "bytes": 132,
+      "sha256": "7ded8bccecc04b19ffa7f8f28a6fdf7c40f5a62b67d22b80b84070684da95b46"
+    },
+    {
+      "path": "mod/haipam/events/haipam_population_events.txt",
+      "bytes": 3678,
+      "sha256": "7e29b6cb3c7000e98cbaaa272abd3073b14c28d2b8abfc4179793a3d734bff82"
+    },
+    {
+      "path": "mod/haipam/localisation/english/haipam_l_english.yml",
+      "bytes": 2161,
+      "sha256": "0734be7c5bae6ae990126929e63c44ef00c2a654e016f42f6e7f28011c4a43ec"
+    },
+    {
+      "path": "mod/haipam/localisation/simp_chinese/haipam_l_simp_chinese.yml",
+      "bytes": 2166,
+      "sha256": "12e35c7268d23393d7c6434ca4ab091fb2b6634b377a25580719c391973f0b7a"
+    },
+    {
+      "path": "mod/haipam/prescripted_countries/haipam_empire.txt",
+      "bytes": 1418,
+      "sha256": "289ede8e8aed083e4978a56dbb7364842ed9a7ee269a30b40b81182083304298"
+    },
+    {
       "path": "README.md",
-      "bytes": 2175,
-      "sha256": "e0239bdf6c0f181c5b7069de6f95e6e6f9a22bd352714bfc67e1b54483a9127d"
+      "bytes": 3554,
+      "sha256": "d135b4aad27aeaffd57288f646a649351b81a057eeb001bb2ab49fa2e9773d9f"
+    },
+    {
+      "path": "scripts/install_mod.py",
+      "bytes": 4855,
+      "sha256": "4b14649f24c3ea55c18c6e69d43c9cc929f95b5205d887321ad2d0eaa6cd5ca1"
     },
     {
       "path": "scripts/package_handoff.py",
-      "bytes": 3255,
-      "sha256": "0d320d31131bfe05dfbca7ce21e647dc0448a890b62e5a45d9f988498ae9e6aa"
+      "bytes": 3518,
+      "sha256": "381587c810f4bfb3e6be09a0967b02aa9eb9f214cd6a6772209ebb24236dbde7"
     },
     {
       "path": "scripts/setup-codex.sh",
-      "bytes": 382,
-      "sha256": "52ca4700656f09f6c5aff1c09ddbeaf45b60e7ff27fe8ac6c2e25545fb3b9bc7"
+      "bytes": 485,
+      "sha256": "ab2bc48efc09e69d759c98d0f1711718b54e54806c2cf16c21a4e763f8d77aed"
     },
     {
       "path": "scripts/validate_handoff.py",
-      "bytes": 3309,
-      "sha256": "6107d42f2a126e36e316675434c12dbec613f362c975a342358ffc2f84365b31"
+      "bytes": 3337,
+      "sha256": "4d9d552cb38871591ba0a89160e1bf9abef5baf8e2affb1c105022cdecde0e25"
+    },
+    {
+      "path": "scripts/validate_mod.py",
+      "bytes": 5496,
+      "sha256": "a7e027d0d29484a37b17c867f88ff83324b2bb31bd1106dd42185c383a14edab"
     }
   ]
 }

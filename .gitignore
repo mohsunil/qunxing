@@ -1,7 +1,7 @@
-.DS_Store
-Thumbs.db
 __pycache__/
 *.pyc
+.DS_Store
+Thumbs.db
 .env
 .env.*
 *.key
@@ -12,4 +12,6 @@ work/
 local/
 reports/
 releases/
-
+local-backups/
+local-install-report.json
+mod/haipam/common/game_rules/zz_haipam_local_rules.txt

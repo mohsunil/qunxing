@@ -32,7 +32,7 @@ def validate():
     require(steel["path"] == "synthetic", "Steel ascension route changed")
     require(not steel["gray_species_conversion_is_origin_story"], "Superseded gray-to-steel origin restored")
     require(data["events"]["midgame"]["after_refusal_dialogue"] == "饿殍遍地", "Hunger dialogue missing")
-    require(status["implemented_game_features"] == 0 and status["custom_models"] == 0, "Design handoff misrepresented as implemented")
+    require(status["implemented_game_features"] == 0 and status["custom_models"] == 0, "Unverified prototype misrepresented as gameplay-tested")
     require(not status["in_game_tests_passed"], "Unperformed game testing claimed")
     manifest = json.loads((ROOT / "MANIFEST.json").read_text(encoding="utf-8"))
     paths = set()
@@ -46,7 +46,7 @@ def validate():
         require(len(raw) == entry["bytes"], "Size mismatch: " + rel)
         require(hashlib.sha256(raw).hexdigest() == entry["sha256"], "Hash mismatch: " + rel)
         raw.decode("utf-8")
-    print(json.dumps({"ok": True, "requirements": len(reqs), "verified_files": len(paths), "scope": "design_integrity_only", "gameplay_verified": False}, ensure_ascii=False))
+    print(json.dumps({"ok": True, "requirements": len(reqs), "verified_files": len(paths), "scope": "requirements_and_payload_integrity_only", "gameplay_verified": False}, ensure_ascii=False))
     return True
 
 if __name__ == "__main__":
