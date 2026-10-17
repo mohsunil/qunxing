@@ -1,0 +1,4 @@
+haipam = {
+ name = HAIPAM_PORTRAIT_CATEGORY
+ sets = { haipam_mosquitoes }
+}

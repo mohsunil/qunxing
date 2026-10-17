@@ -1,5 +1,5 @@
 {
-  "version": "0.2.1-alpha",
+  "version": "0.3.2-alpha",
   "date": "2026-10-16",
   "game_version": "Cygnus 4.5.2 (9776)",
   "definition_loading_verified": true,
@@ -11,8 +11,8 @@
   ],
   "main_menu_confirmation": "user_report",
   "preset_visible_confirmation": "user_report",
-  "new_campaign_started": false,
-  "population_initialization_verified": false,
+  "new_campaign_started": true,
+  "population_initialization_verified": true,
   "employment_and_surplus_verified": false,
   "in_game_tests_passed": false,
   "fixed_engine_errors": [
@@ -25,8 +25,39 @@
     "Gray lineage needed initial=yes"
   ],
   "ui_capture": "FrameArrived / window capture timed out; accessibility exposes only title bar",
-  "latest_user_action": "User accidentally closed game; reopened on request",
+  "latest_user_action": "User closed game; reopened 0.3.0 on request to inspect new portraits",
   "other_mods": "Only Haipam enabled; later startup reports missing files for unrelated subscribed Workshop mods. These were not altered.",
   "test_configuration": "Windowed Chinese test display and Haipam-only activation retained while game is reopened for the user; original settings backup retained locally",
-  "next_required_test": "Enter a new non-Ironman Haipam campaign, advance >=3 days, then inspect initialization and month-based population behavior"
+  "next_required_test": "Enter a new non-Ironman Haipam campaign, advance >=3 days, then inspect initialization and month-based population behavior",
+  "prior_main_menu_and_preset_checked_version": "0.2.1-alpha",
+  "current_definition_check_pending": true,
+  "user_six_month_smoke_test": "no visible abnormality reported",
+  "save_audit": {
+    "date": "2200.07.01",
+    "white_leader_records": 13,
+    "royal_hatchery_exists": true,
+    "reactor_exists": true,
+    "gray_natural_growth": 0,
+    "gray_total": 2400,
+    "gray_civilian_surplus": 800,
+    "gray_still_had_serviles": true,
+    "unused_proles_free_gray_template_created": true,
+    "worker_and_specialist_pending_cohorts": 0,
+    "hatching_with_new_jobs_exercised": false
+  },
+  "fixes_pending_retest": [
+    "Apply proles-free template to matching existing populations",
+    "Use explicit pop-group trait query for cleanup",
+    "Protect owner context on unowned presapient populations"
+  ],
+  "visual_assets_installed": true,
+  "in_game_visuals_confirmed": false,
+  "active_portrait_style": "normal adult-proportion half-body",
+  "chibi_portraits_rejected_by_user": true,
+  "portrait_generation_tool": "built-in image_gen",
+  "building_texture_directory_fixed": true,
+  "custom_portrait_textures": 4,
+  "gray_wings_pose": "folded against back",
+  "helmet_off_variants": 2,
+  "helmet_off_face_canon_verified": false
 }

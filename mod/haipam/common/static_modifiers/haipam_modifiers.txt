@@ -1,0 +1,2 @@
+haipam_graviton_trade = { country_trade_produces_mult = 0.50 }
+haipam_graviton_guard = { ship_hull_mult = 0.25 army_health = 0.50 }

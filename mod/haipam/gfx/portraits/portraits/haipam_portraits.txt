@@ -1,0 +1,43 @@
+portraits = {
+ haipam_white_01 = {
+  texturefile = "gfx/interface/portraits/haipam_white_01.dds" greeting_sound = "arthropoid_01_greetings"
+ }
+ haipam_gray_01 = {
+  texturefile = "gfx/interface/portraits/haipam_gray_01.dds" greeting_sound = "arthropoid_01_greetings"
+ }
+ haipam_white_02 = {
+  texturefile = "gfx/interface/portraits/haipam_white_02.dds" greeting_sound = "arthropoid_01_greetings"
+ }
+ haipam_gray_02 = {
+  texturefile = "gfx/interface/portraits/haipam_gray_02.dds" greeting_sound = "arthropoid_01_greetings"
+ }
+ haipam_white_emperor = { texturefile = "gfx/interface/portraits/haipam_white_emperor.dds" greeting_sound = "arthropoid_01_greetings" }
+ haipam_white_admiral = { texturefile = "gfx/interface/portraits/haipam_white_admiral.dds" greeting_sound = "arthropoid_01_greetings" }
+ haipam_white_scientist = { texturefile = "gfx/interface/portraits/haipam_white_scientist.dds" greeting_sound = "arthropoid_01_greetings" }
+ haipam_gray_space_worker = { texturefile = "gfx/interface/portraits/haipam_gray_space_worker.dds" greeting_sound = "arthropoid_01_greetings" }
+}
+
+# Portrait groups select role art while preserving one biological species.
+portrait_groups = {
+ haipam_white_01 = {
+  default = haipam_white_02
+  game_setup = { add = { portraits = { haipam_white_02 } } }
+  species = { add = { portraits = { haipam_white_02 } } }
+  pop = { add = { portraits = { haipam_white_02 } } }
+  leader = {
+   add = { trigger = { leader_class = scientist } portraits = { haipam_white_scientist } }
+   add = { trigger = { leader_class = commander } portraits = { haipam_white_admiral } }
+   add = { trigger = { leader_class = official } portraits = { haipam_white_02 } }
+  }
+  ruler = { add = { portraits = { haipam_white_emperor } } }
+ }
+ haipam_gray_01 = {
+  default = haipam_gray_02
+  game_setup = { add = { portraits = { haipam_gray_02 } } }
+  species = { add = { portraits = { haipam_gray_02 } } }
+  pop = { add = { portraits = { haipam_gray_02 haipam_gray_space_worker haipam_gray_01 } } }
+  # Gray citizens are never eligible leaders; this is only a display fallback.
+  leader = { add = { portraits = { haipam_gray_02 } } }
+  ruler = { add = { portraits = { haipam_gray_02 } } }
+ }
+}

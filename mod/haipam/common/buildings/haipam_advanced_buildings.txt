@@ -1,0 +1,40 @@
+building_haipam_royal_hall = {
+ icon = building_haipam_royal_hall
+ capital = yes capital_tier = 4 position_priority = 0
+ can_build = no can_demolish = no can_be_ruined = no can_be_disabled = no
+ category = government building_sets = { government } planet_limit = 1
+ potential = { is_capital = yes exists = owner owner = { haipam_is_empire = yes } }
+ prerequisites = { "tech_haipam_royal_governance" }
+ planet_modifier = { planet_housing_add = 4000 planet_amenities_add = 4000 planet_stability_add = 10 }
+ inline_script = { script = buildings/on_all_capital_buildings }
+ inline_script = { script = buildings/regular_empire_capital_jobs AMOUNT = 400 }
+ resources = { category = planet_buildings upkeep = { energy = 12 } produces = { unity = 100 } }
+}
+building_haipam_royal_design_bureau = {
+ icon = building_haipam_royal_design_bureau base_buildtime = 480
+ category = research building_sets = { urban research } planet_limit = 1
+ potential = { exists = owner owner = { haipam_is_empire = yes } }
+ allow = { has_upgraded_capital = yes }
+ prerequisites = { "tech_haipam_royal_design" }
+ planet_modifier = { job_physicist_add = 300 job_engineer_add = 300 }
+ resources = { category = planet_buildings cost = { minerals = 700 alloys = 150 }
+ upkeep = { energy = 8 consumer_goods = 4 } produces = { physics_research = 30 engineering_research = 30 } }
+}
+building_haipam_graviton_temple = {
+ icon = building_haipam_graviton_temple base_buildtime = 600
+ category = unity building_sets = { government urban } planet_limit = 1
+ potential = { exists = owner owner = { haipam_is_empire = yes has_country_flag = haipam_ling_unlocked } }
+ prerequisites = { "tech_haipam_graviton_cult" }
+ planet_modifier = { job_bureaucrat_add = 300 job_trader_add = 200 }
+ resources = { category = planet_buildings cost = { minerals = 1000 alloys = 200 }
+ upkeep = { energy = 10 consumer_goods = 5 } produces = { unity = 80 trade = 35 } }
+}
+building_haipam_postal_hub = {
+ icon = building_haipam_postal_hub base_buildtime = 300
+ category = trade building_sets = { urban trade } planet_limit = 1
+ potential = { exists = owner owner = { haipam_is_empire = yes } }
+ prerequisites = { "tech_haipam_postal_fleets" }
+ planet_modifier = { job_trader_add = 200 }
+ resources = { category = planet_buildings cost = { minerals = 500 alloys = 100 }
+ upkeep = { energy = 5 } produces = { trade = 30 } }
+}

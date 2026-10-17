@@ -1,0 +1,27 @@
+decision_haipam_royal_hall = {
+ icon = decision_planet_to_city_world
+ owned_planets_only = yes enactment_time = 360
+ potential = { is_capital = yes exists = owner owner = { haipam_is_empire = yes }
+ NOT = { has_building = building_haipam_royal_hall } }
+ allow = { owner = { has_technology = tech_haipam_royal_governance } has_upgraded_capital = yes }
+ resources = { category = decisions cost = { alloys = 1000 minerals = 1500 unity = 500 } }
+ effect = {
+  if = { limit = { has_building = building_capital } remove_building = building_capital }
+  if = { limit = { has_building = building_major_capital } remove_building = building_major_capital }
+  if = { limit = { has_building = building_system_capital } remove_building = building_system_capital }
+  add_building = building_haipam_royal_hall
+  owner = { haipam_refresh_royal_continuity = yes country_event = { id = haipam.201 days = 1 } }
+ }
+ ai_weight = { weight = 10 }
+}
+decision_haipam_gray_gene_program = {
+ icon = decision_genetic_experiment
+ owned_planets_only = yes enactment_time = 30
+ potential = { exists = owner owner = { haipam_is_empire = yes }
+ has_active_building = building_haipam_royal_hatchery }
+ allow = { owner = { has_technology = tech_haipam_royal_biology NOT = { has_country_flag = haipam_gray_gene_menu } }
+ any_owned_pop_group = { haipam_is_gray_pop_group = yes } }
+ resources = { category = decisions cost = { food = 500 alloys = 100 } }
+ effect = { owner = { set_country_flag = haipam_gray_gene_menu country_event = { id = haipam.220 days = 1 } } }
+ ai_weight = { weight = 0 }
+}

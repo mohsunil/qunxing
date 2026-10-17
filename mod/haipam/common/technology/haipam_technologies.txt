@@ -1,0 +1,87 @@
+tech_haipam_royal_biology = {
+ area = society category = { biology } tier = 1 cost = 1500 weight = 100
+ prerequisites = { "tech_genome_mapping" }
+ potential = { has_valid_civic = civic_haipam_royal_biology }
+ modifier = { BIOLOGICAL_species_trait_points_add = 2 modify_species_cost_mult = -0.90 }
+ ai_weight = { factor = 2 }
+}
+
+tech_haipam_royal_governance = {
+ area = society category = { statecraft } tier = 2 cost = 4000 weight = 100
+ prerequisites = { "tech_planetary_government" }
+ potential = { has_valid_civic = civic_haipam_royal_biology }
+ modifier = {  }
+ ai_weight = { factor = 2 }
+}
+
+tech_haipam_royal_design = {
+ area = engineering category = { industry } tier = 1 cost = 1800 weight = 100
+ prerequisites = { "tech_engineering_1" }
+ potential = { has_valid_civic = civic_haipam_royal_biology }
+ modifier = {  }
+ ai_weight = { factor = 2 }
+}
+
+tech_haipam_fleetization = {
+ area = society category = { military_theory } tier = 2 cost = 5000 weight = 100
+ prerequisites = { "tech_doctrine_fleet_size_1" }
+ potential = { has_valid_civic = civic_haipam_royal_biology }
+ modifier = { command_limit_add = -20 country_naval_cap_add = 200 country_naval_cap_mult = 0.50 ships_upkeep_mult = -0.70 ship_build_speed_mult = 0.50 }
+ ai_weight = { factor = 2 }
+}
+
+tech_haipam_postal_fleets = {
+ area = society category = { statecraft } tier = 1 cost = 2000 weight = 100
+ prerequisites = { "tech_interplanetary_commerce" }
+ potential = { has_valid_civic = civic_haipam_royal_biology }
+ modifier = { planet_jobs_trade_produces_mult = 0.50 country_trade_produces_mult = 0.25 }
+ ai_weight = { factor = 2 }
+}
+
+tech_haipam_axial_small = {
+ area = physics category = { particles } tier = 2 cost = 3500 weight = 100
+ prerequisites = { "tech_plasma_1" }
+ potential = { has_valid_civic = civic_haipam_royal_biology }
+ modifier = {  }
+ ai_weight = { factor = 2 }
+}
+
+tech_haipam_axial_medium = {
+ area = physics category = { particles } tier = 3 cost = 8000 weight = 100
+ prerequisites = { "tech_haipam_axial_small" }
+ potential = { has_valid_civic = civic_haipam_royal_biology }
+ modifier = {  }
+ ai_weight = { factor = 2 }
+}
+
+tech_haipam_axial_heavy = {
+ area = physics category = { particles } tier = 4 cost = 16000 weight = 100
+ prerequisites = { "tech_haipam_axial_medium" }
+ potential = { has_valid_civic = civic_haipam_royal_biology }
+ modifier = {  }
+ ai_weight = { factor = 2 }
+}
+
+tech_haipam_graviton_cult = {
+ area = society category = { psionics } tier = 2 cost = 5000 weight = 100
+ prerequisites = { "tech_psionic_theory" }
+ potential = { has_valid_civic = civic_haipam_royal_biology }
+ modifier = {  }
+ ai_weight = { factor = 2 }
+}
+
+tech_haipam_dual_helix = {
+ area = society category = { biology } tier = 3 cost = 10000 weight = 100
+ prerequisites = { "tech_gene_tailoring" "tech_haipam_graviton_cult" }
+ potential = { has_valid_civic = civic_haipam_royal_biology }
+ modifier = { BIOLOGICAL_species_trait_points_add = 4 }
+ ai_weight = { factor = 2 }
+}
+
+tech_haipam_planetary_arsenal = {
+ area = engineering category = { voidcraft } tier = 4 cost = 20000 weight = 100
+ prerequisites = { "tech_mega_engineering" "tech_haipam_fleetization" }
+ potential = { has_valid_civic = civic_haipam_royal_biology }
+ modifier = { starbase_shipyard_build_speed_mult = 0.25 }
+ ai_weight = { factor = 2 }
+}

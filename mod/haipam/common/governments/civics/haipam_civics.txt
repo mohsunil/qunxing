@@ -1,5 +1,5 @@
 civic_haipam_royal_biology = {
- icon = "gfx/interface/icons/governments/civics/civic_aristocratic_elite.dds"
+ icon = "gfx/interface/icons/haipam/civic_haipam_royal_biology.dds"
  description = civic_haipam_royal_biology_effects
  potential = { authority = { value = auth_imperial } }
  possible = { origin = { value = origin_syncretic_evolution } }

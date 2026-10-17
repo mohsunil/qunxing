@@ -1,0 +1,54 @@
+# Country scope. Only the presence of an active royal capital grants immortality.
+haipam_refresh_royal_continuity = {
+ if = {
+  limit = { any_owned_planet = { has_active_building = building_haipam_royal_hall } }
+  every_owned_leader = { limit = { species = { has_trait = trait_haipam_white }
+   NOT = { has_trait = leader_trait_haipam_royal_continuity } }
+   add_trait = leader_trait_haipam_royal_continuity }
+  every_pool_leader = { limit = { species = { has_trait = trait_haipam_white }
+   NOT = { has_trait = leader_trait_haipam_royal_continuity } }
+   add_trait = leader_trait_haipam_royal_continuity }
+ }
+ else = {
+  every_owned_leader = { limit = { has_trait = leader_trait_haipam_royal_continuity }
+   remove_trait = leader_trait_haipam_royal_continuity }
+  every_pool_leader = { limit = { has_trait = leader_trait_haipam_royal_continuity }
+   remove_trait = leader_trait_haipam_royal_continuity }
+ }
+}
+
+# Country scope. One-time separate species; the white lineage marker preserves
+# white-only leadership, rather than turning gray workers into eligible leaders.
+haipam_awaken_ling = {
+ set_country_flag = haipam_ling_unlocked
+ create_species = {
+  name = "HAIPAM_LING" plural = "HAIPAM_LING" adjective = "HAIPAM_LING"
+  class = ART portrait = haipam_white_02
+  traits = { trait = trait_organic trait = trait_haipam_white trait = trait_haipam_ling trait = trait_psionic }
+  effect = { save_event_target_as = haipam_new_ling }
+ }
+ event_target:haipam_new_ling = { set_citizenship_type = { country = root type = citizenship_full } }
+ capital_scope = { create_pop_group = { species = event_target:haipam_new_ling category = specialist size = 200 } }
+ country_event = { id = haipam.211 days = 1 }
+}
+
+# One mutually exclusive production specialization (all three cost two points).
+# Existing non-program gene changes and the gray lineage marker are preserved.
+haipam_gray_gene_program = {
+ every_owned_species = {
+  limit = { has_trait = trait_haipam_gray NOT = { has_trait = $TRAIT$ } }
+  save_event_target_as = haipam_gene_old
+  modify_species = {
+   species = this
+   remove_trait = trait_industrious remove_trait = trait_agrarian remove_trait = trait_intelligent
+   add_trait = $TRAIT$
+   effect = { save_event_target_as = haipam_gene_new }
+  }
+  event_target:haipam_gene_new = { set_citizenship_type = { country = root type = citizenship_limited } }
+  root = { every_owned_planet = { every_owned_pop_group = {
+   limit = { is_exact_same_species = event_target:haipam_gene_old }
+   change_species = event_target:haipam_gene_new
+  } } }
+ }
+ remove_country_flag = haipam_gray_gene_menu
+}

@@ -1,6 +1,11 @@
 {
-  "embedded_assets": [],
-  "note": "Reference metadata only; no models or images included. Historical placement unverified; optional units were not adopted as current scope.",
+  "embedded_assets": [
+    "source/white-general.png",
+    "source/gray-winged-soldier.png",
+    "source/flag-reference.png",
+    "haipam-royal-crest.svg"
+  ],
+  "note": "Portraits reused from user-authorized local ZhuLu library; provenance in visual-assets.json. Ship references remain optional and unimplemented.",
   "references": [
     {
       "name": "短剑级巡洋舰",
@@ -32,4 +37,3 @@
     }
   ]
 }
-

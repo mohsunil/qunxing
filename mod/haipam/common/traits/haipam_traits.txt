@@ -6,7 +6,7 @@ trait_haipam_white = {
  species_possible_remove = { always = no }
  species_possible_merge_remove = { always = no }
  allowed_archetypes = { BIOLOGICAL }
- icon = "gfx/interface/icons/traits/trait_intelligent.dds"
+ icon = "gfx/interface/icons/haipam/trait_haipam_white.dds"
 }
 
 trait_haipam_gray = {
@@ -17,7 +17,7 @@ trait_haipam_gray = {
  species_possible_remove = { always = no }
  species_possible_merge_remove = { always = no }
  allowed_archetypes = { BIOLOGICAL }
- icon = "gfx/interface/icons/traits/trait_primitive.dds"
+ icon = "gfx/interface/icons/haipam/trait_haipam_gray.dds"
 
  assembly_score = { base = -1000 }
  triggered_pop_group_modifier = {

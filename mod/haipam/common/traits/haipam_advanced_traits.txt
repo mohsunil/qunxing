@@ -1,0 +1,12 @@
+leader_trait_haipam_royal_continuity = {
+ leader_class = { scientist commander official }
+ initial = no randomized = no notify_on_gained = no immortal_leaders = yes
+ icon = { layer = { icon = "GFX_haipam_royal_continuity" } }
+}
+trait_haipam_ling = {
+ cost = 0 initial = no randomized = no allowed_archetypes = { BIOLOGICAL }
+ species_potential_add = { always = no } species_possible_remove = { always = no }
+ species_possible_merge_remove = { always = no }
+ icon = "gfx/interface/icons/haipam/trait_haipam_ling.dds"
+ modifier = { planet_jobs_unity_produces_mult = 0.50 planet_jobs_trade_produces_mult = 0.25 }
+}

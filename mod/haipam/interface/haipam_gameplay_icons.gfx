@@ -1,0 +1,10 @@
+spriteTypes = {
+ spriteType = { name = "GFX_haipam_evt_royal_hall" texturefile = "gfx/event_pictures/haipam_royal_hall.dds" }
+ spriteType = { name = "GFX_haipam_evt_hatchery" texturefile = "gfx/event_pictures/haipam_hatchery.dds" }
+ spriteType = { name = "GFX_haipam_evt_ling" texturefile = "gfx/event_pictures/haipam_ling.dds" }
+ spriteType = { name = "GFX_haipam_evt_postal" texturefile = "gfx/event_pictures/haipam_postal.dds" }
+ spriteType = { name = "GFX_haipam_evt_arsenal" texturefile = "gfx/event_pictures/haipam_arsenal.dds" }
+ spriteType = { name = "GFX_army_type_haipam_ling" texturefile = "gfx/interface/icons/haipam/army_haipam_ling.dds" }
+ spriteType = { name = "GFX_haipam_axial_plasma" texturefile = "gfx/interface/icons/haipam/haipam_axis.dds" }
+ spriteType = { name = "GFX_haipam_royal_continuity" texturefile = "gfx/interface/icons/haipam/civic_haipam_royal_biology.dds" }
+}

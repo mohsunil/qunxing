@@ -1,0 +1,45 @@
+# One-time migration for alpha saves; keeps each species' traits and identity.
+haipam_refresh_visuals = {
+ if = {
+  limit = { NOT = { has_country_flag = haipam_visuals_v1 } }
+  every_owned_species = {
+   if = {
+    limit = { has_trait = trait_haipam_white NOT = { species_portrait = haipam_white_02 } }
+    change_species_characteristics = { portrait = haipam_white_01 can_change_leader = yes }
+   }
+   if = {
+    limit = { has_trait = trait_haipam_gray NOT = { species_portrait = haipam_gray_02 } }
+    change_species_characteristics = { portrait = haipam_gray_01 can_change_leader = yes }
+   }
+  }
+  every_owned_leader = {
+   limit = { species = { has_trait = trait_haipam_white } }
+   change_leader_portrait = species
+  }
+  every_pool_leader = {
+   limit = { species = { has_trait = trait_haipam_white } }
+   change_leader_portrait = species
+  }
+  change_country_flag = {
+   icon = { category = "haipam" file = "haipam_royal_crest.dds" }
+   background = { category = "backgrounds" file = "horizontal.dds" }
+   colors = { "wave_blue" "off_white" "black" "null" }
+  }
+  set_country_flag = haipam_visuals_v1
+ }
+}
+
+# Leader scope; biological lineage remains unchanged. Also refresh alpha saves.
+haipam_role_portrait = {
+ if = {
+  limit = { species = { has_trait = trait_haipam_white } }
+  if = { limit = { is_ruler = yes } change_leader_portrait = haipam_white_emperor }
+  else_if = { limit = { leader_class = scientist } change_leader_portrait = haipam_white_scientist }
+  else_if = { limit = { leader_class = commander } change_leader_portrait = haipam_white_admiral }
+  else = { change_leader_portrait = haipam_white_02 }
+ }
+}
+haipam_refresh_role_portraits = {
+ every_owned_leader = { haipam_role_portrait = yes }
+ every_pool_leader = { haipam_role_portrait = yes }
+}

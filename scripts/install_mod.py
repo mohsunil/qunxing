@@ -42,8 +42,8 @@ def make_adapter(game):
         raise ValueError('Prototype supports v4.5.2 only; found '+str(settings.get('rawVersion')))
     source = (game/'common/game_rules/00_rules.txt').read_text(encoding='utf-8-sig')
     white_guard = 'OR = { root = { NOT = { has_valid_civic = civic_haipam_royal_biology } } has_trait = trait_haipam_white }'
-    growth_guard = 'OR = { root.owner = { NOT = { has_valid_civic = civic_haipam_royal_biology } } NOT = { has_trait = trait_haipam_gray } }'
-    ruler_guard = 'OR = { owner = { NOT = { has_valid_civic = civic_haipam_royal_biology } } has_trait = trait_haipam_white }'
+    growth_guard = 'if = { limit = { root = { exists = owner } } OR = { root.owner = { NOT = { has_valid_civic = civic_haipam_royal_biology } } NOT = { has_trait = trait_haipam_gray } } }'
+    ruler_guard = 'if = { limit = { exists = owner } OR = { owner = { NOT = { has_valid_civic = civic_haipam_royal_biology } } has_trait = trait_haipam_white } }'
     guards = {
         'can_species_procreate': growth_guard,
         'species_uses_bonus_growth': growth_guard,
@@ -87,7 +87,7 @@ def install(game, userdir):
             dest=target/file.relative_to(source)
             if file.read_bytes()!=dest.read_bytes(): raise ValueError('Copy verification failed: '+str(dest))
             checked.append(str(file.relative_to(source)))
-    report={'installed':True,'version':'0.2.1-alpha','target':str(target),'descriptor':str(descriptor),'source_files_verified':len(checked),'local_rules':6,'game_files_modified':False,'other_mods_modified':False,'backup':str(backup) if backup else None,'gameplay_verified':False}
+    report={'installed':True,'version':re.search(r'version="([^"]+)"',(source/'descriptor.mod').read_text(encoding='utf-8'))[1],'target':str(target),'descriptor':str(descriptor),'source_files_verified':len(checked),'local_rules':6,'game_files_modified':False,'other_mods_modified':False,'backup':str(backup) if backup else None,'gameplay_verified':False}
     (ROOT/'local-install-report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     print(json.dumps(report,ensure_ascii=False))
 

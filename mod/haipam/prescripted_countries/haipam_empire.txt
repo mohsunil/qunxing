@@ -4,11 +4,11 @@ haipam_early_empire = {
  ship_prefix = "HRS"
  playable = haipam_design_playable
  species = {
-  class = "ART" portrait = "art1" name = "HAIPAM_WHITE" plural = "HAIPAM_WHITE" adjective = "HAIPAM_WHITE"
+  class = "ART" portrait = "haipam_white_01" name = "HAIPAM_WHITE" plural = "HAIPAM_WHITE" adjective = "HAIPAM_WHITE"
   name_list = "ART1" trait = "trait_organic" trait = "trait_haipam_white"
  }
  secondary_species = {
-  class = "ART" portrait = "art3" name = "HAIPAM_GRAY" plural = "HAIPAM_GRAY" adjective = "HAIPAM_GRAY"
+  class = "ART" portrait = "haipam_gray_01" name = "HAIPAM_GRAY" plural = "HAIPAM_GRAY" adjective = "HAIPAM_GRAY"
   name_list = "ART1" trait = "trait_organic" trait = "trait_syncretic_proles" trait = "trait_haipam_gray"
  }
  room = "personality_hegemonic_imperialists_room"
@@ -21,10 +21,10 @@ haipam_early_empire = {
  system_name = "HAIPAM_SYSTEM" initializer = ""
  graphical_culture = "arthropoid_01" city_graphical_culture = "arthropoid_01"
  empire_flag = {
-  icon = { category = "domination" file = "domination_1.dds" }
-  background = { category = "backgrounds" file = "00_solid.dds" }
-  colors = { "red" "black" "null" "null" }
+  icon = { category = "haipam" file = "haipam_royal_crest.dds" }
+  background = { category = "backgrounds" file = "horizontal.dds" }
+  colors = { "wave_blue" "off_white" "black" "null" }
  }
- ruler = { name = "HAIPAM_RULER" gender = male portrait = "art1" leader_class = commander }
+ ruler = { name = "HAIPAM_RULER" gender = male portrait = "haipam_white_emperor" leader_class = commander }
  flag = empire_haipam
 }

@@ -1,0 +1,5 @@
+haipam_mosquitoes = {
+ species_class = ART
+ portraits = { "haipam_white_01" "haipam_white_02" "haipam_white_emperor" "haipam_white_admiral" "haipam_white_scientist" "haipam_gray_01" "haipam_gray_02" "haipam_gray_space_worker" }
+ non_randomized_portraits = { "haipam_white_01" "haipam_white_02" "haipam_white_emperor" "haipam_white_admiral" "haipam_white_scientist" "haipam_gray_01" "haipam_gray_02" "haipam_gray_space_worker" }
+}

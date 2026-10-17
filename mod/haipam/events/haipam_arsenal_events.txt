@@ -1,0 +1,29 @@
+namespace = haipam
+country_event = {
+ id = haipam.250 hide_window = yes is_triggered_only = yes
+ trigger = { haipam_is_empire = yes exists = capital_scope NOT = { has_country_flag = haipam_home_registered } }
+ immediate = {
+  capital_scope = { planet = { set_planet_flag = haipam_homeworld } }
+  set_country_flag = haipam_home_registered
+ }
+}
+
+country_event = {
+ id = haipam.251 is_triggered_only = yes title = haipam.251.name desc = haipam.251.desc
+ picture = GFX_haipam_evt_arsenal option = { name = haipam.arsenal.ok }
+}
+
+country_event = {
+ id = haipam.252 is_triggered_only = yes title = haipam.252.name desc = haipam.252.desc
+ picture = GFX_haipam_evt_arsenal option = { name = haipam.arsenal.ok }
+}
+
+country_event = {
+ id = haipam.253 is_triggered_only = yes title = haipam.253.name desc = haipam.253.desc
+ picture = GFX_haipam_evt_arsenal option = { name = haipam.arsenal.ok }
+}
+
+country_event = {
+ id = haipam.254 is_triggered_only = yes title = haipam.254.name desc = haipam.254.desc
+ picture = GFX_haipam_evt_arsenal option = { name = haipam.arsenal.ok }
+}

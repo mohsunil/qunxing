@@ -1,0 +1,48 @@
+namespace = haipam
+country_event = {
+ id = haipam.200 hide_window = yes is_triggered_only = yes
+ trigger = { haipam_is_empire = yes }
+ immediate = {
+  haipam_refresh_royal_continuity = yes
+  if = { limit = { has_technology = tech_psionic_theory NOT = { has_country_flag = haipam_ling_unlocked } }
+   haipam_awaken_ling = yes }
+ }
+}
+country_event = {
+ id = haipam.201 is_triggered_only = yes title = haipam.201.name desc = haipam.201.desc
+ picture = GFX_haipam_evt_royal_hall
+ option = { name = haipam.201.ok }
+}
+country_event = {
+ id = haipam.211 is_triggered_only = yes title = haipam.211.name desc = haipam.211.desc
+ picture = GFX_haipam_evt_ling
+ option = { name = haipam.211.ok }
+}
+country_event = {
+ id = haipam.220 is_triggered_only = yes title = haipam.220.name desc = haipam.220.desc
+ picture = GFX_haipam_evt_hatchery
+ option = { name = haipam.220.industry haipam_gray_gene_program = { TRAIT = trait_industrious } }
+ option = { name = haipam.220.food haipam_gray_gene_program = { TRAIT = trait_agrarian } }
+ option = { name = haipam.220.research haipam_gray_gene_program = { TRAIT = trait_intelligent } }
+ option = { name = haipam.220.cancel remove_country_flag = haipam_gray_gene_menu }
+}
+# Low-frequency temple experiences, gated by the completed temple rather than
+# merely researching psionics. They add resources/modifiers, never console cheats.
+country_event = {
+ id = haipam.230 hide_window = yes is_triggered_only = yes
+ trigger = { haipam_is_empire = yes any_owned_planet = { has_active_building = building_haipam_graviton_temple } }
+ immediate = { random_list = { 70 = { } 15 = { country_event = { id = haipam.231 days = 5 } }
+ 15 = { country_event = { id = haipam.232 days = 5 } } } }
+}
+country_event = {
+ id = haipam.231 is_triggered_only = yes title = haipam.231.name desc = haipam.231.desc
+ picture = GFX_haipam_evt_ling
+ option = { name = haipam.231.harmony add_resource = { unity = 600 } }
+ option = { name = haipam.231.insight add_resource = { society_research = 1000 } }
+}
+country_event = {
+ id = haipam.232 is_triggered_only = yes title = haipam.232.name desc = haipam.232.desc
+ picture = GFX_haipam_evt_ling
+ option = { name = haipam.232.trade add_modifier = { modifier = haipam_graviton_trade days = 1080 } }
+ option = { name = haipam.232.guard add_modifier = { modifier = haipam_graviton_guard days = 1080 } }
+}

@@ -45,7 +45,8 @@ def validate():
         raw = file.read_bytes()
         require(len(raw) == entry["bytes"], "Size mismatch: " + rel)
         require(hashlib.sha256(raw).hexdigest() == entry["sha256"], "Hash mismatch: " + rel)
-        raw.decode("utf-8")
+        if file.suffix.lower() in {'.md','.txt','.mod','.gfx','.yml','.json','.svg','.py','.sh'} or file.name in {'.gitignore','.gitattributes'}:
+            raw.decode("utf-8")
     print(json.dumps({"ok": True, "requirements": len(reqs), "verified_files": len(paths), "scope": "requirements_and_payload_integrity_only", "gameplay_verified": False}, ensure_ascii=False))
     return True
 

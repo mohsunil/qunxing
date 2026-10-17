@@ -1,0 +1,30 @@
+namespace = haipam
+country_event = {
+ id = haipam.240 hide_window = yes is_triggered_only = yes
+ trigger = { haipam_is_empire = yes exists = capital_scope
+  has_technology = tech_haipam_postal_fleets has_technology = tech_haipam_fleetization
+  has_technology = tech_haipam_axial_small
+  NOT = { has_country_flag = haipam_postal_offer_pending }
+  any_owned_planet = { has_active_building = building_haipam_postal_hub } }
+ immediate = { random_list = { 75 = { } 25 = {
+  set_country_flag = haipam_postal_offer_pending country_event = { id = haipam.241 days = 10 }
+ } } }
+}
+country_event = {
+ id = haipam.241 is_triggered_only = yes title = haipam.241.name desc = haipam.241.desc
+ picture = GFX_haipam_evt_postal
+ option = {
+  name = haipam.241.repair allow = { alloys >= 100 exists = capital_scope }
+  add_resource = { alloys = -100 } remove_country_flag = haipam_postal_offer_pending
+  create_fleet = {
+   name = "NAME_HAIPAM_POSTAL_FLEET"
+   effect = {
+    set_owner = root
+    create_ship = { name = "NAME_HAIPAM_POSTAL_RETURN" design = "NAME_HAIPAM_POSTAL_RETURN" prefix = no upgradable = no }
+    set_location = root.capital_scope
+   }
+  }
+ }
+ option = { name = haipam.241.scrap add_resource = { alloys = 50 }
+  remove_country_flag = haipam_postal_offer_pending }
+}

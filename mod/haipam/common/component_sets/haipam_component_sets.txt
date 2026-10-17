@@ -1,0 +1,3 @@
+component_set = {
+ key = "HAIPAM_AXIAL_PLASMA" icon = "GFX_haipam_axial_plasma" icon_frame = 1
+}

@@ -1,0 +1,65 @@
+haipam_arsenal_0 = {
+ entity = "construction_platform_entity" construction_entity = "construction_platform_entity"
+ portrait = GFX_haipam_evt_arsenal place_entity_on_planet_plane = no
+ entity_offset = { x = -18 y = -18 } build_time = 720
+ prerequisites = { "tech_haipam_planetary_arsenal" }
+ potential = { haipam_is_empire = yes has_technology = tech_haipam_planetary_arsenal }
+ resources = { category = megastructures cost = { alloys = 3000 unity = 1000 } upkeep = { energy = 5 } }
+ 
+ possible = {
+  exists = starbase is_inside_border = from
+  from = { NOT = { has_country_flag = haipam_arsenal_built } }
+ }
+ placement_rules = { planet_possible = {
+  has_planet_flag = haipam_homeworld is_colony = yes exists = owner
+  owner = { is_same_value = prev.from }
+  NOT = { has_anomaly = yes }
+  NOT = { has_planet_flag = has_megastructure }
+ } }
+ on_build_complete = {
+  from = { set_country_flag = haipam_arsenal_built country_event = { id = haipam.251 days = 1 } }
+ }
+ ai_weight = { factor = 10 }
+}
+
+haipam_arsenal_1 = {
+ entity = "mega_shipyard_01_stage_1_entity" construction_entity = "mega_shipyard_01_stage_1_entity"
+ portrait = GFX_haipam_evt_arsenal place_entity_on_planet_plane = no
+ entity_offset = { x = -18 y = -18 } build_time = 1440
+ prerequisites = { "tech_haipam_planetary_arsenal" }
+ potential = { haipam_is_empire = yes has_technology = tech_haipam_planetary_arsenal }
+ resources = { category = megastructures cost = { alloys = 8000 unity = 2000 } upkeep = { energy = 15 } }
+ upgrade_from = { haipam_arsenal_0 }
+ station_modifier = { starbase_shipyard_capacity_add = 10 }
+ country_modifier = { starbase_shipyard_build_speed_mult = 0.5 }
+ on_build_complete = { from = { country_event = { id = haipam.252 days = 1 } } }
+ ai_weight = { factor = 10 }
+}
+
+haipam_arsenal_2 = {
+ entity = "mega_shipyard_01_stage_2_entity" construction_entity = "mega_shipyard_01_stage_2_entity"
+ portrait = GFX_haipam_evt_arsenal place_entity_on_planet_plane = no
+ entity_offset = { x = -18 y = -18 } build_time = 1800
+ prerequisites = { "tech_haipam_planetary_arsenal" }
+ potential = { haipam_is_empire = yes has_technology = tech_haipam_planetary_arsenal }
+ resources = { category = megastructures cost = { alloys = 16000 unity = 3000 } upkeep = { energy = 25 } }
+ upgrade_from = { haipam_arsenal_1 }
+ station_modifier = { starbase_shipyard_capacity_add = 25 }
+ country_modifier = { starbase_shipyard_build_speed_mult = 1.0 }
+ on_build_complete = { from = { country_event = { id = haipam.253 days = 1 } } }
+ ai_weight = { factor = 10 }
+}
+
+haipam_arsenal_3 = {
+ entity = "mega_shipyard_01_stage_3_entity" construction_entity = "mega_shipyard_01_stage_3_entity"
+ portrait = GFX_haipam_evt_arsenal place_entity_on_planet_plane = no
+ entity_offset = { x = -18 y = -18 } build_time = 2160
+ prerequisites = { "tech_haipam_planetary_arsenal" }
+ potential = { haipam_is_empire = yes has_technology = tech_haipam_planetary_arsenal }
+ resources = { category = megastructures cost = { alloys = 30000 unity = 5000 } upkeep = { energy = 35 } }
+ upgrade_from = { haipam_arsenal_2 }
+ station_modifier = { starbase_shipyard_capacity_add = 60 }
+ country_modifier = { starbase_shipyard_build_speed_mult = 2.0 }
+ on_build_complete = { from = { country_event = { id = haipam.254 days = 1 } } }
+ ai_weight = { factor = 10 }
+}

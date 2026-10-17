@@ -1,0 +1,18 @@
+ship_design = {
+ name = "NAME_HAIPAM_POSTAL_RETURN" ship_size = haipam_axial_light
+ is_event_design = yes hide_size = yes
+ section = {
+  template = "HAIPAM_LIGHT_CORE" slot = "mid"
+  component = { slot = "SMALL_GUN_01" template = "HAIPAM_SMALL_AXIAL_PLASMA" }
+  component = { slot = "SMALL_GUN_02" template = "HAIPAM_SMALL_AXIAL_PLASMA" }
+  component = { slot = "SMALL_GUN_03" template = "HAIPAM_SMALL_AXIAL_PLASMA" }
+  component = { slot = "SMALL_UTILITY_1" template = "SMALL_ARMOR_1" }
+  component = { slot = "SMALL_UTILITY_2" template = "SMALL_ARMOR_1" }
+  component = { slot = "SMALL_UTILITY_3" template = "SMALL_ARMOR_1" }
+  component = { slot = "SMALL_UTILITY_4" template = "SMALL_ARMOR_1" }
+ }
+ required_component = "HAIPAM_LIGHT_REACTOR"
+ required_component = "HAIPAM_THRUSTER"
+ required_component = "HAIPAM_COMBAT_COMPUTER"
+ required_component = "HYPER_DRIVE_1" required_component = "SENSOR_1"
+}

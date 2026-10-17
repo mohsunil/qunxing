@@ -1,0 +1,44 @@
+{
+  "tool": "built-in image_gen for building PNGs; code-native UI glyphs and mechanical format export",
+  "concept_art_not_verified_canon": true,
+  "building_icons": [
+    {
+      "building": "royal_hatchery",
+      "source": "assets/buildings/royal-hatchery-v1.png",
+      "sha256": "95859dd5061abd5e795d36d9d1efee6db2d22fa4d2481fb25a0b35778c8d0781",
+      "output": "gfx/interface/icons/buildings/building_haipam_royal_hatchery.dds"
+    },
+    {
+      "building": "reactor",
+      "source": "assets/buildings/reaction-vat-v1.png",
+      "sha256": "7df2f7112e61705778f3448f383d628fcb480cf79b85a5d02c63bea74cc05b18",
+      "output": "gfx/interface/icons/buildings/building_haipam_reactor.dds"
+    },
+    {
+      "building": "royal_hall",
+      "source": "assets/buildings/royal-hall-v1.png",
+      "sha256": "245ed968cee8101349780e88ccc0d07dbe53c45cdee71ad01e15624a2604458a",
+      "output": "gfx/interface/icons/buildings/building_haipam_royal_hall.dds"
+    },
+    {
+      "building": "royal_design_bureau",
+      "source": "assets/buildings/royal-design-bureau-v1.png",
+      "sha256": "128cbd8c0b41a585f0338d96bb87ea7bce0edfc0a859daff198fa90e3b6accc8",
+      "output": "gfx/interface/icons/buildings/building_haipam_royal_design_bureau.dds"
+    },
+    {
+      "building": "graviton_temple",
+      "source": "assets/buildings/graviton-temple-v1.png",
+      "sha256": "f0846f36929218cbf78e146e1af6d17317693a624bd47e4d6a3b20ca0d0cbe95",
+      "output": "gfx/interface/icons/buildings/building_haipam_graviton_temple.dds"
+    },
+    {
+      "building": "postal_hub",
+      "source": "assets/buildings/postal-hub-v1.png",
+      "sha256": "afe8766dde8c572fdf47f6dd39143d5e77a44fabb19c1fdfa2c794bb623bb901",
+      "output": "gfx/interface/icons/buildings/building_haipam_postal_hub.dds"
+    }
+  ],
+  "event_pictures": "Building information cards, not full illustrated scenes",
+  "runtime_verified": false
+}

@@ -1,0 +1,3 @@
+on_monthly_pulse_country = { events = { haipam.200 } }
+on_tech_increased = { events = { haipam.200 } }
+on_yearly_pulse_country = { events = { haipam.230 } }

@@ -1,0 +1,5 @@
+{
+  "tool": "built-in image_gen",
+  "prompt": "Precisely extract the input BLACK emblem from its white background. Keep the BLACK emblem BLACK, unchanged in design and proportions, on genuine transparent alpha background. Do not invert it to white. Do not add or change anything. Preserve the clean black upper horn crest, ringed planet and circular frame, two-node tilted double orbit, left curved hook, long bottom triangular tip and fine cutouts. All original white negative space, including internal holes, must become transparent. Smooth solid black shapes and lines with antialiased edges; no scattered black/white speckles, no weathering, no texture, no shadow, no glow, no background. One intact emblem centered with margin, square output. Faithful background removal only.",
+  "note": "Black transparent extraction; alpha retained when exporting white tint-mask DDS."
+}

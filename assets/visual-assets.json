@@ -1,0 +1,144 @@
+{
+  "portraits": "Eight adult-proportion role portraits from user-provided armor, emperor and distinct white/gray biological references; user requested larger heads.",
+  "emblem": "User-supplied species mark, image_gen black transparent extraction; white alpha-preserving engine tint-mask export. Previous helmet crest is no longer active.",
+  "flag_palette": "Blue/pale bands referenced from the local flag carrier art; mapped to available Stellaris swatches",
+  "ui_icons": "Species mark on white trait/civic, distinct original gray trait and building symbols; new building art follows in gameplay release",
+  "animated": false,
+  "in_game_visual_acceptance": false,
+  "sources": [
+    {
+      "role": "white_portrait_01",
+      "source_file": "assets/portraits/haipam-white-helmet-v3.png",
+      "source_sha256": "8617fd9e93de9698932f25571bc748b6217611c5564fd3a8f7ca1b556ff7d959",
+      "output": "gfx/interface/portraits/haipam_white_01.dds",
+      "size": [
+        575,
+        380
+      ],
+      "method": "Built-in image_gen from user-provided role and biology references; aspect-preserving DDS export",
+      "helmet": true,
+      "wings": "none",
+      "biological_reference": "user-references-20261016/white-face.png"
+    },
+    {
+      "role": "gray_portrait_01",
+      "source_file": "assets/portraits/haipam-gray-helmet-folded-v3.png",
+      "source_sha256": "671258ea0d58153810bb8b37fd4f7fb655099ff0f25fe0d870eda18fdd813a72",
+      "output": "gfx/interface/portraits/haipam_gray_01.dds",
+      "size": [
+        575,
+        380
+      ],
+      "method": "Built-in image_gen from user-provided role and biology references; aspect-preserving DDS export",
+      "helmet": true,
+      "wings": "folded",
+      "biological_reference": "user-references-20261016/gray-biology.png"
+    },
+    {
+      "role": "white_portrait_02",
+      "source_file": "assets/portraits/haipam-white-governor-v1.png",
+      "source_sha256": "46e688f4754348fd2fc7632583c6aec67901d8798c32ba20bbb0f796313ca11e",
+      "output": "gfx/interface/portraits/haipam_white_02.dds",
+      "size": [
+        575,
+        380
+      ],
+      "method": "Built-in image_gen from user-provided role and biology references; aspect-preserving DDS export",
+      "helmet": false,
+      "wings": "none",
+      "biological_reference": "user-references-20261016/white-face.png"
+    },
+    {
+      "role": "gray_portrait_02",
+      "source_file": "assets/portraits/haipam-gray-worker-v1.png",
+      "source_sha256": "d9764a70d8aed97a17fbfae81e6385d552a6f8bda1ebf2a0542b4a7b91e01a9b",
+      "output": "gfx/interface/portraits/haipam_gray_02.dds",
+      "size": [
+        575,
+        380
+      ],
+      "method": "Built-in image_gen from user-provided role and biology references; aspect-preserving DDS export",
+      "helmet": false,
+      "wings": "folded",
+      "biological_reference": "user-references-20261016/gray-biology.png"
+    },
+    {
+      "role": "white_portrait_emperor",
+      "source_file": "assets/portraits/haipam-emperor-no-feelers-v2.png",
+      "source_sha256": "49b5524f7f6bc25d62989236483ba2d908573be246309d570e70eae3813d0a59",
+      "output": "gfx/interface/portraits/haipam_white_emperor.dds",
+      "size": [
+        575,
+        380
+      ],
+      "method": "Built-in image_gen from user-provided role and biology references; aspect-preserving DDS export",
+      "helmet": false,
+      "wings": "none",
+      "biological_reference": "user-references-20261016/emperor.png"
+    },
+    {
+      "role": "white_portrait_admiral",
+      "source_file": "assets/portraits/haipam-white-admiral-v1.png",
+      "source_sha256": "548525dd6283fb24902c59ff1a48e59bce8da87a42bb43b063875c6bc4a0f9e8",
+      "output": "gfx/interface/portraits/haipam_white_admiral.dds",
+      "size": [
+        575,
+        380
+      ],
+      "method": "Built-in image_gen from user-provided role and biology references; aspect-preserving DDS export",
+      "helmet": false,
+      "wings": "none",
+      "biological_reference": "user-references-20261016/white-face.png"
+    },
+    {
+      "role": "white_portrait_scientist",
+      "source_file": "assets/portraits/haipam-white-scientist-v1.png",
+      "source_sha256": "6784752853bee46a91ac5ab5d893f7ce4fe88f731fab0c970d278e773fade61c",
+      "output": "gfx/interface/portraits/haipam_white_scientist.dds",
+      "size": [
+        575,
+        380
+      ],
+      "method": "Built-in image_gen from user-provided role and biology references; aspect-preserving DDS export",
+      "helmet": false,
+      "wings": "none",
+      "biological_reference": "user-references-20261016/white-face.png"
+    },
+    {
+      "role": "gray_portrait_space_worker",
+      "source_file": "assets/portraits/haipam-gray-space-worker-v1.png",
+      "source_sha256": "09c83d8db812e9052caae67e695e5d72d6ada593694ad8e0414b419eed6c028c",
+      "output": "gfx/interface/portraits/haipam_gray_space_worker.dds",
+      "size": [
+        575,
+        380
+      ],
+      "method": "Built-in image_gen from user-provided role and biology references; aspect-preserving DDS export",
+      "helmet": true,
+      "wings": "folded",
+      "biological_reference": "user-references-20261016/gray-biology.png"
+    },
+    {
+      "role": "helmet_crest_reference_only",
+      "source_file": "海帕姆_将军_无 (1).png",
+      "source_sha256": "9b2c5acd658a7c470bedaa6a3e60816fb3c9e6451e187169d9ca375982c0c5cd"
+    },
+    {
+      "role": "gray_helmet_reference_only",
+      "source_file": "海帕姆_长生军_离子步枪（飞行）.png",
+      "source_sha256": "47b2361709276634262c3cca2356fddaddabcdf79517803e4a960e8589bc54f8"
+    },
+    {
+      "role": "flag_palette_reference",
+      "source_file": "海帕姆_火炮呼嚎官_海帕姆军旗.png",
+      "source_sha256": "618e89d918d001b2319c0022fa0ae45166bb9fe137ddf5fbea6f3892d084611b"
+    }
+  ],
+  "generation_prompts": [
+    "assets/character-prompts-v033.json",
+    "assets/character-prompts-v033-b.json",
+    "assets/species-mark-prompt.json"
+  ],
+  "white_feelers": "Omitted for now at user request; retained anatomy reference is inactive.",
+  "greeting_audio": "Native arthropoid reference only, not auditioned."
+}

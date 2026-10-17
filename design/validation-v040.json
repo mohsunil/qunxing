@@ -1,0 +1,28 @@
+{
+  "structure": {
+    "ok": true,
+    "parsed_script_files": 37,
+    "population_algorithm_cases": 406,
+    "randomized_monthly_steps": 19200,
+    "engine_error_regression_guards": 8,
+    "localisation_languages": 2,
+    "engine_loading_verified": false,
+    "employment_allocation_verified": false,
+    "in_game_tests_passed": false
+  },
+  "content": {
+    "ok": true,
+    "technology_definitions": 11,
+    "technology_dependencies": 21,
+    "ship_sizes": 3,
+    "components": 8,
+    "sections": 6,
+    "event_definitions": 21,
+    "native_reference_check": true,
+    "engine_scopes_verified": false,
+    "gameplay_verified": false
+  },
+  "version": "0.4.0-alpha",
+  "latest_engine_loaded": false,
+  "other_processes_modified": false
+}

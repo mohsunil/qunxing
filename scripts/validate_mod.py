@@ -108,7 +108,7 @@ def simulation_tests():
 def validate():
     checked=[]
     for file in MOD.rglob('*'):
-        if file.is_file() and file.suffix in ('.txt','.mod'):
+        if file.is_file() and file.suffix in ('.txt','.mod','.gfx'):
             parse(file.read_text(encoding='utf-8-sig'))
             checked.append(file.relative_to(MOD).as_posix())
     for file in (MOD/'localisation').rglob('*.yml'):
@@ -135,6 +135,30 @@ def validate():
     event_source=(MOD/'events/haipam_population_events.txt').read_text()
     assert 'planet_event = { id = haipam.20' not in event_source
     assert 'colony_event = { id = haipam.20' in event_source
+    assert 'haipam_repair_gray_species = yes' in event_source
+    repair=fields(parse((MOD/'common/scripted_effects/haipam_population.txt').read_text()))['haipam_repair_gray_species']
+    assert 'change_species = event_target:haipam_gray_repaired' in (MOD/'common/scripted_effects/haipam_population.txt').read_text()
+    assert 'haipam_is_gray_pop_group = yes' in event_source
+    # Texture headers and references can be checked without graphics/Pillow on Cloud.
+    import struct
+    texture_sizes={}
+    for file in MOD.rglob('*.dds'):
+        header=file.read_bytes()[:128]
+        assert header[:4]==b'DDS ' and len(header)==128
+        height,width=struct.unpack_from('<II',header,12)
+        assert width>0 and height>0
+        texture_sizes[file.relative_to(MOD).as_posix()]=[width,height]
+    assert texture_sizes['gfx/interface/portraits/haipam_white_01.dds']==[575,380]
+    assert texture_sizes['gfx/interface/portraits/haipam_gray_01.dds']==[575,380]
+    assert texture_sizes['gfx/interface/portraits/haipam_white_02.dds']==[575,380]
+    assert texture_sizes['gfx/interface/portraits/haipam_gray_02.dds']==[575,380]
+    assert texture_sizes['flags/haipam/haipam_royal_crest.dds']==[128,128]
+    assert texture_sizes['flags/haipam/map/haipam_royal_crest.dds']==[256,256]
+    assert texture_sizes['flags/haipam/small/haipam_royal_crest.dds']==[24,24]
+    for file in MOD.rglob('*'):
+        if file.is_file() and file.suffix in ('.txt','.gfx'):
+            for path in re.findall(r'(?:texturefile|icon)\s*=\s*"(gfx/[^\"]+\.dds)"',file.read_text(encoding='utf-8')):
+                assert (MOD/path).is_file(), 'Missing custom texture: '+path
     report={'ok':True,'parsed_script_files':len(checked),'population_algorithm_cases':count,'randomized_monthly_steps':19200,'engine_error_regression_guards':8,'localisation_languages':2,'engine_loading_verified':False,'employment_allocation_verified':False,'in_game_tests_passed':False}
     print(json.dumps(report,ensure_ascii=False))
     return report

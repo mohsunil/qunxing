@@ -1,0 +1,10 @@
+haipam_ling_guard = {
+ damage = 4.0 morale_damage = 3.0 health = 4.0 morale = 5.0
+ collateral_damage = 0.25 war_exhaustion = 2.0 time = 90 icon = GFX_army_type_haipam_ling
+ prerequisites = { "tech_haipam_graviton_cult" }
+ resources = { category = armies cost = { minerals = 250 alloys = 50 } upkeep = { energy = 1 } }
+ potential_country = { haipam_is_empire = yes }
+ potential = { from = { has_trait = trait_haipam_ling } }
+ allow = { has_active_building = building_haipam_graviton_temple }
+ ai_weight = { base = 100 }
+}

@@ -23,7 +23,7 @@ def payload_files():
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--output", default=str(ROOT.parent / "haipam-stellaris-prototype-v0.2.1-20261016.zip"))
+    parser.add_argument("--output", default=str(ROOT.parent / "haipam-stellaris-prototype-v0.4.0-20261017.zip"))
     args = parser.parse_args()
     output = Path(args.output).resolve()
     if output.is_relative_to(ROOT):
@@ -33,7 +33,7 @@ def main():
     output.parent.mkdir(parents=True, exist_ok=True)
     files = payload_files()
     manifest = {
-        "package_version": "0.2.1-alpha",
+        "package_version": "0.4.0-alpha",
         "created_at_utc": datetime.now(timezone.utc).isoformat(),
         "kind": "mod_source_prototype_and_design",
         "gameplay_verified": False,
@@ -43,6 +43,7 @@ def main():
     manifest_path.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     subprocess.run([sys.executable, str(ROOT / "scripts/validate_handoff.py")], check=True)
     subprocess.run([sys.executable, str(ROOT / "scripts/validate_mod.py")], check=True)
+    subprocess.run([sys.executable, str(ROOT / "scripts/validate_content.py")], check=True)
     files.append(manifest_path)
     with zipfile.ZipFile(output, "w", compression=zipfile.ZIP_DEFLATED, compresslevel=9) as archive:
         for p in files:
