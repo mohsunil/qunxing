@@ -45,7 +45,6 @@ for tier,proxy,hp,capacity,fleet_slot,speed,time,upkeep,tech,power in sizes:
  key = "HAIPAM_{tier.upper()}_REACTOR" size = small
  icon = "GFX_ship_part_reactor_3" power = {power}
  component_set = "power_core"
- prerequisites = {{ "tech_haipam_axial_{tech}" }}
  potential = {{ is_ship_size = haipam_axial_{tier} }}
  resources = {{ category = ship_components cost = {{ alloys = {power//15} }} }}
  ai_weight = {{ weight = 100 }}
@@ -55,7 +54,7 @@ put('common/ship_sizes/haipam_ship_sizes.txt','\n\n'.join(definitions))
 selection='OR = { '+' '.join('is_ship_size = haipam_axial_'+t[0] for t in sizes)+' }'
 utilities.append(f'''utility_component_template = {{
  key = "HAIPAM_THRUSTER" size = small icon = "GFX_ship_part_thruster_2" power = -10
- component_set = "thruster_components" prerequisites = {{ "tech_haipam_fleetization" }}
+ component_set = "thruster_components"
  potential = {{ {selection} }}
  modifier = {{ ship_speed_mult = 0.25 }}
  resources = {{ category = ship_components cost = {{ alloys = 10 }} }}
@@ -64,7 +63,7 @@ utilities.append(f'''utility_component_template = {{
 utility_component_template = {{
  key = "HAIPAM_COMBAT_COMPUTER" size = small icon = "GFX_ship_part_computer_default" power = -5
  component_set = "combat_computers" ship_behavior = artillery
- prerequisites = {{ "tech_haipam_fleetization" }} potential = {{ {selection} }}
+ potential = {{ {selection} }}
  modifier = {{ ship_fire_rate_mult = 0.15 }}
  resources = {{ category = ship_components cost = {{ alloys = 10 }} }}
  ai_weight = {{ weight = 100 }}
@@ -83,7 +82,7 @@ for size,tech,low,high,cost,power,range_,tracking in [
  component_set = "HAIPAM_AXIAL_PLASMA" projectile_gfx = "plasma_thrower_{size[0]}"
  prerequisites = {{ "tech_haipam_axial_{tech}" }}
  potential = {{ from = {{ haipam_is_empire = yes }} }}
- damage = {{ min = {low} max = {high} }} power = {power} cooldown = 4.0
+ damage = {{ min = {low} max = {high} }} power = {power}
  range = {range_} accuracy = 0.90 tracking = {tracking}
  hull_damage = 1.75 armor_damage = 2.0 shield_damage = 0.50
  tags = {{ weapon_type_energy {size[0]}_slot }}
@@ -151,7 +150,7 @@ country_event = {
  id = haipam.241 is_triggered_only = yes title = haipam.241.name desc = haipam.241.desc
  picture = GFX_haipam_evt_postal
  option = {
-  name = haipam.241.repair allow = { alloys >= 100 exists = capital_scope }
+  name = haipam.241.repair allow = { has_resource = { type = alloys amount >= 100 } exists = capital_scope }
   add_resource = { alloys = -100 } remove_country_flag = haipam_postal_offer_pending
   create_fleet = {
    name = "NAME_HAIPAM_POSTAL_FLEET"

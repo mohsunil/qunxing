@@ -71,7 +71,13 @@ def validate(game=None):
     # Refits use ordinary capacity and upkeep. A recovered ship cannot opt out.
     assert 'uses_naval_capacity = no' not in texts(MOD/'events')
     assert 'damage = { min =' in texts(MOD/'common/component_templates')
+    for key in ['HAIPAM_SMALL_AXIAL_PLASMA','HAIPAM_MEDIUM_AXIAL_PLASMA','HAIPAM_LARGE_AXIAL_PLASMA']:
+        assert components[key].get('prerequisites'), 'Weapon tech gate missing'
+    for key in ['HAIPAM_LIGHT_REACTOR','HAIPAM_MEDIUM_REACTOR','HAIPAM_HEAVY_REACTOR','HAIPAM_THRUSTER']:
+        assert 'prerequisites' not in components[key], 'Required initial design component is tech-locked'
     assert 'min_damage =' not in texts(MOD/'common/component_templates')
+    assert 'cooldown =' not in texts(MOD/'common/component_templates')
+    assert 'allow = { alloys >=' not in texts(MOD/'events')
     arsenal=texts(MOD/'common/megastructures')
     assert 'has_planet_flag = haipam_homeworld' in arsenal
     assert 'destroy_colony' not in arsenal and 'change_pc' not in arsenal

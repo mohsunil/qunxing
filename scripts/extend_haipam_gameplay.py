@@ -14,7 +14,7 @@ techs=[
  ('tech_haipam_royal_biology','society','biology',1,1500,['tech_genome_mapping'],'BIOLOGICAL_species_trait_points_add = 2 modify_species_cost_mult = -0.90'),
  ('tech_haipam_royal_governance','society','statecraft',2,4000,['tech_planetary_government'],''),
  ('tech_haipam_royal_design','engineering','industry',1,1800,['tech_engineering_1'],''),
- ('tech_haipam_fleetization','society','military_theory',2,5000,['tech_doctrine_fleet_size_1'],'command_limit_add = -20 country_naval_cap_add = 200 country_naval_cap_mult = 0.50 ships_upkeep_mult = -0.70 ship_build_speed_mult = 0.50'),
+ ('tech_haipam_fleetization','society','military_theory',2,5000,['tech_doctrine_fleet_size_1'],'command_limit_add = -20 country_naval_cap_add = 200 country_naval_cap_mult = 0.50 ships_upkeep_mult = -0.70 starbase_shipyard_build_speed_mult = 0.50'),
  ('tech_haipam_postal_fleets','society','statecraft',1,2000,['tech_interplanetary_commerce'],'planet_jobs_trade_produces_mult = 0.50 country_trade_produces_mult = 0.25'),
  ('tech_haipam_axial_small','physics','particles',2,3500,['tech_plasma_1'],''),
  ('tech_haipam_axial_medium','physics','particles',3,8000,['tech_haipam_axial_small'],''),

@@ -1,0 +1,16 @@
+# Colony scope. Never enroll a new capital or another colony as the motherworld.
+haipam_enrich_homeworld = {
+ if = {
+  limit = { exists = owner owner = { haipam_is_empire = yes }
+   planet = { has_planet_flag = haipam_homeworld } }
+  if = { limit = { NOT = { has_deposit = d_haipam_deep_mantle } }
+   add_deposit = d_haipam_deep_mantle }
+  if = { limit = { NOT = { has_deposit = d_haipam_energy_network } }
+   add_deposit = d_haipam_energy_network }
+  if = { limit = { NOT = { has_deposit = d_haipam_nutrient_seas } }
+   add_deposit = d_haipam_nutrient_seas }
+  if = { limit = { NOT = { has_deposit = d_haipam_rare_strata } }
+   add_deposit = d_haipam_rare_strata }
+  set_planet_flag = haipam_resource_cradle_v1
+ }
+}

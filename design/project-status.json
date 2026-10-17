@@ -1,5 +1,5 @@
 {
-  "package_version": "0.4.0-alpha",
+  "package_version": "0.4.2-alpha",
   "date": "2026-10-17",
   "kind": "mod_source_prototype_and_design",
   "game_version": "4.5.2 (9776)",
@@ -17,7 +17,7 @@
   },
   "game_install_path_confirmed": true,
   "implemented_game_features": 0,
-  "game_script_files": 37,
+  "game_script_files": 42,
   "custom_models": 0,
   "in_game_tests_passed": false,
   "tripo_last_observation": "no API key configured",
@@ -33,7 +33,7 @@
   "upload_status_is_pre_upload_snapshot": true,
   "codex_cloud_environment_published": false,
   "cloud_task_started": false,
-  "prototype_source_files": 86,
+  "prototype_source_files": 95,
   "prototype_systems": [
     "prescripted_syncretic_empire",
     "lineage_traits",
@@ -52,7 +52,8 @@
     "three_axial_weapons",
     "three_low_capacity_ship_sizes",
     "postal_trade_and_salvage",
-    "motherworld_four_stage_arsenal"
+    "motherworld_four_stage_arsenal",
+    "resource_rich_homeworld_features"
   ],
   "gameplay_verified_features": 0,
   "prototype_installed_locally": true,
@@ -132,6 +133,25 @@
     "cause_confirmed": false,
     "other_playsets_modified": false
   },
-  "latest_default_install_version": "0.4.0-alpha",
-  "latest_default_install_verified": true
+  "latest_default_install_version": "0.4.2-alpha",
+  "latest_default_install_verified": true,
+  "v041_engine_observation": {
+    "haipam_traits_and_namespace_loaded": true,
+    "haipam_new_campaign_generation_started": true,
+    "required_components_initial_auto_design_errors": true,
+    "source_fixed_pending_retest": true
+  },
+  "homeworld_resources": {
+    "features": 4,
+    "extra_district_capacity": 12,
+    "mining_max_add": 12,
+    "generator_max_add": 10,
+    "farming_max_add": 10,
+    "mineral_job_bonus": 1.0,
+    "energy_and_food_job_bonus": 0.75,
+    "rare_resources_require_technology_and_jobs": true,
+    "migrate_original_homeworld_on_monthly_pulse": true,
+    "prototype_numbers": true,
+    "gameplay_verified": false
+  }
 }

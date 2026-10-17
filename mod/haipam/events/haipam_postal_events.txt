@@ -14,7 +14,7 @@ country_event = {
  id = haipam.241 is_triggered_only = yes title = haipam.241.name desc = haipam.241.desc
  picture = GFX_haipam_evt_postal
  option = {
-  name = haipam.241.repair allow = { alloys >= 100 exists = capital_scope }
+  name = haipam.241.repair allow = { has_resource = { type = alloys amount >= 100 } exists = capital_scope }
   add_resource = { alloys = -100 } remove_country_flag = haipam_postal_offer_pending
   create_fleet = {
    name = "NAME_HAIPAM_POSTAL_FLEET"

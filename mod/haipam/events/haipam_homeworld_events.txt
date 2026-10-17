@@ -1,0 +1,11 @@
+namespace = haipam
+country_event = {
+ id = haipam.260 hide_window = yes is_triggered_only = yes
+ trigger = { haipam_is_empire = yes has_country_flag = haipam_home_registered }
+ immediate = {
+  every_owned_planet = {
+   limit = { planet = { has_planet_flag = haipam_homeworld } }
+   haipam_enrich_homeworld = yes
+  }
+ }
+}

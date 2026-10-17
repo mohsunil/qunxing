@@ -16,14 +16,14 @@ def payload_files():
         p for p in ROOT.rglob("*")
         if p.is_file() and not p.is_symlink()
         and not EXCLUDED.intersection(p.relative_to(ROOT).parts)
-        and p.name not in {"MANIFEST.json", "local-install-report.json", "zz_haipam_local_rules.txt"}
+        and p.name not in {"MANIFEST.json", "local-install-report.json", "zz_haipam_local_rules.txt", "weapon_components.csv"}
         and p.suffix not in {".pyc", ".log", ".key", ".pem", ".pfx"}
         and not p.name.startswith('.env')
     )
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--output", default=str(ROOT.parent / "haipam-stellaris-prototype-v0.4.0-20261017.zip"))
+    parser.add_argument("--output", default=str(ROOT.parent / "haipam-stellaris-prototype-v0.4.2-20261017.zip"))
     args = parser.parse_args()
     output = Path(args.output).resolve()
     if output.is_relative_to(ROOT):
@@ -33,14 +33,16 @@ def main():
     output.parent.mkdir(parents=True, exist_ok=True)
     files = payload_files()
     manifest = {
-        "package_version": "0.4.0-alpha",
+        "package_version": "0.4.2-alpha",
         "created_at_utc": datetime.now(timezone.utc).isoformat(),
         "kind": "mod_source_prototype_and_design",
         "gameplay_verified": False,
         "files": [{"path": p.relative_to(ROOT).as_posix(), "bytes": p.stat().st_size, "sha256": hashlib.sha256(p.read_bytes()).hexdigest()} for p in files],
     }
     manifest_path = ROOT / "MANIFEST.json"
-    manifest_path.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    manifest_temp=manifest_path.with_suffix('.json.tmp')
+    manifest_temp.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    manifest_temp.replace(manifest_path)
     subprocess.run([sys.executable, str(ROOT / "scripts/validate_handoff.py")], check=True)
     subprocess.run([sys.executable, str(ROOT / "scripts/validate_mod.py")], check=True)
     subprocess.run([sys.executable, str(ROOT / "scripts/validate_content.py")], check=True)

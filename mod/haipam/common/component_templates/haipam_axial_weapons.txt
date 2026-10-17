@@ -4,7 +4,7 @@ weapon_component_template = {
  component_set = "HAIPAM_AXIAL_PLASMA" projectile_gfx = "plasma_thrower_s"
  prerequisites = { "tech_haipam_axial_small" }
  potential = { from = { haipam_is_empire = yes } }
- damage = { min = 30 max = 55 } power = -12 cooldown = 4.0
+ damage = { min = 30 max = 55 } power = -12
  range = 50 accuracy = 0.90 tracking = 0.6
  hull_damage = 1.75 armor_damage = 2.0 shield_damage = 0.50
  tags = { weapon_type_energy s_slot }
@@ -19,7 +19,7 @@ weapon_component_template = {
  component_set = "HAIPAM_AXIAL_PLASMA" projectile_gfx = "plasma_thrower_m"
  prerequisites = { "tech_haipam_axial_medium" }
  potential = { from = { haipam_is_empire = yes } }
- damage = { min = 80 max = 130 } power = -30 cooldown = 4.0
+ damage = { min = 80 max = 130 } power = -30
  range = 75 accuracy = 0.90 tracking = 0.3
  hull_damage = 1.75 armor_damage = 2.0 shield_damage = 0.50
  tags = { weapon_type_energy m_slot }
@@ -34,7 +34,7 @@ weapon_component_template = {
  component_set = "HAIPAM_AXIAL_PLASMA" projectile_gfx = "plasma_thrower_l"
  prerequisites = { "tech_haipam_axial_heavy" }
  potential = { from = { haipam_is_empire = yes } }
- damage = { min = 200 max = 350 } power = -70 cooldown = 4.0
+ damage = { min = 200 max = 350 } power = -70
  range = 110 accuracy = 0.90 tracking = 0.1
  hull_damage = 1.75 armor_damage = 2.0 shield_damage = 0.50
  tags = { weapon_type_energy l_slot }

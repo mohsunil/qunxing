@@ -59,9 +59,22 @@ def make_adapter(game):
         blocks.append(name+' = {\n '+guard+'\n'+body+'\n}\n')
     return '# LOCALLY GENERATED from installed v4.5.2. Do not redistribute.\n'+'\n'.join(blocks)
 
-def install(game, userdir):
+def make_weapon_adapter(game):
+    # The instant-weapon parser rejects inline cooldown in 4.5.2. Preserve every
+    # native row locally and append only our own definitions. Never redistribute
+    # this generated file or replace the installation's original CSV.
+    source=(game/'common/component_templates/weapon_components.csv').read_text(encoding='utf-8-sig')
+    columns=next(line for line in source.splitlines() if line.startswith('key;')).split(';')
+    assert {'key','cooldown','min_damage','max_damage'} <= set(columns)
+    stats=json.loads((ROOT/'design/axial-weapon-stats.json').read_text(encoding='utf-8'))
+    for row in stats:
+        assert row['key'].startswith('HAIPAM_') and row['key'] not in source
+    return source.rstrip()+'\n# Locally appended Haipam weapon rows. Do not redistribute.\n'+''.join(';'.join(str(row.get(column,'')) for column in columns)+'\n' for row in stats)
+
+def install(game, userdir, backup_root=None):
     source = ROOT/'mod/haipam'
     adapter = make_adapter(game)  # Validate before any destination mutation.
+    weapon_adapter = make_weapon_adapter(game)
     moddir = userdir/'mod'
     target = moddir/'haipam_early'
     descriptor = moddir/'haipam_early.mod'
@@ -71,7 +84,7 @@ def install(game, userdir):
     if target.exists() or descriptor.exists():
         if target.exists() and not (target/'descriptor.mod').exists():
             raise ValueError('Destination is not a recognized Haipam mod')
-        backup = ROOT/'local-backups'/datetime.now().strftime('%Y%m%d-%H%M%S-%f')
+        backup = (backup_root or ROOT/'local-backups')/datetime.now().strftime('%Y%m%d-%H%M%S-%f')
         backup.mkdir(parents=True)
         if target.exists(): shutil.copytree(target, backup/'haipam_early')
         if descriptor.exists(): shutil.copy2(descriptor, backup/'haipam_early.mod')
@@ -80,6 +93,7 @@ def install(game, userdir):
     rulepath = target/'common/game_rules/zz_haipam_local_rules.txt'
     rulepath.parent.mkdir(parents=True, exist_ok=True)
     rulepath.write_text(adapter,encoding='utf-8')
+    (target/'common/component_templates/weapon_components.csv').write_text(weapon_adapter,encoding='utf-8')
     descriptor.write_text((source/'descriptor.mod').read_text(encoding='utf-8')+'path="'+target.as_posix()+'"\n',encoding='utf-8')
     checked=[]
     for file in source.rglob('*'):
@@ -95,5 +109,6 @@ if __name__=='__main__':
     parser=argparse.ArgumentParser()
     parser.add_argument('--game',type=Path,required=True)
     parser.add_argument('--userdir',type=Path,required=True)
+    parser.add_argument('--backup-root',type=Path,help='Optional backup location on another disk')
     args=parser.parse_args()
-    install(args.game.resolve(),args.userdir.resolve())
+    install(args.game.resolve(),args.userdir.resolve(),args.backup_root.resolve() if args.backup_root else None)

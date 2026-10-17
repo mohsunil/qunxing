@@ -2,7 +2,6 @@ utility_component_template = {
  key = "HAIPAM_LIGHT_REACTOR" size = small
  icon = "GFX_ship_part_reactor_3" power = 300
  component_set = "power_core"
- prerequisites = { "tech_haipam_axial_small" }
  potential = { is_ship_size = haipam_axial_light }
  resources = { category = ship_components cost = { alloys = 20 } }
  ai_weight = { weight = 100 }
@@ -12,7 +11,6 @@ utility_component_template = {
  key = "HAIPAM_MEDIUM_REACTOR" size = small
  icon = "GFX_ship_part_reactor_3" power = 600
  component_set = "power_core"
- prerequisites = { "tech_haipam_axial_medium" }
  potential = { is_ship_size = haipam_axial_medium }
  resources = { category = ship_components cost = { alloys = 40 } }
  ai_weight = { weight = 100 }
@@ -22,7 +20,6 @@ utility_component_template = {
  key = "HAIPAM_HEAVY_REACTOR" size = small
  icon = "GFX_ship_part_reactor_3" power = 1200
  component_set = "power_core"
- prerequisites = { "tech_haipam_axial_heavy" }
  potential = { is_ship_size = haipam_axial_heavy }
  resources = { category = ship_components cost = { alloys = 80 } }
  ai_weight = { weight = 100 }
@@ -30,7 +27,7 @@ utility_component_template = {
 
 utility_component_template = {
  key = "HAIPAM_THRUSTER" size = small icon = "GFX_ship_part_thruster_2" power = -10
- component_set = "thruster_components" prerequisites = { "tech_haipam_fleetization" }
+ component_set = "thruster_components"
  potential = { OR = { is_ship_size = haipam_axial_light is_ship_size = haipam_axial_medium is_ship_size = haipam_axial_heavy } }
  modifier = { ship_speed_mult = 0.25 }
  resources = { category = ship_components cost = { alloys = 10 } }
@@ -38,8 +35,7 @@ utility_component_template = {
 }
 utility_component_template = {
  key = "HAIPAM_COMBAT_COMPUTER" size = small icon = "GFX_ship_part_computer_default" power = -5
- component_set = "combat_computers" ship_behavior = artillery
- prerequisites = { "tech_haipam_fleetization" } potential = { OR = { is_ship_size = haipam_axial_light is_ship_size = haipam_axial_medium is_ship_size = haipam_axial_heavy } }
+ component_set = "combat_computers" ship_behavior = artillery potential = { OR = { is_ship_size = haipam_axial_light is_ship_size = haipam_axial_medium is_ship_size = haipam_axial_heavy } }
  modifier = { ship_fire_rate_mult = 0.15 }
  resources = { category = ship_components cost = { alloys = 10 } }
  ai_weight = { weight = 100 }

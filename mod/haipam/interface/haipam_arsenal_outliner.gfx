@@ -1,0 +1,6 @@
+spriteTypes = {
+ spriteType = { name = "GFX_haipam_arsenal_0_outliner_icon" texturefile = "gfx/interface/icons/buildings/building_haipam_royal_design_bureau.dds" }
+ spriteType = { name = "GFX_haipam_arsenal_1_outliner_icon" texturefile = "gfx/interface/icons/buildings/building_haipam_royal_design_bureau.dds" }
+ spriteType = { name = "GFX_haipam_arsenal_2_outliner_icon" texturefile = "gfx/interface/icons/buildings/building_haipam_royal_design_bureau.dds" }
+ spriteType = { name = "GFX_haipam_arsenal_3_outliner_icon" texturefile = "gfx/interface/icons/buildings/building_haipam_royal_design_bureau.dds" }
+}

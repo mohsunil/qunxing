@@ -19,9 +19,7 @@ country_event = {
   capital_scope = {
    add_building = building_haipam_royal_hatchery
    add_building = building_haipam_reactor
-   add_deposit = d_geothermal_vent
-   add_deposit = d_ore_rich_caverns
-   add_deposit = d_fertile_lands
+   haipam_enrich_homeworld = yes
    haipam_reset_pipeline = yes
   }
   country_event = { id = haipam.100 days = 2 }

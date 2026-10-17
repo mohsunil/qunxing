@@ -17,7 +17,7 @@ Read README.md and docs/01-confirmed-design.md before editing. The JSON requirem
 - No sub-agent delegation unless directly authorized by the user or applicable higher-level instructions.
 - User explicitly rejected chibi/Q-style portraits. Active Haipam portraits must use normal adult proportions and the half-body sources in assets/portraits. Chibi library images are structural/crest references only; never restore them as active portraits. Preserve white wingless knight/officer identity and gray four-winged mass-produced armor identity.
 
-The initial design handoff is preserved in the v0.1.0 release. mod/haipam now contains v0.4.0-alpha source; it is not yet engine-validated. Read docs/09-prototype-progress.md before changing runtime scripts. scripts/install_mod.py generates a local rules adapter from the user's installed 4.5.2 game; never commit or package that generated adapter or copy proprietary base-game assets. Local install reports/backups are excluded from publication.
+The initial design handoff is preserved in the v0.1.0 release. mod/haipam now contains v0.4.2-alpha source; it is not yet engine-validated. Read docs/09-prototype-progress.md before changing runtime scripts. scripts/install_mod.py generates a local rules adapter from the user's installed 4.5.2 game; never commit or package that generated adapter or copy proprietary base-game assets. Local install reports/backups are excluded from publication.
 
 
 - Gray mosquito portrait wings must rest folded against the back. Keep four wings; do not delete them or restore the spread pose. Preserve both helmeted (_01) and helmet-off (_02) alternatives. Helmet-off faces are provisional Mod designs, not verified canon.

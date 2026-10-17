@@ -26,7 +26,7 @@ tech_haipam_fleetization = {
  area = society category = { military_theory } tier = 2 cost = 5000 weight = 100
  prerequisites = { "tech_doctrine_fleet_size_1" }
  potential = { has_valid_civic = civic_haipam_royal_biology }
- modifier = { command_limit_add = -20 country_naval_cap_add = 200 country_naval_cap_mult = 0.50 ships_upkeep_mult = -0.70 ship_build_speed_mult = 0.50 }
+ modifier = { command_limit_add = -20 country_naval_cap_add = 200 country_naval_cap_mult = 0.50 ships_upkeep_mult = -0.70 starbase_shipyard_build_speed_mult = 0.50 }
  ai_weight = { factor = 2 }
 }
 

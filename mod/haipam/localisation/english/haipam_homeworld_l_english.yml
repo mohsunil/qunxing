@@ -1,0 +1,9 @@
+﻿l_english:
+ d_haipam_deep_mantle:0 "海帕姆·深层富矿"
+ d_haipam_deep_mantle_desc:0 "母星的深层矿床与可开发陆架。采矿区域上限+12，行星总区域上限+12，矿物岗位产出+100%。"
+ d_haipam_energy_network:0 "海帕姆·行星能源脉络"
+ d_haipam_energy_network_desc:0 "密集的地热与能源沉积网络。发电区域上限+10，能量岗位产出+75%。"
+ d_haipam_nutrient_seas:0 "海帕姆·原生营养海"
+ d_haipam_nutrient_seas_desc:0 "富含有机养分的海洋和沿岸生态。农业区域上限+10，食物岗位产出+75%。"
+ d_haipam_rare_strata:0 "海帕姆·稀有元素共生层"
+ d_haipam_rare_strata_desc:0 "研究对应开采科技后，矿工附带产出稀有水晶，农业岗位附带产出异星天然气，技工附带产出易爆微粒。必须有实际就业人口才能开采。"
