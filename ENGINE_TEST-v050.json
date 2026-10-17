@@ -1,0 +1,15 @@
+{
+  "version": "0.5.0-alpha",
+  "enabled_mods": [
+    "mod/haipam_early.mod"
+  ],
+  "installed_source_files_verified": 135,
+  "source_mismatches": [],
+  "new_campaign_init_logged": true,
+  "gray_surplus_cleanup_execution_logged": true,
+  "expected_dual_override_notices": 8,
+  "unexpected_haipam_log_entries": [],
+  "actual_model_display_verified": false,
+  "latest_save_population_counts_verified": false,
+  "complete_gameplay_verified": false
+}

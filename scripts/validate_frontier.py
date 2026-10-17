@@ -9,11 +9,12 @@ from validate_mod import parse,fields,MOD
 
 effects=fields(parse((MOD/'common/scripted_effects/haipam_frontier_effects.txt').read_text(encoding='utf-8')))
 events={fields(v)['id']:fields(v) for k,op,v in parse((MOD/'events/haipam_frontier_events.txt').read_text(encoding='utf-8')) if k!='namespace'}
+salvation_triggers=fields(parse((MOD/'common/scripted_triggers/haipam_salvation_triggers.txt').read_text(encoding='utf-8')))
 
 class Fixture:
  def __init__(self,station=True,colony=True,temple=False):
   self.variables={};self.flags=set();self.resources={k:100000 for k in ['alloys','influence','energy','minerals','food','consumer_goods','unity']}
-  self.station=station;self.colony=colony;self.temple=temple;self.released=0;self.notifications=[];self.parent=True;self.war=False;self.ai=False;self.jobs=[]
+  self.station=station;self.colony=colony;self.temple=temple;self.released=0;self.notifications=[];self.parent=True;self.war=False;self.ai=False;self.jobs=[];self.deficit=False;self.draw=99;self.enabled=[]
  def condition(self,nodes):
   out=[]
   for key,op,value in nodes:
@@ -26,7 +27,12 @@ class Fixture:
    elif key=='has_country_flag':answer=value in self.flags
    elif key=='is_ai':answer=self.ai==(value=='yes')
    elif key=='is_at_war':answer=self.war==(value=='yes')
-   elif key=='has_resource':a=fields(value);answer=self.resources.get(a['type'],0)>=float(a['amount'])
+   elif key=='has_resource':
+    a=fields(value);operator=next(o for k,o,v in value if k=='amount');x=self.resources.get(a['type'],0);y=float(a['amount'])
+    answer={'>':x>y,'<':x<y,'>=':x>=y,'<=':x<=y,'=':x==y}[operator]
+   elif key=='has_deficit':answer=self.deficit
+   elif key=='haipam_is_empire':answer=self.parent
+   elif key in salvation_triggers:answer=self.condition(salvation_triggers[key])
    elif key=='haipam_is_frontier_parent':answer=self.parent
    elif key=='haipam_frontier_can_advance':answer=self.parent and not self.war and not self.temple and 'haipam_frontier_paused' not in self.flags
    elif key=='any_owned_planet':answer=self.temple if 'has_active_building' in fields(value) else self.colony
@@ -50,6 +56,12 @@ class Fixture:
     for k,o,v in value:self.resources[k]+=float(v)
    elif key=='country_event':self.notifications.append(fields(value)['id'])
    elif key=='planet_event':self.jobs.append(fields(value))
+   elif key=='enable_faction_of_type':self.enabled.append(value)
+   elif key=='random_list':
+    mark=0
+    for weight,o,branch in value:
+     mark+=int(weight)
+     if self.draw<mark:self.execute(branch);break
    elif key=='root':self.execute(value)
    elif key=='random_system':
     text=str(fields(value)['limit'])
@@ -120,6 +132,26 @@ def validate():
  assert 'trait_haipam_gray' not in steel_effects and 'change_species' not in steel_effects
  assert 'has_truce' in str(steel['haipam.406'])
  assert 'is_at_war_with' in str(steel['haipam.406'])
- report={'ok':True,'frontier_control_flow_cases':cases,'story_branches_checked':2,'engine_scopes_verified':False,'gameplay_verified':False}
+ faction_events={fields(v)['id']:fields(v) for k,o,v in parse((MOD/'events/haipam_salvation_events.txt').read_text()) if k!='namespace'}
+ monthly=faction_events['haipam.620']['immediate'];faction_cases=0;unlocked=0
+ for roll in range(100):
+  f=Fixture();f.draw=roll
+  f.execute(monthly);assert not f.enabled
+  f.execute(faction_events['haipam.622']['immediate']);f.execute(monthly)
+  unlocked+=int('haipam_salvation_unlocked' in f.flags);faction_cases+=1
+ assert unlocked==10
+ f=Fixture();f.resources['food']=100
+ for i in range(2):f.execute(monthly);assert not f.enabled
+ f.execute(monthly);assert 'haipam_salvation_unlocked' in f.flags
+ f.resources['food']=1000;f.execute(monthly);assert f.variables['hp_salvation_hunger_months']==0
+ faction_cases+=1
+ f=Fixture();f.deficit=True;f.resources['food']=10000
+ for i in range(3):f.execute(monthly)
+ assert 'haipam_salvation_unlocked' in f.flags;faction_cases+=1
+ resource=fields(parse((MOD/'common/static_modifiers/haipam_resource_cradle.txt').read_text()))['haipam_resource_cradle']
+ assert fields(resource)['planet_jobs_minerals_produces_mult']=='1.0'
+ for _,_,body in parse((MOD/'common/deposits/haipam_homeworld_deposits.txt').read_text()):
+  assert fields(body)['planet_modifier']==[], 'Resource bonuses double-counted in deposits and visible modifier'
+ report={'ok':True,'frontier_control_flow_cases':cases,'story_branches_checked':2,'salvation_faction_cases':faction_cases,'resource_modifier_double_count_guard':True,'engine_scopes_verified':False,'gameplay_verified':False}
  print(json.dumps(report));return report
 if __name__=='__main__':validate()

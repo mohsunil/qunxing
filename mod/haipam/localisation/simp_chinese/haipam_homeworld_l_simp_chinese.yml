@@ -1,4 +1,6 @@
 ﻿l_simp_chinese:
+ haipam_resource_cradle:0 "海帕姆：资源母星"
+ haipam_resource_cradle_desc:0 "母星拥有深层矿床、地热能源网络、营养海与稀有元素共生层。资源需要通过区划、岗位和开采科技利用。"
  d_haipam_deep_mantle:0 "海帕姆·深层富矿"
  d_haipam_deep_mantle_desc:0 "母星的深层矿床与可开发陆架。采矿区域上限+12，行星总区域上限+12，矿物岗位产出+100%。"
  d_haipam_energy_network:0 "海帕姆·行星能源脉络"

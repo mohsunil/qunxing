@@ -1,0 +1,9 @@
+haipam_salvation_food_crisis = {
+ OR = { has_resource = { type = food amount < 200 } has_deficit = food }
+}
+haipam_salvation_crisis = {
+ OR = {
+  check_variable = { which = hp_salvation_hunger_months value >= 3 }
+  has_country_flag = haipam_recent_defeat
+ }
+}

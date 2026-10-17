@@ -10,16 +10,13 @@ def put(path,text):
     p=MOD/path;p.parent.mkdir(parents=True,exist_ok=True);p.write_text(text.strip()+'\n',encoding='utf-8')
 
 features=[
- ('deep_mantle','d_ore_rich_caverns','deposit_cat_minerals',
-  'district_mining_max_add = 12 planet_jobs_minerals_produces_mult = 1.0 planet_max_districts_add = 12'),
- ('energy_network','d_geothermal_vent','deposit_cat_energy',
-  'district_generator_max_add = 10 planet_jobs_energy_produces_mult = 0.75'),
- ('nutrient_seas','d_fertile_lands','deposit_cat_food',
-  'district_farming_max_add = 10 planet_jobs_food_produces_mult = 0.75'),
- ('rare_strata','d_crystalline_caverns','deposit_cat_rare_resource',''),
+ ('deep_mantle','d_ore_rich_caverns','deposit_cat_minerals'),
+ ('energy_network','d_geothermal_vent','deposit_cat_energy'),
+ ('nutrient_seas','d_fertile_lands','deposit_cat_food'),
+ ('rare_strata','d_crystalline_caverns','deposit_cat_rare_resource'),
 ]
 deposits=[]
-for key,icon,category,modifier in features:
+for key,icon,category in features:
     rare=''
     if key=='rare_strata':
         for tech,stat in [('tech_mine_rare_crystals','planet_miners_rare_crystals_produces_add'),
@@ -27,18 +24,25 @@ for key,icon,category,modifier in features:
                           ('tech_mine_volatile_motes','planet_technician_volatile_motes_produces_add')]:
             rare+=f'''triggered_planet_modifier = {{
  potential = {{ exists = owner owner = {{ has_technology = {tech} }} }}
- {stat} = 0.05
+ modifier = {{ {stat} = 0.05 }}
 }}\n'''
     deposits.append(f'''d_haipam_{key} = {{
  icon = {icon} is_for_colonizable = yes category = {category}
- use_for_min_max_adjustments = no should_swap_deposit_on_terraforming = no
+ use_for_min_max_adjustments = yes should_swap_deposit_on_terraforming = no
  can_be_cleared = {{ always = no }}
  potential = {{ has_planet_flag = haipam_homeworld }}
  drop_weight = {{ weight = 0 }}
- planet_modifier = {{ {modifier} }}
+ planet_modifier = {{ }}
  {rare}
 }}''')
 put('common/deposits/haipam_homeworld_deposits.txt','\n\n'.join(deposits))
+put('common/static_modifiers/haipam_resource_cradle.txt', '''haipam_resource_cradle = {
+ icon = "gfx/interface/icons/haipam/civic_haipam_royal_biology.dds" icon_frame = 1
+ planet_max_districts_add = 12
+ district_mining_max_add = 12 district_generator_max_add = 10 district_farming_max_add = 10
+ planet_jobs_minerals_produces_mult = 1.0
+ planet_jobs_energy_produces_mult = 0.75 planet_jobs_food_produces_mult = 0.75
+}''')
 effect='''# Colony scope. Never enroll a new capital or another colony as the motherworld.
 haipam_enrich_homeworld = {
  if = {
@@ -49,7 +53,9 @@ for key,*_ in features:
     effect+=f'''  if = {{ limit = {{ NOT = {{ has_deposit = d_haipam_{key} }} }}
    add_deposit = d_haipam_{key} }}
 '''
-effect+='''  set_planet_flag = haipam_resource_cradle_v1
+effect+='''  if = { limit = { NOT = { has_modifier = haipam_resource_cradle } }
+   add_modifier = { modifier = haipam_resource_cradle days = -1 } }
+  set_planet_flag = haipam_resource_cradle_v1
  }
 }'''
 put('common/scripted_effects/haipam_homeworld.txt',effect)
@@ -71,6 +77,8 @@ old='   add_deposit = d_geothermal_vent\n   add_deposit = d_ore_rich_caverns\n  
 s=s.replace(old,'   haipam_enrich_homeworld = yes')
 p.write_text(s,encoding='utf-8')
 loc={
+ 'haipam_resource_cradle':'海帕姆：资源母星',
+ 'haipam_resource_cradle_desc':'母星拥有深层矿床、地热能源网络、营养海与稀有元素共生层。资源需要通过区划、岗位和开采科技利用。',
  'd_haipam_deep_mantle':'海帕姆·深层富矿',
  'd_haipam_deep_mantle_desc':'母星的深层矿床与可开发陆架。采矿区域上限+12，行星总区域上限+12，矿物岗位产出+100%。',
  'd_haipam_energy_network':'海帕姆·行星能源脉络',

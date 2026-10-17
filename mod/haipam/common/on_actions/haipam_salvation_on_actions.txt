@@ -1,0 +1,2 @@
+on_monthly_pulse_country = { events = { haipam.620 } }
+on_war_lost = { events = { haipam.622 } }

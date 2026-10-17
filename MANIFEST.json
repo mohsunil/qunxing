@@ -1,6 +1,6 @@
 {
-  "package_version": "0.5.0-alpha",
-  "created_at_utc": "2026-10-17T07:46:48.967288+00:00",
+  "package_version": "0.5.1-alpha",
+  "created_at_utc": "2026-10-17T08:42:17.854788+00:00",
   "kind": "mod_source_prototype_and_design",
   "gameplay_verified": false,
   "files": [
@@ -16,8 +16,8 @@
     },
     {
       "path": "AGENTS.md",
-      "bytes": 4100,
-      "sha256": "bd00080139ac4fd679df64f6b98738f0d43d9dce5a4accfb213b3fcdac6608c0"
+      "bytes": 4148,
+      "sha256": "0c2bbf56efa75fe28f66d583f4d19982d8aa2229097788f3edae5a1280dd944b"
     },
     {
       "path": "assets/building-prompts-v040-b.json",
@@ -456,8 +456,8 @@
     },
     {
       "path": "design/project-status.json",
-      "bytes": 6660,
-      "sha256": "f2b7a7fa582b1e517e1a1bb697a7194f283c6b7569a5ee1d58698e3566872296"
+      "bytes": 7238,
+      "sha256": "cf02cb8f2a79a19b2cd7ed5fb7816ce36247477d75a60057a0739d44d163bb3a"
     },
     {
       "path": "design/requirements.json",
@@ -540,6 +540,16 @@
       "sha256": "73c65b514274d1eff19183bc4f2bac422ab0f8a87732a6ffafe1e61e6a4482c1"
     },
     {
+      "path": "docs/15-salvation-and-resources-v051.md",
+      "bytes": 2015,
+      "sha256": "30643f794a7101640781a5646a6198d6c91d0344a3c92255581c094254b0cb50"
+    },
+    {
+      "path": "ENGINE_TEST-v050.json",
+      "bytes": 460,
+      "sha256": "6245dd4df576755d77f94ca6925204d6140899fff34bd30441b5505611aae554"
+    },
+    {
       "path": "events/hunger_dialogue_zh.txt",
       "bytes": 1154,
       "sha256": "2b91ff8960580452cbe3815616156241609250acc1e68118686835499cbf93fb"
@@ -586,8 +596,8 @@
     },
     {
       "path": "mod/haipam/common/deposits/haipam_homeworld_deposits.txt",
-      "bytes": 2109,
-      "sha256": "3754faf61a7486adab6ed1d2e1918e9fb580c3bd241da73b7293f3b111eaa287"
+      "bytes": 1917,
+      "sha256": "1599862ba35002e41fb4e0dbcbe64deffd1f30e72b7bdaba12afd358cfde14ff"
     },
     {
       "path": "mod/haipam/common/global_ship_designs/haipam_designs.txt",
@@ -650,6 +660,11 @@
       "sha256": "463821991f11e3fe2f812810e78d97e39bb876150fa15c74975d82ea0db5bd85"
     },
     {
+      "path": "mod/haipam/common/on_actions/haipam_salvation_on_actions.txt",
+      "bytes": 99,
+      "sha256": "36e9b78abda9f2c534c865e0683dbefb12a0d2b2f2afb217ca74b88febc853e4"
+    },
+    {
       "path": "mod/haipam/common/on_actions/haipam_steel_on_actions.txt",
       "bytes": 66,
       "sha256": "d7fb79fea037b1fd944adc6b68e12a34c133da2f7f69ff3c9870cd9cb79be1f3"
@@ -663,6 +678,11 @@
       "path": "mod/haipam/common/opinion_modifiers/haipam_steel_opinions.txt",
       "bytes": 246,
       "sha256": "e487ed658223872866fa5e4efc376ee17ec9b049cc5d45a9148344142af1586e"
+    },
+    {
+      "path": "mod/haipam/common/pop_faction_types/haipam_salvation.txt",
+      "bytes": 3241,
+      "sha256": "32b6240d0376ddd3c7582aca5e08b85577786e972d4e28a653b8f3a7c6c8f78b"
     },
     {
       "path": "mod/haipam/common/portrait_categories/haipam_portrait_categories.txt",
@@ -686,8 +706,8 @@
     },
     {
       "path": "mod/haipam/common/scripted_effects/haipam_homeworld.txt",
-      "bytes": 733,
-      "sha256": "3363082ac52ae6911d609cfdd5e8cada22d5c80342d834a7e272b45d3e37891d"
+      "bytes": 872,
+      "sha256": "1315ebf6ae3780484b7822f50b682535d89cb94c97052774f4f98b06b566f70b"
     },
     {
       "path": "mod/haipam/common/scripted_effects/haipam_population.txt",
@@ -730,6 +750,11 @@
       "sha256": "395946f366975181dc327b6a53379008e751751d2ebaba24a09d685d3946a142"
     },
     {
+      "path": "mod/haipam/common/scripted_triggers/haipam_salvation_triggers.txt",
+      "bytes": 269,
+      "sha256": "4f1cd67cd62b2f6046b6996fc992105b9812bdea0de690a3dede0561728c71b1"
+    },
+    {
       "path": "mod/haipam/common/scripted_triggers/haipam_steel_triggers.txt",
       "bytes": 506,
       "sha256": "9de5bfb4f214364bfdb633bbc667b17a1e7dfbdddb93b4a2370224912d1b51a6"
@@ -760,6 +785,16 @@
       "sha256": "3791ee8232a29051f54211269bd205cd7d54d13fcfddd0e4adec1c696af48b1e"
     },
     {
+      "path": "mod/haipam/common/static_modifiers/haipam_resource_cradle.txt",
+      "bytes": 363,
+      "sha256": "88524568474f13a75af4709b5daaa7574ff090e13edaef7098e3da0887358d8c"
+    },
+    {
+      "path": "mod/haipam/common/static_modifiers/haipam_salvation_modifiers.txt",
+      "bytes": 97,
+      "sha256": "b6cbb335db354b60b62d2341f39c025f5e00d764aadda93f0f88537c220c2233"
+    },
+    {
       "path": "mod/haipam/common/static_modifiers/haipam_steel_modifiers.txt",
       "bytes": 227,
       "sha256": "1101ef95c43a46bfd8c6e83468cc32c1b63f287ff1fd8ab00fe042c5f758f768"
@@ -782,7 +817,7 @@
     {
       "path": "mod/haipam/descriptor.mod",
       "bytes": 121,
-      "sha256": "43d0f0d9b5beb604753cce69e7cb452e1a3abf0330fb93a7694e64e853e663e9"
+      "sha256": "eaf512e75b0927b6622a7d7e2218cd1702a63281dcda2d4e46e254fe23ccaab5"
     },
     {
       "path": "mod/haipam/events/haipam_arsenal_events.txt",
@@ -818,6 +853,11 @@
       "path": "mod/haipam/events/haipam_progression_events.txt",
       "bytes": 2391,
       "sha256": "471465bbcf10ccafdee5c76b36f5ce512b633d2047f2debbc406f9e3d1cad33c"
+    },
+    {
+      "path": "mod/haipam/events/haipam_salvation_events.txt",
+      "bytes": 1181,
+      "sha256": "9b11b45bca86880f9af21c207f6ae492ce174321327807d244dd3dab359414d7"
     },
     {
       "path": "mod/haipam/events/haipam_steel_events.txt",
@@ -1151,8 +1191,8 @@
     },
     {
       "path": "mod/haipam/localisation/english/haipam_homeworld_l_english.yml",
-      "bytes": 860,
-      "sha256": "2ff5d11738d75b994ea22a37be22711385865e5a67c5effeb8c88ea97d07fe04"
+      "bytes": 1090,
+      "sha256": "0da98833607e2d915814ad4007bb508d76fc42f99c8fea8c160cf9d024eb6bfd"
     },
     {
       "path": "mod/haipam/localisation/english/haipam_l_english.yml",
@@ -1163,6 +1203,11 @@
       "path": "mod/haipam/localisation/english/haipam_navy_l_english.yml",
       "bytes": 2915,
       "sha256": "b17da5f731063e39170f11113a56d61eac57345d99b5e2649333608a893b5ca0"
+    },
+    {
+      "path": "mod/haipam/localisation/english/haipam_salvation_l_english.yml",
+      "bytes": 1675,
+      "sha256": "81179af20c2627db19e0bd05b99e335a8b5e192f4538fe3dc3461eb607556a1b"
     },
     {
       "path": "mod/haipam/localisation/english/haipam_steel_l_english.yml",
@@ -1196,8 +1241,8 @@
     },
     {
       "path": "mod/haipam/localisation/simp_chinese/haipam_homeworld_l_simp_chinese.yml",
-      "bytes": 865,
-      "sha256": "01e78e88926f19556752b138f28c01ef204cd70766d3ee76b695d7518f9268de"
+      "bytes": 1095,
+      "sha256": "d0e48cc5ca37b1dbc842b0a9a0a8989a7a98a11a2e5a54195dd46a1855bfd5df"
     },
     {
       "path": "mod/haipam/localisation/simp_chinese/haipam_l_simp_chinese.yml",
@@ -1208,6 +1253,11 @@
       "path": "mod/haipam/localisation/simp_chinese/haipam_navy_l_simp_chinese.yml",
       "bytes": 2920,
       "sha256": "3d89d7de37d18ad735845d5d88e4fb6226e38ebfc334f48ad636a69810eb0786"
+    },
+    {
+      "path": "mod/haipam/localisation/simp_chinese/haipam_salvation_l_simp_chinese.yml",
+      "bytes": 1680,
+      "sha256": "d4dd61fbfe6bda7f0ef40cd0d4978d2654c2e980fda17da22b901318599b5f31"
     },
     {
       "path": "mod/haipam/localisation/simp_chinese/haipam_steel_l_simp_chinese.yml",
@@ -1221,8 +1271,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 1803,
-      "sha256": "df3c23df8ffd65dd7198b89c7a3be5588f4379f856ae7a7277acbcf2bd630a87"
+      "bytes": 1961,
+      "sha256": "95d59b6f8764bc9c23fa7fbc6649e4948925430a321a718ff0c19b7f9193d440"
     },
     {
       "path": "scripts/build_gameplay_assets.py",
@@ -1266,13 +1316,18 @@
     },
     {
       "path": "scripts/extend_haipam_homeworld.py",
-      "bytes": 4521,
-      "sha256": "dd99555bc0e9970700f10835b35fd0b31f09016a1814b8eab81f17b111580631"
+      "bytes": 5144,
+      "sha256": "b2ad2dcf111cabf43a68ad762be3cfde408bc9d98b19e88a07b1b83eea5bbabe"
     },
     {
       "path": "scripts/extend_haipam_navy.py",
       "bytes": 10713,
       "sha256": "9b7ae37a011310f75d80a0e7db78dc26fdb6742c5fb7a1dfd835d96b1b7d874f"
+    },
+    {
+      "path": "scripts/extend_haipam_salvation.py",
+      "bytes": 7570,
+      "sha256": "4b3ff56c97e79e0eae1fec67b270978943d4a6e1af77755d86305ce382393b59"
     },
     {
       "path": "scripts/extend_haipam_steel.py",
@@ -1286,8 +1341,8 @@
     },
     {
       "path": "scripts/package_handoff.py",
-      "bytes": 4060,
-      "sha256": "fd117a20f2e5ff593fc161023027ef671435a44686664b58e273ba5978f10fba"
+      "bytes": 4156,
+      "sha256": "b8e889e36d4460fddb121f5d1fc2d9071a14d18670df12978ce9cc37d43cdd6b"
     },
     {
       "path": "scripts/pdx_binary.py",
@@ -1296,18 +1351,18 @@
     },
     {
       "path": "scripts/setup-codex.sh",
-      "bytes": 485,
-      "sha256": "ab2bc48efc09e69d759c98d0f1711718b54e54806c2cf16c21a4e763f8d77aed"
+      "bytes": 745,
+      "sha256": "9c66cf27558e99d8eafc2d75f655cca9a779aa180b4b55bfe06131612afe0f5c"
     },
     {
       "path": "scripts/validate_content.py",
-      "bytes": 7514,
-      "sha256": "80bce3defdc4a4683580063129c5ca69b7262ef17a815979bbea77b961bec3d2"
+      "bytes": 7551,
+      "sha256": "6a3547d7b348c0b65c23066300b9e64484ea6863c1f88fb316a421d0ea5c09cc"
     },
     {
       "path": "scripts/validate_frontier.py",
-      "bytes": 7970,
-      "sha256": "d3421e8430eb0efc60de61d185c25ae09bf4fd4139896546bb89467ee425eed3"
+      "bytes": 10042,
+      "sha256": "bb79df2e543032dc0e1d57fa04ec1d1d0be27c3f5a8714d13fff9b8c145d0d91"
     },
     {
       "path": "scripts/validate_handoff.py",

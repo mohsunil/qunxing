@@ -1,51 +1,51 @@
 d_haipam_deep_mantle = {
  icon = d_ore_rich_caverns is_for_colonizable = yes category = deposit_cat_minerals
- use_for_min_max_adjustments = no should_swap_deposit_on_terraforming = no
+ use_for_min_max_adjustments = yes should_swap_deposit_on_terraforming = no
  can_be_cleared = { always = no }
  potential = { has_planet_flag = haipam_homeworld }
  drop_weight = { weight = 0 }
- planet_modifier = { district_mining_max_add = 12 planet_jobs_minerals_produces_mult = 1.0 planet_max_districts_add = 12 }
+ planet_modifier = { }
  
 }
 
 d_haipam_energy_network = {
  icon = d_geothermal_vent is_for_colonizable = yes category = deposit_cat_energy
- use_for_min_max_adjustments = no should_swap_deposit_on_terraforming = no
+ use_for_min_max_adjustments = yes should_swap_deposit_on_terraforming = no
  can_be_cleared = { always = no }
  potential = { has_planet_flag = haipam_homeworld }
  drop_weight = { weight = 0 }
- planet_modifier = { district_generator_max_add = 10 planet_jobs_energy_produces_mult = 0.75 }
+ planet_modifier = { }
  
 }
 
 d_haipam_nutrient_seas = {
  icon = d_fertile_lands is_for_colonizable = yes category = deposit_cat_food
- use_for_min_max_adjustments = no should_swap_deposit_on_terraforming = no
+ use_for_min_max_adjustments = yes should_swap_deposit_on_terraforming = no
  can_be_cleared = { always = no }
  potential = { has_planet_flag = haipam_homeworld }
  drop_weight = { weight = 0 }
- planet_modifier = { district_farming_max_add = 10 planet_jobs_food_produces_mult = 0.75 }
+ planet_modifier = { }
  
 }
 
 d_haipam_rare_strata = {
  icon = d_crystalline_caverns is_for_colonizable = yes category = deposit_cat_rare_resource
- use_for_min_max_adjustments = no should_swap_deposit_on_terraforming = no
+ use_for_min_max_adjustments = yes should_swap_deposit_on_terraforming = no
  can_be_cleared = { always = no }
  potential = { has_planet_flag = haipam_homeworld }
  drop_weight = { weight = 0 }
- planet_modifier = {  }
+ planet_modifier = { }
  triggered_planet_modifier = {
  potential = { exists = owner owner = { has_technology = tech_mine_rare_crystals } }
- planet_miners_rare_crystals_produces_add = 0.05
+ modifier = { planet_miners_rare_crystals_produces_add = 0.05 }
 }
 triggered_planet_modifier = {
  potential = { exists = owner owner = { has_technology = tech_mine_exotic_gases } }
- planet_farmers_exotic_gases_produces_add = 0.05
+ modifier = { planet_farmers_exotic_gases_produces_add = 0.05 }
 }
 triggered_planet_modifier = {
  potential = { exists = owner owner = { has_technology = tech_mine_volatile_motes } }
- planet_technician_volatile_motes_produces_add = 0.05
+ modifier = { planet_technician_volatile_motes_produces_add = 0.05 }
 }
 
 }

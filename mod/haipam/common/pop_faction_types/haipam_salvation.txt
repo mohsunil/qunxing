@@ -1,0 +1,66 @@
+haipam_salvation = {
+ election_header = "GFX_haipam_evt_royal_hall"
+ guiding_ethic = ethic_authoritarian visual_ethic = "totalitarian_visual_ethic"
+ use_guiding_ethic_as_pop_filter = no use_guiding_ethic_as_growth_factor = no
+ pop_ethics_filter = { ethic_authoritarian ethic_egalitarian ethic_militarist ethic_pacifist ethic_materialist ethic_spiritualist ethic_xenophile ethic_xenophobe }
+ unique = yes can_rename = no persistent_faction = yes skip_creation_cooldown = yes
+ support_multiplier = 1
+ resources = { category = pop_factions inline_script = pop_faction_types/shared_unity_production }
+ is_potential = {
+  haipam_is_empire = yes has_country_flag = haipam_salvation_unlocked
+ }
+ can_join_pre_triggers = { is_enslaved = no is_being_purged = no }
+ can_join_faction = { pop_group_has_trait = trait_haipam_white has_citizenship_rights = yes }
+ attraction = {
+  base = 100
+  modifier = { factor = 3 owner = { haipam_salvation_crisis = yes } }
+ }
+ leader = {
+  base = 100
+  modifier = { factor = 0 species = { NOT = { has_trait = trait_haipam_white } } }
+  modifier = { factor = 0 is_event_leader = yes }
+ }
+ demand = {
+  title = HAIPAM_SALVATION_GRAIN unfulfilled_title = HAIPAM_SALVATION_NO_GRAIN desc = HAIPAM_SALVATION_GRAIN_DESC
+  fulfilled_effect = 10 unfulfilled_effect = -20
+  potential = { exists = owner }
+  trigger = { owner = { has_resource = { type = food amount >= 1000 } NOT = { has_deficit = food } } }
+ }
+ demand = {
+  title = HAIPAM_SALVATION_RECOVERY unfulfilled_title = HAIPAM_SALVATION_DEFEAT desc = HAIPAM_SALVATION_RECOVERY_DESC
+  fulfilled_effect = 5 unfulfilled_effect = -10
+  potential = { exists = owner }
+  trigger = { owner = { NOT = { has_country_flag = haipam_recent_defeat } } }
+ }
+ demand = {
+  title = HAIPAM_SALVATION_INDUSTRY unfulfilled_title = HAIPAM_SALVATION_NO_INDUSTRY desc = HAIPAM_SALVATION_INDUSTRY_DESC
+  fulfilled_effect = 5 unfulfilled_effect = -10
+  potential = { exists = owner }
+  trigger = { owner = { any_owned_planet = { has_active_building = building_haipam_royal_design_bureau } } }
+ }
+ demand = {
+  title = HAIPAM_SALVATION_REFORM unfulfilled_title = HAIPAM_SALVATION_NO_REFORM desc = HAIPAM_SALVATION_REFORM_DESC
+  fulfilled_effect = 10 unfulfilled_effect = -5
+  potential = { exists = owner }
+  trigger = { owner = { has_country_flag = haipam_salvation_reform_active } }
+ }
+ on_create = {
+  set_name = "NAME_HAIPAM_SALVATION"
+  owner = {
+   set_country_flag = haipam_salvation_formed
+   if = { limit = { is_ai = no } country_event = { id = haipam.621 days = 1 } }
+  }
+ }
+ actions = {
+  haipam_salvation_fund_reform = {
+   title = HAIPAM_SALVATION_FUND_REFORM description = HAIPAM_SALVATION_FUND_REFORM_DESC
+   potential = { owner = { haipam_is_empire = yes } }
+   valid = { owner = { NOT = { has_country_flag = haipam_salvation_reform_active }
+    has_resource = { type = energy amount >= 1000 } has_resource = { type = unity amount >= 500 } } }
+   effect = { owner = { add_resource = { energy = -1000 unity = -500 }
+    set_timed_country_flag = { flag = haipam_salvation_reform_active days = 1800 }
+    add_modifier = { modifier = haipam_salvation_reform days = 1800 } } }
+   ai_weight = { base = 10 }
+  }
+ }
+}

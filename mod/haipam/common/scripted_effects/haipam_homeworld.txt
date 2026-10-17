@@ -11,6 +11,8 @@ haipam_enrich_homeworld = {
    add_deposit = d_haipam_nutrient_seas }
   if = { limit = { NOT = { has_deposit = d_haipam_rare_strata } }
    add_deposit = d_haipam_rare_strata }
+  if = { limit = { NOT = { has_modifier = haipam_resource_cradle } }
+   add_modifier = { modifier = haipam_resource_cradle days = -1 } }
   set_planet_flag = haipam_resource_cradle_v1
  }
 }

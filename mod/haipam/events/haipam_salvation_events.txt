@@ -1,0 +1,27 @@
+namespace = haipam
+country_event = {
+ id = haipam.620 hide_window = yes is_triggered_only = yes
+ trigger = { haipam_is_empire = yes }
+ immediate = {
+  if = { limit = { haipam_salvation_food_crisis = yes }
+   change_variable = { which = hp_salvation_hunger_months value = 1 } }
+  else = { set_variable = { which = hp_salvation_hunger_months value = 0 } }
+  if = { limit = { NOT = { has_country_flag = haipam_salvation_unlocked } haipam_salvation_crisis = yes }
+   random_list = { 90 = { } 10 = {
+    set_country_flag = haipam_salvation_unlocked
+    enable_faction_of_type = haipam_salvation
+   } }
+  }
+  if = { limit = { has_country_flag = haipam_salvation_unlocked NOT = { has_country_flag = haipam_salvation_formed } }
+   enable_faction_of_type = haipam_salvation }
+ }
+}
+country_event = {
+ id = haipam.622 hide_window = yes is_triggered_only = yes
+ trigger = { haipam_is_empire = yes }
+ immediate = { set_timed_country_flag = { flag = haipam_recent_defeat days = 3600 } }
+}
+country_event = {
+ id = haipam.621 is_triggered_only = yes title = haipam.621.name desc = haipam.621.desc
+ picture = GFX_haipam_evt_royal_hall option = { name = haipam.621.ok }
+}

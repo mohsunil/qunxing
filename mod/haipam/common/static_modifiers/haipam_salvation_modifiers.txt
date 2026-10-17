@@ -1,0 +1,3 @@
+haipam_salvation_reform = {
+ planet_jobs_food_produces_mult = 0.25 planet_stability_add = 5
+}

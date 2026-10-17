@@ -1,5 +1,5 @@
 {
-  "package_version": "0.5.0-alpha",
+  "package_version": "0.5.1-alpha",
   "date": "2026-10-17",
   "kind": "mod_source_prototype_and_design",
   "game_version": "4.5.2 (9776)",
@@ -17,7 +17,7 @@
   },
   "game_install_path_confirmed": true,
   "implemented_game_features": 0,
-  "game_script_files": 64,
+  "game_script_files": 70,
   "custom_models": 0,
   "in_game_tests_passed": false,
   "tripo_last_observation": "no API key configured",
@@ -33,7 +33,7 @@
   "upload_status_is_pre_upload_snapshot": true,
   "codex_cloud_environment_published": false,
   "cloud_task_started": false,
-  "prototype_source_files": 135,
+  "prototype_source_files": 143,
   "prototype_systems": [
     "prescripted_syncretic_empire",
     "lineage_traits",
@@ -58,7 +58,9 @@
     "organization_and_friendly_secession",
     "grain_request_hunger_steel_coalition_war",
     "scoped_dual_native_ascension",
-    "researched_production_blueprints"
+    "researched_production_blueprints",
+    "visible_resource_motherworld_modifier",
+    "salvation_crisis_reform_faction"
   ],
   "gameplay_verified_features": 0,
   "prototype_installed_locally": true,
@@ -134,7 +136,7 @@
     "cause_confirmed": false,
     "other_playsets_modified": false
   },
-  "latest_default_install_version": "0.5.0-alpha",
+  "latest_default_install_version": "0.5.1-alpha",
   "latest_default_install_verified": true,
   "v041_engine_observation": {
     "haipam_traits_and_namespace_loaded": true,
@@ -164,11 +166,15 @@
     "new_campaign_initialization_observed": true,
     "save_gray_specialist_employment_observed": true,
     "save_gray_idle_surplus_observed": 700,
-    "native_kill_pop_group_fix_pending_reload": true,
+    "native_kill_pop_group_fix_pending_reload": false,
     "owned_leaders_observed": 13,
     "all_owned_leaders_white": true,
     "homeworld_resource_flag_observed": true,
-    "second_engine_load_started": true
+    "second_engine_load_started": true,
+    "gray_idle_surplus_after_fix": 0,
+    "gray_worker_snapshot": 1300,
+    "gray_specialist_snapshot": 400,
+    "gray_cleanup_execution_and_snapshot_verified": true
   },
   "custom_ship_model_prototypes": {
     "frames": 3,
@@ -177,5 +183,15 @@
     "editable_obj": true,
     "engine_verified": false,
     "fixed_turrets": true
-  }
+  },
+  "salvation_faction": {
+    "user_direction": "crisis_reform",
+    "hunger_months": 3,
+    "food_stock_threshold": 200,
+    "monthly_crisis_chance": 0.1,
+    "defeat_window_years": 10,
+    "logic_cases": 102,
+    "gameplay_verified": false
+  },
+  "visible_homeworld_resource_modifier_pending_install": false
 }

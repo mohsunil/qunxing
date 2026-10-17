@@ -1,0 +1,7 @@
+haipam_resource_cradle = {
+ icon = "gfx/interface/icons/haipam/civic_haipam_royal_biology.dds" icon_frame = 1
+ planet_max_districts_add = 12
+ district_mining_max_add = 12 district_generator_max_add = 10 district_farming_max_add = 10
+ planet_jobs_minerals_produces_mult = 1.0
+ planet_jobs_energy_produces_mult = 0.75 planet_jobs_food_produces_mult = 0.75
+}

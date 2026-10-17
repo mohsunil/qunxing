@@ -49,7 +49,7 @@ def validate(game=None):
         used_districts=set(re.findall(r'\badd_district\s*=\s*(district_[A-Za-z0-9_]+)',all_source))
         assert not used_districts-districts,'Missing district definitions: '+str(sorted(used_districts-districts))
         native_buildings=keys(texts(game/'common/buildings'))
-        used_buildings=set(re.findall(r'\badd_building\s*=\s*(building_[A-Za-z0-9_]+)',all_source))
+        used_buildings=set(re.findall(r'\b(?:add_building|has_building|has_active_building)\s*=\s*(building_[A-Za-z0-9_]+)',all_source))
         assert not used_buildings-native_buildings-keys(texts(MOD/'common/buildings')),'Missing building definitions'
     for _,_,design in designs:
         data=fields(design);assert data['ship_size'] in ships
