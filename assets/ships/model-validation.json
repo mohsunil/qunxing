@@ -1,0 +1,200 @@
+{
+  "source": "user reference sheet + original procedural geometry",
+  "sections": {
+    "light_core": {
+      "vertices": 768,
+      "triangles": 408,
+      "locators": {
+        "small_gun_01": [
+          0,
+          0.4,
+          0.72
+        ],
+        "small_gun_02": [
+          -0.64,
+          0.48,
+          -0.9
+        ],
+        "small_gun_03": [
+          0.64,
+          0.48,
+          -0.9
+        ],
+        "small_gun_01_muzzle": [
+          0,
+          0.4,
+          1.17
+        ],
+        "small_gun_02_muzzle": [
+          -0.64,
+          0.48,
+          -0.45
+        ],
+        "small_gun_03_muzzle": [
+          0.64,
+          0.48,
+          -0.45
+        ]
+      }
+    },
+    "medium_bow": {
+      "vertices": 308,
+      "triangles": 162,
+      "locators": {
+        "medium_gun_01": [
+          0,
+          0.6,
+          1
+        ],
+        "small_gun_01": [
+          -0.6,
+          0.36,
+          1.8
+        ],
+        "small_gun_02": [
+          0.6,
+          0.36,
+          1.8
+        ],
+        "medium_gun_01_muzzle": [
+          0,
+          0.6,
+          1.45
+        ],
+        "small_gun_01_muzzle": [
+          -0.6,
+          0.36,
+          2.25
+        ],
+        "small_gun_02_muzzle": [
+          0.6,
+          0.36,
+          2.25
+        ]
+      }
+    },
+    "medium_stern": {
+      "vertices": 1204,
+      "triangles": 650,
+      "locators": {
+        "small_gun_01": [
+          -1.4,
+          0.56,
+          -1
+        ],
+        "small_gun_02": [
+          1.4,
+          0.56,
+          -1
+        ],
+        "small_gun_01_muzzle": [
+          -1.4,
+          0.56,
+          -0.55
+        ],
+        "small_gun_02_muzzle": [
+          1.4,
+          0.56,
+          -0.55
+        ]
+      }
+    },
+    "heavy_bow": {
+      "vertices": 748,
+      "triangles": 382,
+      "locators": {
+        "large_gun_01": [
+          0,
+          0.76,
+          1.2
+        ],
+        "large_gun_01_muzzle": [
+          0,
+          0.76,
+          1.65
+        ]
+      }
+    },
+    "heavy_core": {
+      "vertices": 364,
+      "triangles": 182,
+      "locators": {
+        "medium_gun_01": [
+          -2,
+          0.68,
+          -1.4
+        ],
+        "medium_gun_02": [
+          2,
+          0.68,
+          -1.4
+        ],
+        "medium_gun_03": [
+          0,
+          1.59,
+          -1.75
+        ],
+        "medium_gun_01_muzzle": [
+          -2,
+          0.68,
+          -0.95
+        ],
+        "medium_gun_02_muzzle": [
+          2,
+          0.68,
+          -0.95
+        ],
+        "medium_gun_03_muzzle": [
+          0,
+          1.59,
+          -1.3
+        ]
+      }
+    },
+    "heavy_stern": {
+      "vertices": 2176,
+      "triangles": 1160,
+      "locators": {
+        "medium_gun_01": [
+          0,
+          1.59,
+          -3.35
+        ],
+        "medium_gun_01_muzzle": [
+          0,
+          1.59,
+          -2.9
+        ]
+      }
+    }
+  },
+  "pdx_roundtrip": true,
+  "engine_verified": false,
+  "scale_material_firing_verified": false,
+  "geometry_checks": {
+    "section_count": 6,
+    "frame_count": 3,
+    "triangles": 2944,
+    "unit_normals": true,
+    "orthogonal_tangents": true,
+    "uv_range": true,
+    "required_locators": true,
+    "dds_readable": true
+  },
+  "sha256": {
+    "haipam_heavy_bow.mesh": "6cd6ea902fb3f0ba17321162d0b1468856d87fdd1dffa89d4d77feceb26debea",
+    "haipam_heavy_core.mesh": "9cf1e20a435a16c2d2a5b4e42e0b6de8d62079b9b2cf47ee7517fc79d8db07e9",
+    "haipam_heavy_frame.mesh": "d8b9e069b8909bea6c9f7c51a35a2fc5d8c6bae90f438d20faa60822d040d6b7",
+    "haipam_heavy_stern.mesh": "d7779d1f7e0f580716cab98943aef124d6af939800ce4d0ae42a39ee553743a3",
+    "haipam_hulls_diffuse.dds": "2bfa69e2344bf00a2f9e1d824054af93ee91fd58806f18c88790fd6211a7d9a0",
+    "haipam_hulls_normal.dds": "7d1b3aa11614686bed5b510f85f81f4fec8931c5367d4ea8bd2f38dea31713a7",
+    "haipam_hulls_specular.dds": "b08cc2cc89d4c4d133e8ef8499f02fcd044e6fda08084a7846af924a6184e339",
+    "haipam_light_core.mesh": "acf51c130a1829bcf642da4ffb245d49a885775e4bc13ed85f034cf12a2c9092",
+    "haipam_light_frame.mesh": "f2c43b8aa5863d21667ff40b00b719bcf691c5a778b0c85bdd0925b5f5a350ce",
+    "haipam_medium_bow.mesh": "33a94a86e33c54af2b93ec0e627bc919319144c6a68d444b8909123ed7cc6b21",
+    "haipam_medium_frame.mesh": "8a2344b61b0466544a74bcbf76813fe86e2741f35a1fad6db97a5e28a3e22570",
+    "haipam_medium_stern.mesh": "0e1ff6e268298688930c3105836e6b89221763478e29e43350e45b408ed14859",
+    "haipam_ships.asset": "0e1c2adcc85784a59ca2aab63bef77e4eeb2225676b744f12634572c1e0101bb",
+    "haipam_ships.gfx": "e4ff70573a872817cb221281b9cb0d87b9cd65d3723f2c87f5849eaeaf5dde74"
+  }
+}

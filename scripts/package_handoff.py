@@ -17,13 +17,14 @@ def payload_files():
         if p.is_file() and not p.is_symlink()
         and not EXCLUDED.intersection(p.relative_to(ROOT).parts)
         and p.name not in {"MANIFEST.json", "local-install-report.json", "zz_haipam_local_rules.txt", "weapon_components.csv"}
-        and p.suffix not in {".pyc", ".log", ".key", ".pem", ".pfx"}
+        and p.suffix not in {".pyc", ".log", ".key", ".pem", ".pfx", ".tmp"}
+        and not p.name.startswith('zz_haipam_dual_')
         and not p.name.startswith('.env')
     )
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--output", default=str(ROOT.parent / "haipam-stellaris-prototype-v0.4.2-20261017.zip"))
+    parser.add_argument("--output", default=str(ROOT.parent / "haipam-stellaris-prototype-v0.5.0-20261017.zip"))
     args = parser.parse_args()
     output = Path(args.output).resolve()
     if output.is_relative_to(ROOT):
@@ -33,7 +34,7 @@ def main():
     output.parent.mkdir(parents=True, exist_ok=True)
     files = payload_files()
     manifest = {
-        "package_version": "0.4.2-alpha",
+        "package_version": "0.5.0-alpha",
         "created_at_utc": datetime.now(timezone.utc).isoformat(),
         "kind": "mod_source_prototype_and_design",
         "gameplay_verified": False,
@@ -46,6 +47,8 @@ def main():
     subprocess.run([sys.executable, str(ROOT / "scripts/validate_handoff.py")], check=True)
     subprocess.run([sys.executable, str(ROOT / "scripts/validate_mod.py")], check=True)
     subprocess.run([sys.executable, str(ROOT / "scripts/validate_content.py")], check=True)
+    subprocess.run([sys.executable, str(ROOT / "scripts/validate_frontier.py")], check=True)
+    subprocess.run([sys.executable, str(ROOT / "scripts/dual_ascension_adapter.py")], check=True)
     files.append(manifest_path)
     with zipfile.ZipFile(output, "w", compression=zipfile.ZIP_DEFLATED, compresslevel=9) as archive:
         for p in files:

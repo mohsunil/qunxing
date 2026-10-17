@@ -1,6 +1,6 @@
 ship_section_template = {
  key = "HAIPAM_LIGHT_CORE" ship_size = haipam_axial_light fits_on_slot = mid
- should_draw_components = yes entity = "corvette_S3_entity" icon = "GFX_ship_part_core_mid"
+ should_draw_components = no entity = "haipam_light_core_entity" icon = "GFX_ship_part_core_mid"
  component_slot = { name = "SMALL_GUN_01" template = "small_turret" locatorname = "small_gun_01" }
 component_slot = { name = "SMALL_GUN_02" template = "small_turret" locatorname = "small_gun_02" }
 component_slot = { name = "SMALL_GUN_03" template = "small_turret" locatorname = "small_gun_03" }
@@ -11,7 +11,7 @@ component_slot = { name = "SMALL_GUN_03" template = "small_turret" locatorname =
 
 ship_section_template = {
  key = "HAIPAM_MEDIUM_BOW" ship_size = haipam_axial_medium fits_on_slot = bow
- should_draw_components = yes entity = "destroyer_bow_M1S2_entity" icon = "GFX_ship_part_core_bow"
+ should_draw_components = no entity = "haipam_medium_bow_entity" icon = "GFX_ship_part_core_bow"
  component_slot = { name = "MEDIUM_GUN_01" template = "medium_turret" locatorname = "medium_gun_01" }
 component_slot = { name = "SMALL_GUN_01" template = "small_turret" locatorname = "small_gun_01" }
 component_slot = { name = "SMALL_GUN_02" template = "small_turret" locatorname = "small_gun_02" }
@@ -22,7 +22,7 @@ component_slot = { name = "SMALL_GUN_02" template = "small_turret" locatorname =
 
 ship_section_template = {
  key = "HAIPAM_MEDIUM_STERN" ship_size = haipam_axial_medium fits_on_slot = stern
- should_draw_components = yes entity = "destroyer_stern_S2_entity" icon = "GFX_ship_part_core_stern"
+ should_draw_components = no entity = "haipam_medium_stern_entity" icon = "GFX_ship_part_core_stern"
  component_slot = { name = "SMALL_GUN_01" template = "small_turret" locatorname = "small_gun_01" }
 component_slot = { name = "SMALL_GUN_02" template = "small_turret" locatorname = "small_gun_02" }
  small_utility_slots = 2 aux_utility_slots = 1
@@ -32,7 +32,7 @@ component_slot = { name = "SMALL_GUN_02" template = "small_turret" locatorname =
 
 ship_section_template = {
  key = "HAIPAM_HEAVY_BOW" ship_size = haipam_axial_heavy fits_on_slot = bow
- should_draw_components = yes entity = "cruiser_bow_L1_entity" icon = "GFX_ship_part_core_bow"
+ should_draw_components = no entity = "haipam_heavy_bow_entity" icon = "GFX_ship_part_core_bow"
  component_slot = { name = "LARGE_GUN_01" template = "large_turret" locatorname = "large_gun_01" }
  small_utility_slots = 4 aux_utility_slots = 1
  resources = { category = ship_sections cost = { alloys = 300 } }
@@ -41,7 +41,7 @@ ship_section_template = {
 
 ship_section_template = {
  key = "HAIPAM_HEAVY_CORE" ship_size = haipam_axial_heavy fits_on_slot = mid
- should_draw_components = yes entity = "cruiser_mid_M3_entity" icon = "GFX_ship_part_core_mid"
+ should_draw_components = no entity = "haipam_heavy_core_entity" icon = "GFX_ship_part_core_mid"
  component_slot = { name = "MEDIUM_GUN_01" template = "medium_turret" locatorname = "medium_gun_01" }
 component_slot = { name = "MEDIUM_GUN_02" template = "medium_turret" locatorname = "medium_gun_02" }
 component_slot = { name = "MEDIUM_GUN_03" template = "medium_turret" locatorname = "medium_gun_03" }
@@ -52,7 +52,7 @@ component_slot = { name = "MEDIUM_GUN_03" template = "medium_turret" locatorname
 
 ship_section_template = {
  key = "HAIPAM_HEAVY_STERN" ship_size = haipam_axial_heavy fits_on_slot = stern
- should_draw_components = yes entity = "cruiser_stern_M1_entity" icon = "GFX_ship_part_core_stern"
+ should_draw_components = no entity = "haipam_heavy_stern_entity" icon = "GFX_ship_part_core_stern"
  component_slot = { name = "MEDIUM_GUN_01" template = "medium_turret" locatorname = "medium_gun_01" }
  small_utility_slots = 2 aux_utility_slots = 1
  resources = { category = ship_sections cost = { alloys = 150 } }

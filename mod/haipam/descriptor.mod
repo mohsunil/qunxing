@@ -1,4 +1,4 @@
-version="0.4.2-alpha"
+version="0.5.0-alpha"
 tags={ "Species" "Gameplay" }
-name="海帕姆：银心初航（舰团与皇家设施原型）"
+name="Haipam 海帕姆：银心初航"
 supported_version="4.5.2"

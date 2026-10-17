@@ -1,0 +1,6 @@
+decision_haipam_frontier_command = {
+ icon = decision_discourage_growth owned_planets_only = yes enactment_time = 0
+ potential = { is_capital = yes exists = owner owner = { haipam_is_frontier_parent = yes } }
+ effect = { owner = { country_event = { id = haipam.310 days = 1 } } }
+ ai_weight = { weight = 0 }
+}

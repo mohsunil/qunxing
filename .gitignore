@@ -15,3 +15,6 @@ releases/
 local-backups/
 local-install-report.json
 mod/haipam/common/game_rules/zz_haipam_local_rules.txt
+mod/haipam/common/component_templates/weapon_components.csv
+zz_haipam_dual_*.txt
+*.tmp

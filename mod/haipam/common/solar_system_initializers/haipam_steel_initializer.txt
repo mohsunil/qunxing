@@ -1,0 +1,12 @@
+# Event-only fallback, never a randomly spawned extra starting empire.
+haipam_steel_refuge = {
+ name = "NAME_HAIPAM_REFUGE_SYSTEM" class = sc_g
+ flags = { haipam_steel_refuge }
+ planet = { class = star orbit_distance = 0 orbit_angle = 0 size = 25 }
+ planet = {
+  name = "NAME_HAIPAM_REFUGE_WORLD" class = pc_continental size = 24
+  orbit_distance = 70 orbit_angle = 90
+  init_effect = { set_planet_flag = haipam_steel_refuge_world }
+ }
+ planet = { class = pc_barren size = 16 orbit_distance = 35 orbit_angle = 220 }
+}

@@ -1,0 +1,5 @@
+haipam_steel_mobilization = {
+ planet_jobs_produces_mult = 1.0 starbase_shipyard_build_speed_mult = 2.0
+ country_naval_cap_add = 200 ships_upkeep_mult = -0.50
+}
+haipam_grain_repaid = { country_trade_produces_mult = 0.25 }

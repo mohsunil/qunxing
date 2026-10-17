@@ -1,0 +1,75 @@
+namespace = haipam
+country_event = {
+ id = haipam.400 hide_window = yes is_triggered_only = yes
+ trigger = { haipam_is_frontier_parent = yes is_ai = no is_at_war = no mid_game_years_passed > 0
+  NOT = { has_country_flag = haipam_grain_chain_started } }
+ immediate = { haipam_spawn_grain_polity = yes }
+}
+country_event = {
+ id = haipam.401 is_triggered_only = yes title = haipam.401.name desc = haipam.401.desc
+ picture = GFX_haipam_evt_postal trigger = { exists = event_target:haipam_grain_polity }
+ option = { name = haipam.401.aid allow = { has_resource = { type = food amount >= 3000 } }
+  add_resource = { food = -3000 }
+  event_target:haipam_grain_polity = { add_resource = { food = 3000 }
+   add_opinion_modifier = { who = root modifier = haipam_grain_aid } }
+  set_country_flag = haipam_grain_aided country_event = { id = haipam.405 days = 1800 }
+ }
+ option = { name = haipam.401.refuse
+  set_country_flag = haipam_grain_refused
+  event_target:haipam_grain_polity = { add_opinion_modifier = { who = root modifier = haipam_grain_refused } }
+  country_event = { id = haipam.402 days = 180 }
+ }
+}
+country_event = {
+ id = haipam.402 is_triggered_only = yes title = haipam.402.name desc = haipam.402.desc
+ picture = GFX_haipam_evt_hatchery
+ trigger = { exists = event_target:haipam_grain_polity has_country_flag = haipam_grain_refused }
+ immediate = { event_target:haipam_grain_polity = { country_event = { id = haipam.403 days = 720 } } }
+ option = { name = haipam.402.ok }
+}
+country_event = {
+ id = haipam.403 hide_window = yes is_triggered_only = yes
+ trigger = { has_country_flag = haipam_steel_origin exists = capital_scope exists = event_target:haipam_grain_parent }
+ immediate = { haipam_steel_industrial_rise = yes }
+}
+country_event = {
+ id = haipam.404 is_triggered_only = yes title = haipam.404.name desc = haipam.404.desc
+ picture = GFX_haipam_evt_arsenal option = { name = haipam.404.ok }
+}
+country_event = {
+ id = haipam.405 is_triggered_only = yes title = haipam.405.name desc = haipam.405.desc
+ picture = GFX_haipam_evt_postal
+ trigger = { exists = event_target:haipam_grain_polity has_country_flag = haipam_grain_aided }
+ immediate = { add_modifier = { modifier = haipam_grain_repaid days = 3600 } add_resource = { unity = 2000 } }
+ option = { name = haipam.405.ok }
+}
+country_event = {
+ id = haipam.406 hide_window = yes is_triggered_only = yes
+ trigger = { haipam_is_frontier_parent = yes has_country_flag = haipam_grain_refused is_at_war = no is_subject = no }
+ immediate = {
+  save_event_target_as = haipam_grain_parent
+  random_country = {
+   limit = { has_country_flag = haipam_steel_of_@root has_country_flag = haipam_steel_war_pending
+    is_subject = no is_at_war = no exists = capital_scope
+    NOT = { has_country_flag = haipam_steel_preparing_war } NOT = { has_truce = root } }
+   save_event_target_as = haipam_grain_polity
+   add_casus_belli = { type = cb_humiliation who = root days = 3600 }
+   declare_war = { target = root attacker_war_goal = wg_humiliation }
+   if = { limit = { is_at_war_with = root }
+    remove_country_flag = haipam_steel_war_pending
+    root = {
+     every_country = {
+      limit = { is_ai = yes is_subject = no is_at_war = no
+       has_country_flag = haipam_steel_ally_of_@root NOT = { has_truce = root } }
+      join_war = event_target:haipam_grain_polity
+     }
+     country_event = { id = haipam.407 days = 1 }
+    }
+   }
+  }
+ }
+}
+country_event = {
+ id = haipam.407 is_triggered_only = yes title = haipam.407.name desc = haipam.407.desc
+ picture = GFX_haipam_evt_postal option = { name = haipam.407.ok }
+}

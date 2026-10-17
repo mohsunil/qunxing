@@ -1,0 +1,30 @@
+newmtl palette_0
+Kd 1 1 1
+Ks 0.2 0.2 0.2
+Ns 24
+map_Kd haipam_hulls_diffuse.png
+newmtl palette_1
+Kd 1 1 1
+Ks 0.2 0.2 0.2
+Ns 24
+map_Kd haipam_hulls_diffuse.png
+newmtl palette_2
+Kd 1 1 1
+Ks 0.2 0.2 0.2
+Ns 24
+map_Kd haipam_hulls_diffuse.png
+newmtl palette_3
+Kd 1 1 1
+Ks 0.2 0.2 0.2
+Ns 24
+map_Kd haipam_hulls_diffuse.png
+newmtl palette_4
+Kd 1 1 1
+Ks 0.2 0.2 0.2
+Ns 24
+map_Kd haipam_hulls_diffuse.png
+newmtl palette_5
+Kd 1 1 1
+Ks 0.2 0.2 0.2
+Ns 24
+map_Kd haipam_hulls_diffuse.png

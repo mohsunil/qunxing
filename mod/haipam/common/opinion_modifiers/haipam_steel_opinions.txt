@@ -1,0 +1,3 @@
+haipam_grain_aid = { opinion = { base = 150 } decay = { base = 3 } min = 0 }
+haipam_grain_refused = { opinion = { base = -200 } decay = { base = 2 } max = 0 }
+haipam_steel_solidarity = { opinion = { base = 200 } decay = { base = 1 } min = 0 }

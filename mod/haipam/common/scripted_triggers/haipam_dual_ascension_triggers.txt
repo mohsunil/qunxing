@@ -1,0 +1,5 @@
+# Country scope. Only this researched Haipam path bypasses mutual exclusion.
+haipam_can_dual_ascend = {
+ haipam_is_empire = yes
+ has_technology = tech_haipam_dual_helix
+}

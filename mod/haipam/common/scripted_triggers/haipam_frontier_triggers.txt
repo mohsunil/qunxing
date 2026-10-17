@@ -1,0 +1,43 @@
+# Country scope. Child AI states expand through ordinary game AI, preventing
+# recursive scripted creation of countries and one free pipeline per child.
+haipam_is_frontier_parent = {
+ haipam_is_empire = yes has_technology = tech_haipam_fleetization
+ NOT = { has_country_flag = haipam_frontier_child }
+}
+haipam_frontier_can_advance = {
+ haipam_is_frontier_parent = yes is_at_war = no
+ NOT = { has_country_flag = haipam_frontier_paused }
+ NOT = { any_owned_planet = { has_active_building = building_haipam_graviton_temple } }
+}
+# Solar-system scope; root is the paying country. All planets must be surveyed.
+haipam_frontier_system_candidate = {
+ NOT = { exists = owner } NOT = { exists = starbase }
+ any_neighbor_system = { exists = owner owner = { is_same_value = root } }
+ NOT = { any_system_planet = { is_surveyed = { who = root status = no } } }
+ NOT = { any_system_planet = { is_colony = yes } }
+ NOT = { any_fleet_in_system = { exists = owner owner = { is_hostile = root } } }
+}
+# Physical planet scope; the colonist species is the actual founder species.
+haipam_frontier_colony_candidate = {
+ is_colonizable = yes is_colony = no is_under_colonization = no
+ NOT = { exists = owner } NOT = { has_anomaly = yes }
+ NOT = { has_planet_flag = haipam_colonization_pending }
+ is_surveyed = { who = root status = yes }
+ habitability = { who = root.owner_species value >= 0.60 }
+ solar_system = {
+  exists = owner owner = { is_same_value = root }
+  NOT = { any_fleet_in_system = { exists = owner owner = { is_hostile = root } } }
+ }
+}
+# Colony scope. Only a mature automatically settled frontier colony can leave.
+haipam_frontier_secession_candidate = {
+ exists = owner owner = { is_same_value = root }
+ is_capital = no has_planet_flag = haipam_frontier_colony
+ NOT = { has_planet_flag = haipam_frontier_young }
+ planet = { NOT = { has_planet_flag = haipam_homeworld } }
+ any_owned_pop_group = { pop_group_has_trait = trait_haipam_white }
+ solar_system = {
+  exists = owner owner = { is_same_value = root } exists = starbase
+  count_system_planet_colony = { count = 1 }
+ }
+}

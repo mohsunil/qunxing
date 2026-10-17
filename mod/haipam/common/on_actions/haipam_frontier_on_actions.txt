@@ -1,0 +1,2 @@
+on_monthly_pulse_country = { events = { haipam.302 } }
+on_yearly_pulse_country = { events = { haipam.300 } }

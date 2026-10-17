@@ -67,7 +67,9 @@ colony_event = {
  immediate = {
   every_owned_pop_group = {
    limit = { haipam_is_gray_pop_group = yes OR = { is_unemployed = yes is_pop_category = civilian } }
-   remove_pop_amount = trigger:pop_amount
+   # Same explicit deletion interface used by native virtual-pop cleanup.
+   log = "HAIPAM_SURPLUS_GRAY_GROUP_REMOVED"
+   kill_pop_group = { pop_group = this percentage = 1 }
   }
  }
 }

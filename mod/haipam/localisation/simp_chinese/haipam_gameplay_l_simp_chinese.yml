@@ -38,7 +38,7 @@
  tech_haipam_graviton_cult:0 "重力子神殿"
  tech_haipam_graviton_cult_desc:0 "开放灵蚊人专属军队、神殿与灵能事件。灵蚊人的初次出现由灵能理论触发。"
  tech_haipam_dual_helix:0 "王家双螺旋"
- tech_haipam_dual_helix_desc:0 "皇家生物工程与灵能研究并行发展，额外生物特质点数+4。原版飞升互斥规则尚未改写。"
+ tech_haipam_dual_helix_desc:0 "额外生物特质点数+4。海帕姆可并行选择基因与灵能飞升，仍须支付各自的科技、飞升槽和传统成本。"
  tech_haipam_planetary_arsenal:0 "海帕姆行星兵工厂"
  tech_haipam_planetary_arsenal_desc:0 "开放母星分阶段舰造工程，提升舰船生产速度。"
  building_haipam_royal_hall:0 "军耀殿"

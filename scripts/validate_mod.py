@@ -108,7 +108,7 @@ def simulation_tests():
 def validate():
     checked=[]
     for file in MOD.rglob('*'):
-        if file.is_file() and file.suffix in ('.txt','.mod','.gfx'):
+        if file.is_file() and file.suffix in ('.txt','.mod','.gfx','.asset'):
             parse(file.read_text(encoding='utf-8-sig'))
             checked.append(file.relative_to(MOD).as_posix())
     for file in (MOD/'localisation').rglob('*.yml'):
@@ -135,6 +135,8 @@ def validate():
     event_source=(MOD/'events/haipam_population_events.txt').read_text()
     assert 'planet_event = { id = haipam.20' not in event_source
     assert 'colony_event = { id = haipam.20' in event_source
+    assert 'kill_pop_group = { pop_group = this percentage = 1 }' in event_source
+    assert 'remove_pop_amount = trigger:pop_amount' not in event_source
     assert 'haipam_repair_gray_species = yes' in event_source
     repair=fields(parse((MOD/'common/scripted_effects/haipam_population.txt').read_text()))['haipam_repair_gray_species']
     assert 'change_species = event_target:haipam_gray_repaired' in (MOD/'common/scripted_effects/haipam_population.txt').read_text()
@@ -159,7 +161,7 @@ def validate():
         if file.is_file() and file.suffix in ('.txt','.gfx'):
             for path in re.findall(r'(?:texturefile|icon)\s*=\s*"(gfx/[^\"]+\.dds)"',file.read_text(encoding='utf-8')):
                 assert (MOD/path).is_file(), 'Missing custom texture: '+path
-    report={'ok':True,'parsed_script_files':len(checked),'population_algorithm_cases':count,'randomized_monthly_steps':19200,'engine_error_regression_guards':8,'localisation_languages':2,'engine_loading_verified':False,'employment_allocation_verified':False,'in_game_tests_passed':False}
+    report={'ok':True,'parsed_script_files':len(checked),'population_algorithm_cases':count,'randomized_monthly_steps':19200,'engine_error_regression_guards':10,'localisation_languages':2,'engine_loading_verified':False,'employment_allocation_verified':False,'in_game_tests_passed':False}
     print(json.dumps(report,ensure_ascii=False))
     return report
 

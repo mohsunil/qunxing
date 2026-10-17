@@ -1,0 +1,22 @@
+namespace = haipam
+country_event = {
+ id = haipam.242 hide_window = yes is_triggered_only = yes
+ trigger = { haipam_is_empire = yes has_technology = tech_haipam_fleetization }
+ immediate = {
+ if = { limit = { has_technology = tech_haipam_axial_small has_technology = tech_corvettes
+   NOT = { has_country_flag = haipam_blueprint_light } }
+  create_ship_design = { design = "NAME_HAIPAM_PRODUCTION_LIGHT" } add_ship_design = last_created_design
+  set_country_flag = haipam_blueprint_light
+ }
+ if = { limit = { has_technology = tech_haipam_axial_medium has_technology = tech_destroyers
+   NOT = { has_country_flag = haipam_blueprint_medium } }
+  create_ship_design = { design = "NAME_HAIPAM_PRODUCTION_MEDIUM" } add_ship_design = last_created_design
+  set_country_flag = haipam_blueprint_medium
+ }
+ if = { limit = { has_technology = tech_haipam_axial_heavy has_technology = tech_cruisers
+   NOT = { has_country_flag = haipam_blueprint_heavy } }
+  create_ship_design = { design = "NAME_HAIPAM_PRODUCTION_HEAVY" } add_ship_design = last_created_design
+  set_country_flag = haipam_blueprint_heavy
+ }
+ }
+}

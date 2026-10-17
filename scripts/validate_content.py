@@ -24,9 +24,10 @@ def validate(game=None):
     for node in parse(texts(MOD/'common/component_templates')):
         if isinstance(node,tuple):
             value=fields(node[2]);components[value['key'].strip('"')]=value
-    sections={}
+    sections={};section_guns={}
     for _,_,node in parse(texts(MOD/'common/section_templates')):
         value=fields(node);sections[value['key'].strip('"')]=value
+        section_guns[value['key'].strip('"')]={fields(v)['name'].strip('"'):fields(v)['template'].strip('"') for k,o,v in node if k=='component_slot'}
         assert value['ship_size'] in ships
         slots=fields(fields(ships[value['ship_size']])['section_slots'])
         assert '"'+value['fits_on_slot']+'"' in slots
@@ -44,6 +45,12 @@ def validate(game=None):
         native_jobs=keys(texts(game/'common/pop_jobs'))
         used_jobs=set(re.findall(r'\bjob_([A-Za-z0-9_]+)_add\s*=',all_source))
         assert not used_jobs-native_jobs,'Missing job definitions: '+str(sorted(used_jobs-native_jobs))
+        districts=keys(texts(game/'common/districts'))
+        used_districts=set(re.findall(r'\badd_district\s*=\s*(district_[A-Za-z0-9_]+)',all_source))
+        assert not used_districts-districts,'Missing district definitions: '+str(sorted(used_districts-districts))
+        native_buildings=keys(texts(game/'common/buildings'))
+        used_buildings=set(re.findall(r'\badd_building\s*=\s*(building_[A-Za-z0-9_]+)',all_source))
+        assert not used_buildings-native_buildings-keys(texts(MOD/'common/buildings')),'Missing building definitions'
     for _,_,design in designs:
         data=fields(design);assert data['ship_size'] in ships
         for key,_,value in design:
@@ -51,9 +58,19 @@ def validate(game=None):
                 assert value.strip('"') in set(components)|native_components
             if key=='section':
                 section=fields(value);template=sections[section['template'].strip('"')]
+                gun_slots=section_guns[section['template'].strip('"')];seen=set()
                 for k,_,v in value:
-                    if k=='component' and game:
-                        assert fields(v)['template'].strip('"') in set(components)|native_components
+                    if k=='component':
+                        fitted=fields(v);slot=fitted['slot'].strip('"');part=fitted['template'].strip('"')
+                        assert slot not in seen,'Duplicate component socket: '+slot
+                        seen.add(slot)
+                        if game:assert part in set(components)|native_components
+                        if slot in gun_slots:
+                            assert components[part]['size']+'_turret'==gun_slots[slot],'Weapon/socket size mismatch'
+                        else:
+                            assert slot.startswith('SMALL_UTILITY_')
+                            assert int(slot.rsplit('_',1)[1])<=int(template['small_utility_slots'])
+                assert set(gun_slots)<=seen,'Unfitted gun socket in production design'
     ids=re.findall(r'\bid\s*=\s*(haipam\.\d+)',all_source)
     declared=[]
     for p in (MOD/'events').glob('*.txt'):
@@ -78,6 +95,16 @@ def validate(game=None):
     assert 'min_damage =' not in texts(MOD/'common/component_templates')
     assert 'cooldown =' not in texts(MOD/'common/component_templates')
     assert 'allow = { alloys >=' not in texts(MOD/'events')
+    assert 'yearly_decay' not in texts(MOD/'common/opinion_modifiers')
+    for _,_,definition in parse(texts(MOD/'common/scripted_loc')):
+        assert 'name' in fields(definition) and 'type' not in fields(definition)
+    assert ' naval_cap_add ' not in texts(MOD/'common/static_modifiers')
+    assert ' ship_upkeep_mult ' not in texts(MOD/'common/static_modifiers')
+    blueprint=texts(MOD/'events')
+    for tier in ['LIGHT','MEDIUM','HEAVY']:
+        assert 'NAME_HAIPAM_PRODUCTION_'+tier in blueprint
+    production=(MOD/'events/haipam_blueprint_events.txt').read_text()
+    assert 'create_ship = ' not in production and 'add_resource' not in production
     arsenal=texts(MOD/'common/megastructures')
     assert 'has_planet_flag = haipam_homeworld' in arsenal
     assert 'destroy_colony' not in arsenal and 'change_pc' not in arsenal

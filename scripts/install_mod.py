@@ -9,6 +9,7 @@ import re
 import shutil
 from datetime import datetime
 from pathlib import Path
+from dual_ascension_adapter import make_adapters
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -75,6 +76,7 @@ def install(game, userdir, backup_root=None):
     source = ROOT/'mod/haipam'
     adapter = make_adapter(game)  # Validate before any destination mutation.
     weapon_adapter = make_weapon_adapter(game)
+    dual_adapters = make_adapters(game)
     moddir = userdir/'mod'
     target = moddir/'haipam_early'
     descriptor = moddir/'haipam_early.mod'
@@ -94,6 +96,12 @@ def install(game, userdir, backup_root=None):
     rulepath.parent.mkdir(parents=True, exist_ok=True)
     rulepath.write_text(adapter,encoding='utf-8')
     (target/'common/component_templates/weapon_components.csv').write_text(weapon_adapter,encoding='utf-8')
+    for relative, content in dual_adapters.items():
+        dest = target/relative
+        dest.parent.mkdir(parents=True, exist_ok=True)
+        dest.write_text(content, encoding='utf-8')
+        if dest.read_text(encoding='utf-8') != content:
+            raise ValueError('Dual ascension adapter verification failed: '+relative)
     descriptor.write_text((source/'descriptor.mod').read_text(encoding='utf-8')+'path="'+target.as_posix()+'"\n',encoding='utf-8')
     checked=[]
     for file in source.rglob('*'):
@@ -102,6 +110,7 @@ def install(game, userdir, backup_root=None):
             if file.read_bytes()!=dest.read_bytes(): raise ValueError('Copy verification failed: '+str(dest))
             checked.append(str(file.relative_to(source)))
     report={'installed':True,'version':re.search(r'version="([^"]+)"',(source/'descriptor.mod').read_text(encoding='utf-8'))[1],'target':str(target),'descriptor':str(descriptor),'source_files_verified':len(checked),'local_rules':6,'game_files_modified':False,'other_mods_modified':False,'backup':str(backup) if backup else None,'gameplay_verified':False}
+    report['local_dual_ascension_adapters'] = len(dual_adapters)
     (ROOT/'local-install-report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     print(json.dumps(report,ensure_ascii=False))
 

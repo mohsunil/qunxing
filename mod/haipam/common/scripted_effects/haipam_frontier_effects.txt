@@ -1,0 +1,116 @@
+# Country scope. Idempotent initialization, including already-started saves.
+haipam_initialize_frontier = {
+ if = {
+  limit = { NOT = { has_country_flag = haipam_frontier_initialized } }
+  set_country_flag = haipam_frontier_initialized
+  set_variable = { which = hp_frontier_organization value = 80 }
+  set_variable = { which = hp_frontier_low_years value = 0 }
+  set_variable = { which = hp_frontier_children value = 0 }
+  set_variable = { which = hp_frontier_stations value = 0 }
+  set_variable = { which = hp_frontier_colonies value = 0 }
+  if = { limit = { is_ai = no } country_event = { id = haipam.301 days = 1 } }
+ }
+}
+haipam_clamp_frontier_organization = {
+ if = { limit = { check_variable = { which = hp_frontier_organization value > 100 } }
+  set_variable = { which = hp_frontier_organization value = 100 } }
+ if = { limit = { check_variable = { which = hp_frontier_organization value < 0 } }
+  set_variable = { which = hp_frontier_organization value = 0 } }
+}
+haipam_frontier_claim_one_system = {
+ if = { limit = { haipam_frontier_can_advance = yes
+   has_resource = { type = alloys amount >= 100 }
+   has_resource = { type = influence amount >= 50 }
+   has_resource = { type = energy amount >= 100 } }
+  random_system = {
+   limit = { haipam_frontier_system_candidate = yes }
+   # Pay only after finding an eligible system, never on a failed search.
+   root = { add_resource = { alloys = -100 influence = -50 energy = -100 }
+    change_variable = { which = hp_frontier_organization value = -4 }
+    change_variable = { which = hp_frontier_stations value = 1 } }
+   create_starbase = { size = starbase_outpost owner = root }
+   set_star_flag = haipam_frontier_claim
+   log = "HAIPAM_FRONTIER_STATION_CREATED"
+  }
+ }
+}
+haipam_frontier_launch_one_colony = {
+ if = { limit = { haipam_frontier_can_advance = yes
+   has_resource = { type = alloys amount >= 200 }
+   has_resource = { type = minerals amount >= 800 }
+   has_resource = { type = food amount >= 300 }
+   has_resource = { type = consumer_goods amount >= 200 }
+   has_resource = { type = energy amount >= 200 } }
+  save_event_target_as = haipam_frontier_owner
+  owner_species = { save_event_target_as = haipam_frontier_species }
+  random_system = {
+   limit = { exists = owner owner = { is_same_value = root } any_system_planet = { haipam_frontier_colony_candidate = yes } }
+   random_system_planet = {
+    limit = { haipam_frontier_colony_candidate = yes }
+    set_planet_flag = haipam_colonization_pending
+    root = { add_resource = { alloys = -200 minerals = -800 food = -300 consumer_goods = -200 energy = -200 }
+     change_variable = { which = hp_frontier_organization value = -6 } }
+    # This is a PHYSICAL uncolonized planet, not an every_owned_planet colony.
+    planet_event = { id = haipam.321 days = 360 }
+    log = "HAIPAM_FRONTIER_COLONY_LAUNCHED"
+   }
+  }
+ }
+}
+haipam_release_frontier_colony = {
+ if = { limit = { is_at_war = no
+   any_owned_planet = { haipam_frontier_secession_candidate = yes } }
+  save_event_target_as = haipam_frontier_parent
+  owner_species = { save_event_target_as = haipam_frontier_founder }
+  random_owned_planet = {
+   limit = { haipam_frontier_secession_candidate = yes }
+   save_event_target_as = haipam_secession_colony
+  }
+  create_country = {
+   name = { key = "NAME_HAIPAM_FRONTIER" variable_string = "\\[haipam_secession_colony.GetName\\]" }
+   type = default authority = auth_imperial species = event_target:haipam_frontier_founder
+   origin = origin_syncretic_evolution
+   ethos = { ethic = ethic_authoritarian ethic = ethic_militarist ethic = ethic_spiritualist }
+   civics = { civic = civic_haipam_royal_biology civic = civic_distinguished_admiralty }
+   flag = { icon = { category = "haipam" file = "haipam_royal_crest.dds" }
+    background = { category = "backgrounds" file = "horizontal.dds" }
+    colors = { "wave_blue" "off_white" "black" "null" } }
+   ignore_initial_colony_error = yes
+   effect = {
+    save_event_target_as = haipam_frontier_child
+    set_country_flag = haipam_frontier_child
+    set_country_flag = haipam_child_of_@root
+    # Avoid re-running the motherworld gifts/royal initializer in a child state.
+    set_country_flag = haipam_initialized set_country_flag = haipam_home_registered
+    copy_techs_from = { target = root }
+    set_graphical_culture = arthropoid_01
+   }
+  }
+  event_target:haipam_secession_colony = {
+   # This system has exactly one colony; no unrelated colony is transferred.
+   solar_system = { starbase = { set_owner = event_target:haipam_frontier_child } }
+   set_owner = event_target:haipam_frontier_child set_capital = yes
+   if = { limit = { has_building = building_colony_shelter }
+    remove_building = building_colony_shelter add_building = building_capital }
+  }
+  event_target:haipam_frontier_child = {
+   every_owned_species = {
+    if = { limit = { has_trait = trait_haipam_gray }
+     set_citizenship_type = { country = prev type = citizenship_limited } }
+   }
+   create_starting_leaders = yes haipam_refresh_role_portraits = yes
+   establish_communications_no_message = root
+   set_truce = { target = root type = liberation }
+   add_opinion_modifier = { who = root modifier = haipam_friendly_autonomy }
+  }
+  establish_communications_no_message = event_target:haipam_frontier_child
+  set_truce = { target = event_target:haipam_frontier_child type = liberation }
+  add_opinion_modifier = { who = event_target:haipam_frontier_child modifier = haipam_friendly_autonomy }
+  change_variable = { which = hp_frontier_children value = 1 }
+  change_variable = { which = hp_frontier_organization value = 20 }
+  set_variable = { which = hp_frontier_low_years value = 0 }
+  set_timed_country_flag = { flag = haipam_frontier_split_cooldown days = 3600 }
+  if = { limit = { is_ai = no } country_event = { id = haipam.331 days = 1 } }
+  log = "HAIPAM_FRIENDLY_FRONTIER_SECESSION"
+ }
+}

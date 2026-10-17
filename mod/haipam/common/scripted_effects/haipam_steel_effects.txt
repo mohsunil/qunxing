@@ -1,0 +1,114 @@
+haipam_spawn_grain_polity = {
+ save_event_target_as = haipam_grain_parent
+ owner_species = { save_event_target_as = haipam_steel_founder }
+ random_system = {
+  limit = { any_system_planet = { haipam_steel_spawn_world = yes } }
+  random_system_planet = {
+   limit = { haipam_steel_spawn_world = yes }
+   save_event_target_as = haipam_steel_world
+  }
+ }
+ # A crowded midgame must not silently suppress the whole story. Add a single
+ # event-owned refuge system, without taking existing empires' planets.
+ if = { limit = { NOT = { exists = event_target:haipam_steel_world } }
+  capital_scope = { solar_system = {
+   spawn_system = {
+    min_distance >= 25 max_distance <= 35 initializer = haipam_steel_refuge
+    hyperlane = yes is_discovered = yes
+    effect = { random_system_planet = {
+     limit = { has_planet_flag = haipam_steel_refuge_world }
+     save_event_target_as = haipam_steel_world
+    } }
+   }
+  } }
+ }
+ if = { limit = { exists = event_target:haipam_steel_world }
+  set_country_flag = haipam_grain_chain_started
+  create_country = {
+   name = "NAME_HAIPAM_STEEL" type = default authority = auth_oligarchic
+   species = event_target:haipam_steel_founder origin = origin_mechanists
+   ethos = { ethic = ethic_fanatic_materialist ethic = ethic_militarist }
+   civics = { civic = civic_distinguished_admiralty civic = civic_functional_architecture }
+   flag = { icon = { category = "haipam" file = "haipam_royal_crest.dds" }
+    background = { category = "backgrounds" file = "horizontal.dds" }
+    colors = { "black" "off_white" "wave_blue" "null" } }
+   ignore_initial_colony_error = yes
+   effect = {
+    save_event_target_as = haipam_grain_polity
+    set_country_flag = haipam_steel_origin set_country_flag = haipam_steel_of_@root
+    copy_techs_from = { target = root }
+    set_graphical_culture = arthropoid_01
+    give_technology = { tech = tech_robotic_workers message = no }
+    give_technology = { tech = tech_droid_workers message = no }
+    set_policy = { policy = robot_pop_policy option = robot_pops_allowed cooldown = yes }
+    set_policy = { policy = artificial_intelligence_policy option = ai_full_rights cooldown = yes }
+    add_resource = { minerals = 10000 energy = 10000 alloys = 3000 consumer_goods = 3000 food = 500 }
+   }
+  }
+  create_species = {
+   name = "NAME_HAIPAM_INDUSTRIAL_ROBOT" plural = "NAME_HAIPAM_INDUSTRIAL_ROBOT"
+   class = ROBOT portrait = default_robot traits = { trait = trait_mechanical }
+   effect = { save_event_target_as = haipam_steel_robot }
+  }
+  event_target:haipam_steel_world = {
+   solar_system = { create_starbase = { size = starbase_starport owner = event_target:haipam_grain_polity module = shipyard } }
+   create_colony = { owner = event_target:haipam_grain_polity }
+   colony = {
+    set_capital = yes
+    if = { limit = { has_building = building_colony_shelter } remove_building = building_colony_shelter }
+    if = { limit = { NOT = { has_building = building_capital } } add_building = building_capital }
+    add_building = building_robot_assembly_plant add_building = building_research_lab_1
+    add_district = district_generator add_district = district_generator
+    add_district = district_mining add_district = district_mining
+    add_district = district_city add_district = district_city
+    add_zone = { district = district_city zone = zone_research_unity zone_slot = 1 }
+    add_zone = { district = district_city zone = zone_industrial zone_slot = 2 }
+    add_building = { building = building_factory_1 zone = zone_industrial }
+    add_building = { building = building_foundry_1 zone = zone_industrial }
+    create_pop_group = { species = event_target:haipam_steel_founder category = specialist size = 800 }
+    create_pop_group = { species = event_target:haipam_steel_robot category = worker size = 3200 }
+   }
+  }
+  event_target:haipam_grain_polity = {
+   create_starting_leaders = yes establish_communications_no_message = root
+   every_owned_species = { limit = { has_trait = trait_mechanical }
+    set_citizenship_type = { country = prev type = citizenship_full } }
+  }
+  establish_communications_no_message = event_target:haipam_grain_polity
+  country_event = { id = haipam.401 days = 30 }
+  log = "HAIPAM_WHITE_ROBOT_GRAIN_POLITY_CREATED"
+ }
+}
+haipam_steel_industrial_rise = {
+ if = { limit = { NOT = { has_country_flag = haipam_steel_mobilized } }
+  set_country_flag = haipam_steel_mobilized set_country_flag = haipam_steel_war_pending
+  give_technology = { tech = tech_synthetic_workers message = no }
+  give_technology = { tech = tech_synthetic_leaders message = no }
+  give_technology = { tech = tech_haipam_fleetization message = no }
+  give_technology = { tech = tech_haipam_axial_small message = no }
+  give_technology = { tech = tech_haipam_axial_medium message = no }
+  give_technology = { tech = tech_haipam_axial_heavy message = no }
+  give_technology = { tech = tech_cruisers message = no }
+  add_ascension_perk = ap_synthetic_evolution
+  add_tradition = tr_synthetics_adopt
+  # Native adoption starts Digitization or the Utopia project. Do not fake a
+  # completed ascension or convert any gray species from the player's empire.
+  add_modifier = { modifier = haipam_steel_mobilization days = 7200 }
+  add_resource = { minerals = 20000 energy = 20000 alloys = 20000 consumer_goods = 5000 }
+  random_owned_species = { limit = { has_trait = trait_mechanical }
+   save_event_target_as = haipam_steel_robot }
+  capital_scope = { if = { limit = { exists = event_target:haipam_steel_robot }
+   create_pop_group = { species = event_target:haipam_steel_robot category = worker size = 4000 } } }
+  haipam_create_steel_armada = yes
+  event_target:haipam_grain_parent = {
+   country_event = { id = haipam.404 days = 1 }
+   every_country = {
+    limit = { is_ai = yes is_subject = no is_at_war = no has_country_flag = haipam_child_of_@prev }
+    add_opinion_modifier = { who = event_target:haipam_grain_polity modifier = haipam_steel_solidarity }
+    set_country_flag = haipam_steel_ally_of_@prev
+   }
+  }
+  set_timed_country_flag = { flag = haipam_steel_preparing_war days = 1800 }
+  log = "HAIPAM_STEEL_INDUSTRIAL_RISE_NATIVE_SYNTHETIC_PATH_STARTED"
+ }
+}

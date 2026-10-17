@@ -1,0 +1,62 @@
+haipam_create_steel_armada = {
+ create_fleet = { name = "NAME_HAIPAM_STEEL_FLEET" effect = { set_owner = root
+ create_ship = { name = random design = "NAME_HAIPAM_STEEL_LINE" prefix = no upgradable = yes }
+ create_ship = { name = random design = "NAME_HAIPAM_STEEL_LINE" prefix = no upgradable = yes }
+ create_ship = { name = random design = "NAME_HAIPAM_STEEL_LINE" prefix = no upgradable = yes }
+ create_ship = { name = random design = "NAME_HAIPAM_STEEL_LINE" prefix = no upgradable = yes }
+ create_ship = { name = random design = "NAME_HAIPAM_STEEL_LINE" prefix = no upgradable = yes }
+ create_ship = { name = random design = "NAME_HAIPAM_STEEL_LINE" prefix = no upgradable = yes }
+ create_ship = { name = random design = "NAME_HAIPAM_POSTAL_RETURN" prefix = no upgradable = yes }
+ create_ship = { name = random design = "NAME_HAIPAM_POSTAL_RETURN" prefix = no upgradable = yes }
+ create_ship = { name = random design = "NAME_HAIPAM_POSTAL_RETURN" prefix = no upgradable = yes }
+ create_ship = { name = random design = "NAME_HAIPAM_POSTAL_RETURN" prefix = no upgradable = yes }
+ create_ship = { name = random design = "NAME_HAIPAM_POSTAL_RETURN" prefix = no upgradable = yes }
+ create_ship = { name = random design = "NAME_HAIPAM_POSTAL_RETURN" prefix = no upgradable = yes }
+ set_location = root.capital_scope
+ } }
+ create_fleet = { name = "NAME_HAIPAM_STEEL_FLEET" effect = { set_owner = root
+ create_ship = { name = random design = "NAME_HAIPAM_STEEL_LINE" prefix = no upgradable = yes }
+ create_ship = { name = random design = "NAME_HAIPAM_STEEL_LINE" prefix = no upgradable = yes }
+ create_ship = { name = random design = "NAME_HAIPAM_STEEL_LINE" prefix = no upgradable = yes }
+ create_ship = { name = random design = "NAME_HAIPAM_STEEL_LINE" prefix = no upgradable = yes }
+ create_ship = { name = random design = "NAME_HAIPAM_STEEL_LINE" prefix = no upgradable = yes }
+ create_ship = { name = random design = "NAME_HAIPAM_STEEL_LINE" prefix = no upgradable = yes }
+ create_ship = { name = random design = "NAME_HAIPAM_POSTAL_RETURN" prefix = no upgradable = yes }
+ create_ship = { name = random design = "NAME_HAIPAM_POSTAL_RETURN" prefix = no upgradable = yes }
+ create_ship = { name = random design = "NAME_HAIPAM_POSTAL_RETURN" prefix = no upgradable = yes }
+ create_ship = { name = random design = "NAME_HAIPAM_POSTAL_RETURN" prefix = no upgradable = yes }
+ create_ship = { name = random design = "NAME_HAIPAM_POSTAL_RETURN" prefix = no upgradable = yes }
+ create_ship = { name = random design = "NAME_HAIPAM_POSTAL_RETURN" prefix = no upgradable = yes }
+ set_location = root.capital_scope
+ } }
+ create_fleet = { name = "NAME_HAIPAM_STEEL_FLEET" effect = { set_owner = root
+ create_ship = { name = random design = "NAME_HAIPAM_STEEL_LINE" prefix = no upgradable = yes }
+ create_ship = { name = random design = "NAME_HAIPAM_STEEL_LINE" prefix = no upgradable = yes }
+ create_ship = { name = random design = "NAME_HAIPAM_STEEL_LINE" prefix = no upgradable = yes }
+ create_ship = { name = random design = "NAME_HAIPAM_STEEL_LINE" prefix = no upgradable = yes }
+ create_ship = { name = random design = "NAME_HAIPAM_STEEL_LINE" prefix = no upgradable = yes }
+ create_ship = { name = random design = "NAME_HAIPAM_STEEL_LINE" prefix = no upgradable = yes }
+ create_ship = { name = random design = "NAME_HAIPAM_POSTAL_RETURN" prefix = no upgradable = yes }
+ create_ship = { name = random design = "NAME_HAIPAM_POSTAL_RETURN" prefix = no upgradable = yes }
+ create_ship = { name = random design = "NAME_HAIPAM_POSTAL_RETURN" prefix = no upgradable = yes }
+ create_ship = { name = random design = "NAME_HAIPAM_POSTAL_RETURN" prefix = no upgradable = yes }
+ create_ship = { name = random design = "NAME_HAIPAM_POSTAL_RETURN" prefix = no upgradable = yes }
+ create_ship = { name = random design = "NAME_HAIPAM_POSTAL_RETURN" prefix = no upgradable = yes }
+ set_location = root.capital_scope
+ } }
+ create_fleet = { name = "NAME_HAIPAM_STEEL_FLEET" effect = { set_owner = root
+ create_ship = { name = random design = "NAME_HAIPAM_STEEL_LINE" prefix = no upgradable = yes }
+ create_ship = { name = random design = "NAME_HAIPAM_STEEL_LINE" prefix = no upgradable = yes }
+ create_ship = { name = random design = "NAME_HAIPAM_STEEL_LINE" prefix = no upgradable = yes }
+ create_ship = { name = random design = "NAME_HAIPAM_STEEL_LINE" prefix = no upgradable = yes }
+ create_ship = { name = random design = "NAME_HAIPAM_STEEL_LINE" prefix = no upgradable = yes }
+ create_ship = { name = random design = "NAME_HAIPAM_STEEL_LINE" prefix = no upgradable = yes }
+ create_ship = { name = random design = "NAME_HAIPAM_POSTAL_RETURN" prefix = no upgradable = yes }
+ create_ship = { name = random design = "NAME_HAIPAM_POSTAL_RETURN" prefix = no upgradable = yes }
+ create_ship = { name = random design = "NAME_HAIPAM_POSTAL_RETURN" prefix = no upgradable = yes }
+ create_ship = { name = random design = "NAME_HAIPAM_POSTAL_RETURN" prefix = no upgradable = yes }
+ create_ship = { name = random design = "NAME_HAIPAM_POSTAL_RETURN" prefix = no upgradable = yes }
+ create_ship = { name = random design = "NAME_HAIPAM_POSTAL_RETURN" prefix = no upgradable = yes }
+ set_location = root.capital_scope
+ } }
+}

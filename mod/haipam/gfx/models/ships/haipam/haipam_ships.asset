@@ -1,0 +1,9 @@
+entity = { name = "haipam_light_entity" pdxmesh = "haipam_light_frame_mesh" scale = 6.5 default_state = "idle" state = { name = "idle" } state = { name = "moving" } state = { name = "combat" } game_data = { emissive_recolor_crunch = 0.0 } }
+entity = { name = "haipam_light_core_entity" pdxmesh = "haipam_light_core_mesh" default_state = "idle" state = { name = "idle" } state = { name = "moving" } game_data = { emissive_recolor_crunch = 0.0 } }
+entity = { name = "haipam_medium_entity" pdxmesh = "haipam_medium_frame_mesh" scale = 7.5 default_state = "idle" state = { name = "idle" } state = { name = "moving" } state = { name = "combat" } game_data = { emissive_recolor_crunch = 0.0 } }
+entity = { name = "haipam_medium_bow_entity" pdxmesh = "haipam_medium_bow_mesh" default_state = "idle" state = { name = "idle" } state = { name = "moving" } game_data = { emissive_recolor_crunch = 0.0 } }
+entity = { name = "haipam_medium_stern_entity" pdxmesh = "haipam_medium_stern_mesh" default_state = "idle" state = { name = "idle" } state = { name = "moving" } game_data = { emissive_recolor_crunch = 0.0 } }
+entity = { name = "haipam_heavy_entity" pdxmesh = "haipam_heavy_frame_mesh" scale = 10.5 default_state = "idle" state = { name = "idle" } state = { name = "moving" } state = { name = "combat" } game_data = { emissive_recolor_crunch = 0.0 } }
+entity = { name = "haipam_heavy_bow_entity" pdxmesh = "haipam_heavy_bow_mesh" default_state = "idle" state = { name = "idle" } state = { name = "moving" } game_data = { emissive_recolor_crunch = 0.0 } }
+entity = { name = "haipam_heavy_core_entity" pdxmesh = "haipam_heavy_core_mesh" default_state = "idle" state = { name = "idle" } state = { name = "moving" } game_data = { emissive_recolor_crunch = 0.0 } }
+entity = { name = "haipam_heavy_stern_entity" pdxmesh = "haipam_heavy_stern_mesh" default_state = "idle" state = { name = "idle" } state = { name = "moving" } game_data = { emissive_recolor_crunch = 0.0 } }

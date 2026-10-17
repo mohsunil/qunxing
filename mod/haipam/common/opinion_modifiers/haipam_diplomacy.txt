@@ -1,0 +1,1 @@
+haipam_friendly_autonomy = { opinion = { base = 100 } decay = { base = 2 } min = 0 }

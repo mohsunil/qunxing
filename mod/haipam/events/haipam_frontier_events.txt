@@ -1,0 +1,105 @@
+namespace = haipam
+country_event = {
+ id = haipam.302 hide_window = yes is_triggered_only = yes
+ trigger = { haipam_is_frontier_parent = yes }
+ immediate = { haipam_initialize_frontier = yes }
+}
+country_event = {
+ id = haipam.300 hide_window = yes is_triggered_only = yes
+ trigger = { haipam_is_frontier_parent = yes }
+ immediate = {
+  haipam_initialize_frontier = yes
+  change_variable = { which = hp_frontier_organization value = 5 }
+  if = { limit = { any_owned_planet = { has_active_building = building_haipam_graviton_temple } }
+   change_variable = { which = hp_frontier_organization value = 5 }
+   set_variable = { which = hp_frontier_low_years value = 0 } }
+  haipam_frontier_claim_one_system = yes
+  haipam_frontier_launch_one_colony = yes
+  haipam_clamp_frontier_organization = yes
+  if = { limit = { haipam_frontier_can_advance = yes
+    check_variable = { which = hp_frontier_organization value < 35 }
+    NOT = { has_country_flag = haipam_frontier_warning } }
+   set_country_flag = haipam_frontier_warning
+   if = { limit = { is_ai = no } country_event = { id = haipam.330 days = 1 } } }
+  if = { limit = { check_variable = { which = hp_frontier_organization value >= 40 } }
+   remove_country_flag = haipam_frontier_warning }
+  if = { limit = { haipam_frontier_can_advance = yes
+    check_variable = { which = hp_frontier_organization value < 20 } }
+   change_variable = { which = hp_frontier_low_years value = 1 } }
+  else = { set_variable = { which = hp_frontier_low_years value = 0 } }
+  if = { limit = { haipam_frontier_can_advance = yes
+    check_variable = { which = hp_frontier_low_years value >= 2 }
+    check_variable = { which = hp_frontier_children value < 3 }
+    NOT = { has_country_flag = haipam_frontier_split_cooldown } }
+   haipam_release_frontier_colony = yes }
+ }
+}
+country_event = {
+ id = haipam.301 is_triggered_only = yes title = haipam.301.name desc = haipam.301.desc
+ picture = GFX_haipam_evt_postal
+ option = { name = haipam.301.advance }
+ option = { name = haipam.301.pause set_country_flag = haipam_frontier_paused }
+}
+country_event = {
+ id = haipam.310 is_triggered_only = yes title = haipam.310.name desc = haipam.310.desc
+ picture = GFX_haipam_evt_postal
+ immediate = { haipam_initialize_frontier = yes }
+ option = { name = haipam.310.resume
+  trigger = { has_country_flag = haipam_frontier_paused }
+  remove_country_flag = haipam_frontier_paused }
+ option = { name = haipam.310.pause
+  trigger = { NOT = { has_country_flag = haipam_frontier_paused } }
+  set_country_flag = haipam_frontier_paused }
+ option = { name = haipam.310.reorganize
+  allow = { has_resource = { type = unity amount >= 500 } has_resource = { type = energy amount >= 500 }
+   NOT = { has_country_flag = haipam_frontier_reorganized } }
+  add_resource = { unity = -500 energy = -500 }
+  change_variable = { which = hp_frontier_organization value = 25 }
+  set_variable = { which = hp_frontier_low_years value = 0 }
+  set_timed_country_flag = { flag = haipam_frontier_reorganized days = 1800 }
+  haipam_clamp_frontier_organization = yes }
+ option = { name = haipam.310.close }
+}
+planet_event = {
+ id = haipam.321 hide_window = yes is_triggered_only = yes
+ immediate = {
+  remove_planet_flag = haipam_colonization_pending
+  if = { limit = { exists = event_target:haipam_frontier_owner exists = event_target:haipam_frontier_species
+    event_target:haipam_frontier_owner = { haipam_is_empire = yes }
+    is_colonizable = yes is_colony = no is_under_colonization = no NOT = { exists = owner }
+    NOT = { has_anomaly = yes }
+    solar_system = { exists = owner owner = { is_same_value = event_target:haipam_frontier_owner }
+     NOT = { any_fleet_in_system = { exists = owner owner = { is_hostile = event_target:haipam_frontier_owner } } } } }
+   create_colony = { owner = event_target:haipam_frontier_owner }
+   colony = {
+    create_pop_group = { species = event_target:haipam_frontier_species category = worker size = 200 }
+    if = { limit = { NOT = { has_building = building_colony_shelter } } add_building = building_colony_shelter }
+    if = { limit = { NOT = { has_building = building_haipam_royal_hatchery } } add_building = building_haipam_royal_hatchery }
+    if = { limit = { NOT = { has_building = building_haipam_reactor } } add_building = building_haipam_reactor }
+    set_planet_flag = haipam_frontier_colony
+    set_timed_planet_flag = { flag = haipam_frontier_young days = 1800 }
+    haipam_reset_pipeline = yes
+   }
+   event_target:haipam_frontier_owner = {
+    change_variable = { which = hp_frontier_colonies value = 1 }
+    if = { limit = { is_ai = no } country_event = { id = haipam.322 days = 1 } }
+   }
+   log = "HAIPAM_FRONTIER_COLONY_COMPLETED"
+  }
+  else = { log = "HAIPAM_FRONTIER_COLONY_CANCELLED_TARGET_CHANGED" }
+ }
+}
+country_event = {
+ id = haipam.322 is_triggered_only = yes title = haipam.322.name desc = haipam.322.desc
+ picture = GFX_haipam_evt_hatchery option = { name = haipam.322.ok }
+}
+country_event = {
+ id = haipam.330 is_triggered_only = yes title = haipam.330.name desc = haipam.330.desc
+ picture = GFX_haipam_evt_postal
+ option = { name = haipam.330.manage country_event = { id = haipam.310 days = 1 } }
+ option = { name = haipam.330.continue }
+}
+country_event = {
+ id = haipam.331 is_triggered_only = yes title = haipam.331.name desc = haipam.331.desc
+ picture = GFX_haipam_evt_postal option = { name = haipam.331.ok }
+}

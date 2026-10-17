@@ -1,0 +1,10 @@
+defined_text = {
+ name = GetHaipamFrontierOrganization
+ text = { trigger = { check_variable = { which = hp_frontier_organization value >= 70 } }
+  localization_key = haipam.org.high }
+ text = { trigger = { check_variable = { which = hp_frontier_organization value >= 40 } }
+  localization_key = haipam.org.stable }
+ text = { trigger = { check_variable = { which = hp_frontier_organization value >= 20 } }
+  localization_key = haipam.org.low }
+ text = { localization_key = haipam.org.critical }
+}

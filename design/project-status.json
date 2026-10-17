@@ -1,5 +1,5 @@
 {
-  "package_version": "0.4.2-alpha",
+  "package_version": "0.5.0-alpha",
   "date": "2026-10-17",
   "kind": "mod_source_prototype_and_design",
   "game_version": "4.5.2 (9776)",
@@ -17,7 +17,7 @@
   },
   "game_install_path_confirmed": true,
   "implemented_game_features": 0,
-  "game_script_files": 42,
+  "game_script_files": 64,
   "custom_models": 0,
   "in_game_tests_passed": false,
   "tripo_last_observation": "no API key configured",
@@ -33,7 +33,7 @@
   "upload_status_is_pre_upload_snapshot": true,
   "codex_cloud_environment_published": false,
   "cloud_task_started": false,
-  "prototype_source_files": 95,
+  "prototype_source_files": 135,
   "prototype_systems": [
     "prescripted_syncretic_empire",
     "lineage_traits",
@@ -53,7 +53,12 @@
     "three_low_capacity_ship_sizes",
     "postal_trade_and_salvage",
     "motherworld_four_stage_arsenal",
-    "resource_rich_homeworld_features"
+    "resource_rich_homeworld_features",
+    "frontier_expansion_and_colonization",
+    "organization_and_friendly_secession",
+    "grain_request_hunger_steel_coalition_war",
+    "scoped_dual_native_ascension",
+    "researched_production_blueprints"
   ],
   "gameplay_verified_features": 0,
   "prototype_installed_locally": true,
@@ -83,7 +88,7 @@
   "preset_visibility_evidence": "user_confirmed",
   "new_campaign_started": true,
   "population_initialization_verified": true,
-  "engine_error_regression_guards": 8,
+  "engine_error_regression_guards": 10,
   "custom_portrait_textures": 8,
   "custom_flag_sizes": 3,
   "custom_ui_icon_textures": 5,
@@ -116,10 +121,6 @@
   "other_process_attribution": "Unrelated screenshots/playsets excluded without load evidence",
   "pending_systems": [
     "near_galactic_core_initializer",
-    "frontier_expansion_and_colonization",
-    "organization_and_friendly_secession",
-    "grain_request_hunger_steel_coalition_war",
-    "full_dual_native_ascension",
     "animated_portrait_rigs",
     "custom_3d_ship_models",
     "engine_and_campaign_acceptance",
@@ -133,7 +134,7 @@
     "cause_confirmed": false,
     "other_playsets_modified": false
   },
-  "latest_default_install_version": "0.4.2-alpha",
+  "latest_default_install_version": "0.5.0-alpha",
   "latest_default_install_verified": true,
   "v041_engine_observation": {
     "haipam_traits_and_namespace_loaded": true,
@@ -153,5 +154,28 @@
     "migrate_original_homeworld_on_monthly_pulse": true,
     "prototype_numbers": true,
     "gameplay_verified": false
+  },
+  "v050_checks": {
+    "frontier_control_flow_cases": 22,
+    "story_branches": 2,
+    "dual_ascension_logic_cases": 24,
+    "first_engine_load_defects_corrected_pending_recheck": true,
+    "gameplay_verified": false,
+    "new_campaign_initialization_observed": true,
+    "save_gray_specialist_employment_observed": true,
+    "save_gray_idle_surplus_observed": 700,
+    "native_kill_pop_group_fix_pending_reload": true,
+    "owned_leaders_observed": 13,
+    "all_owned_leaders_white": true,
+    "homeworld_resource_flag_observed": true,
+    "second_engine_load_started": true
+  },
+  "custom_ship_model_prototypes": {
+    "frames": 3,
+    "sections": 6,
+    "section_triangles": 2944,
+    "editable_obj": true,
+    "engine_verified": false,
+    "fixed_turrets": true
   }
 }

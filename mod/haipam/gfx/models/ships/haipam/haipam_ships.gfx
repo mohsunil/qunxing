@@ -1,0 +1,11 @@
+objectTypes = {
+pdxmesh = { name = "haipam_light_frame_mesh" file = "gfx/models/ships/haipam/haipam_light_frame.mesh" scale = 1.0 meshsettings = { name = "haipam_hull" shader = "PdxMeshShip" } }
+pdxmesh = { name = "haipam_light_core_mesh" file = "gfx/models/ships/haipam/haipam_light_core.mesh" scale = 1.0 meshsettings = { name = "haipam_hull" shader = "PdxMeshShip" } }
+pdxmesh = { name = "haipam_medium_frame_mesh" file = "gfx/models/ships/haipam/haipam_medium_frame.mesh" scale = 1.0 meshsettings = { name = "haipam_hull" shader = "PdxMeshShip" } }
+pdxmesh = { name = "haipam_medium_bow_mesh" file = "gfx/models/ships/haipam/haipam_medium_bow.mesh" scale = 1.0 meshsettings = { name = "haipam_hull" shader = "PdxMeshShip" } }
+pdxmesh = { name = "haipam_medium_stern_mesh" file = "gfx/models/ships/haipam/haipam_medium_stern.mesh" scale = 1.0 meshsettings = { name = "haipam_hull" shader = "PdxMeshShip" } }
+pdxmesh = { name = "haipam_heavy_frame_mesh" file = "gfx/models/ships/haipam/haipam_heavy_frame.mesh" scale = 1.0 meshsettings = { name = "haipam_hull" shader = "PdxMeshShip" } }
+pdxmesh = { name = "haipam_heavy_bow_mesh" file = "gfx/models/ships/haipam/haipam_heavy_bow.mesh" scale = 1.0 meshsettings = { name = "haipam_hull" shader = "PdxMeshShip" } }
+pdxmesh = { name = "haipam_heavy_core_mesh" file = "gfx/models/ships/haipam/haipam_heavy_core.mesh" scale = 1.0 meshsettings = { name = "haipam_hull" shader = "PdxMeshShip" } }
+pdxmesh = { name = "haipam_heavy_stern_mesh" file = "gfx/models/ships/haipam/haipam_heavy_stern.mesh" scale = 1.0 meshsettings = { name = "haipam_hull" shader = "PdxMeshShip" } }
+}

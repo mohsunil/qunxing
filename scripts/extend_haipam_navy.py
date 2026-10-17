@@ -20,7 +20,7 @@ for tier,proxy,hp,capacity,fleet_slot,speed,time,upkeep,tech,power in sizes:
            'medium':'"bow" = { locator = "part1" } "stern" = { locator = "part2" }',
            'heavy':'"bow" = { locator = "part1" } "mid" = { locator = "part2" } "stern" = { locator = "part3" }'}[tier]
     definitions.append(f'''haipam_axial_{tier} = {{
- entity = "{proxy}_entity" use_shipnames_from = {proxy}
+ entity = "haipam_{tier}_entity" use_shipnames_from = {proxy}
  formation_priority = 20 max_speed = {speed} acceleration = 0.30 rotation_speed = 0.08
  collision_radius = 6 max_hitpoints = {hp}
  size_multiplier = {capacity} fleet_slot_size = {fleet_slot}
@@ -30,7 +30,7 @@ for tier,proxy,hp,capacity,fleet_slot,speed,time,upkeep,tech,power in sizes:
  enable_default_design = yes enable_3dview_in_ship_browser = yes
  default_behavior = artillery ship_roles = {{ artillery gunship }}
  prerequisites = {{ "tech_haipam_fleetization" "tech_haipam_axial_{tech}" "tech_{proxy}s" }}
- potential_country = {{ haipam_is_empire = yes }}
+ potential_country = {{ OR = {{ haipam_is_empire = yes has_country_flag = haipam_steel_origin }} }}
  class = shipclass_military construction_type = starbase_shipyard
  required_component_set = "power_core" required_component_set = "ftl_components"
  required_component_set = "thruster_components" required_component_set = "sensor_components"
@@ -81,7 +81,7 @@ for size,tech,low,high,cost,power,range_,tracking in [
  icon = "GFX_haipam_axial_plasma" icon_frame = 1
  component_set = "HAIPAM_AXIAL_PLASMA" projectile_gfx = "plasma_thrower_{size[0]}"
  prerequisites = {{ "tech_haipam_axial_{tech}" }}
- potential = {{ from = {{ haipam_is_empire = yes }} }}
+ potential = {{ from = {{ OR = {{ haipam_is_empire = yes has_country_flag = haipam_steel_origin }} }} }}
  damage = {{ min = {low} max = {high} }} power = {power}
  range = {range_} accuracy = 0.90 tracking = {tracking}
  hull_damage = 1.75 armor_damage = 2.0 shield_damage = 0.50
@@ -96,19 +96,19 @@ put('common/component_sets/haipam_component_sets.txt', '''component_set = {
 }''')
 
 sections=[
- ('LIGHT_CORE','light','mid','corvette_S3_entity',[('small',1),('small',2),('small',3)],4,160),
- ('MEDIUM_BOW','medium','bow','destroyer_bow_M1S2_entity',[('medium',1),('small',1),('small',2)],6,240),
- ('MEDIUM_STERN','medium','stern','destroyer_stern_S2_entity',[('small',1),('small',2)],2,100),
- ('HEAVY_BOW','heavy','bow','cruiser_bow_L1_entity',[('large',1)],4,300),
- ('HEAVY_CORE','heavy','mid','cruiser_mid_M3_entity',[('medium',1),('medium',2),('medium',3)],6,400),
- ('HEAVY_STERN','heavy','stern','cruiser_stern_M1_entity',[('medium',1)],2,150),
+ ('LIGHT_CORE','light','mid','haipam_light_core_entity',[('small',1),('small',2),('small',3)],4,160),
+ ('MEDIUM_BOW','medium','bow','haipam_medium_bow_entity',[('medium',1),('small',1),('small',2)],6,240),
+ ('MEDIUM_STERN','medium','stern','haipam_medium_stern_entity',[('small',1),('small',2)],2,100),
+ ('HEAVY_BOW','heavy','bow','haipam_heavy_bow_entity',[('large',1)],4,300),
+ ('HEAVY_CORE','heavy','mid','haipam_heavy_core_entity',[('medium',1),('medium',2),('medium',3)],6,400),
+ ('HEAVY_STERN','heavy','stern','haipam_heavy_stern_entity',[('medium',1)],2,150),
 ]
 parts=[]
 for key,tier,slot,entity,guns,utility,cost in sections:
     comps='\n'.join(f'component_slot = {{ name = "{s.upper()}_GUN_{n:02d}" template = "{s}_turret" locatorname = "{s}_gun_{n:02d}" }}' for s,n in guns)
     parts.append(f'''ship_section_template = {{
  key = "HAIPAM_{key}" ship_size = haipam_axial_{tier} fits_on_slot = {slot}
- should_draw_components = yes entity = "{entity}" icon = "GFX_ship_part_core_{slot}"
+ should_draw_components = no entity = "{entity}" icon = "GFX_ship_part_core_{slot}"
  {comps}
  small_utility_slots = {utility} aux_utility_slots = 1
  resources = {{ category = ship_sections cost = {{ alloys = {cost} }} }}
